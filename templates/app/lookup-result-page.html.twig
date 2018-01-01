@@ -1,0 +1,57 @@
+{% extends '@layout/default.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h2>
+                User Agent Lookup
+            </h2>
+            <p>
+                This tool allows you to check what the latest <em>browscap.ini</em> will identify any User Agent as.
+            </p>
+        </div>
+
+        <div class="col-md-12">
+            <div class="panel panel-success">
+                <div class="panel-body">
+                    <form action="" method="POST" class="form-horizontal">
+                        <div class="form-group col-sm-12">
+                            <label for="ua" class="control-label">User Agent:</label>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <input type="text" name="ua" value="{{ ua }}" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <input type="hidden" name="__csrf" value="{{ __csrf }}" />
+                            <input type="submit" value="Look up &raquo;" class="btn btn-success" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        {% if showResult %}
+        <div>
+            <table class="table table-bordered table-hover">
+                <caption>List of detected properties</caption>
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Key</th>
+                    <th scope="col">Value</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for key, row in result %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ row }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
