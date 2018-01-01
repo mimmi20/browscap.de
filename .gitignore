@@ -1,0 +1,14 @@
+vendor/
+.idea/
+.buildpath
+.settings
+.project
+composer.phar
+clover.xml
+coveralls-upload.json
+phpunit.xml
+cache/*
+!cache/.gitkeep
+data/*
+!data/.gitkeep
+.php_cs.cache
