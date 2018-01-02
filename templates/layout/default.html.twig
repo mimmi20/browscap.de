@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{% block title %}{% endblock %} - Browser Capabilities Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <!--
     <style>
         body { padding-top: 60px; }
         .app { display: flex; min-height: 100vh; flex-direction: column; }
@@ -15,6 +16,7 @@
         .app-footer { padding-bottom: 1em; }
         .zf-green, h2 a { color: #68b604; }
     </style>
+    -->
     {% block stylesheets %}{% endblock %}
 </head>
 <body class="app">
@@ -23,6 +25,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -44,6 +47,11 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{ path('capabilities') }}">
+                                <i class="fa fa-book"></i> Browser Capabilities
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ path('api.ping') }}">
                                 Ping Test
                             </a>
@@ -53,7 +61,7 @@
             </div>
         </nav>
         <div class="app-content">
-            <main class="container">
+            <main class="container-fluid">
                 <div class="jumbotron">
                     <h1>Browser Capabilities Project</h1>
                     <p>
@@ -65,24 +73,31 @@
     </header>
 
     <div class="app-content">
-        <main class="container">
+        <main class="container-fluid">
             {% block content %}{% endblock %}
         </main>
     </div>
 
     <footer class="app-footer">
-        <div class="container">
+        <div class="container-fluid">
             <hr />
             {% block footer %}
                 <p>
                     &copy; 1998 - {{ "now"|date("Y") }} Browser Capabilities Project
                 </p>
+                <ul>
+                    <li><a href="https://github.com/browscap">GitHub</a></li>
+                    <li><a href="https://groups.google.com/group/browscap">Discussion Forum</a></li>
+                    <li><a href="https://twitter.com/browscap">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/browscap">Facebook</a></li>
+                    <li><a href="http://webchat.freenode.net/?channels=%23browscap">#browscap on Freenode</a></li>
+                </ul>
             {% endblock %}
         </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
     {% block javascript %}{% endblock %}
 </body>
 </html>

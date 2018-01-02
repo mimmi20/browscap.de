@@ -6,4 +6,4 @@ parameters:
     - */tests/*/data/*
     - */tests/*/Full2Test.php
   ignoreErrors:
-    - '~MockObject~'
+#    - '~MockObject~'

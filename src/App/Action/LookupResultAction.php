@@ -82,6 +82,11 @@ class LookupResultAction implements ServerMiddlewareInterface
         } elseif ('GET' === $request->getMethod()) {
             $ua = $request->getHeaderLine('user-agent');
             $token = $guard->generateToken();
+        } else {
+            return new RedirectResponse(
+                $this->router->generateUri('ua-lookup'),
+                302
+            );
         }
 
         return new HtmlResponse($this->template->render('app::lookup-result-page', ['__csrf' => $token, 'form' => $this->form, 'ua' => $ua, 'result' => (array) $result, 'showResult' => $showResult]));

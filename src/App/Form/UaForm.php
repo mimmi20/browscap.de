@@ -66,5 +66,4 @@ class UaForm extends Form
             ]
         );
     }
-
 }

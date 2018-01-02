@@ -45,7 +45,7 @@ class ConfigProvider
             'factories' => [
                 Action\HomePageAction::class           => Action\HomePageFactory::class,
                 Action\DownloadsPageAction::class      => Action\DownloadsPageFactory::class,
-                Action\LookupFormAction::class         => Action\LookupFormFactory::class,
+                Action\CapabilitiesPageAction::class   => Action\CapabilitiesPageFactory::class,
                 Action\LookupResultAction::class       => Action\LookupResultFactory::class,
                 Logger::class                          => LoggerFactory::class,
                 Model\InputFilter\UaInputFilter::class => Model\InputFilter\UaInputFilterFactory::class,

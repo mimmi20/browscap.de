@@ -32,3 +32,4 @@ $app->get('/', \App\Action\HomePageAction::class, 'home');
 $app->get('/api/ping', \App\Action\PingAction::class, 'api.ping');
 $app->get('/downloads', \App\Action\DownloadsPageAction::class, 'downloads');
 $app->route('/ua-lookup', \App\Action\LookupResultAction::class, ['GET', 'POST'], 'ua-lookup');
+$app->get('/capabilities', \App\Action\CapabilitiesPageAction::class, 'capabilities');

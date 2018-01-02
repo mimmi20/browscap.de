@@ -6,20 +6,20 @@ use Psr\Container\ContainerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class DownloadsPageFactory
+class CapabilitiesPageFactory
 {
     /**
      * @param \Psr\Container\ContainerInterface $container
      *
-     * @return \App\Action\DownloadsPageAction
+     * @return \App\Action\CapabilitiesPageAction
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
      */
-    public function __invoke(ContainerInterface $container): DownloadsPageAction
+    public function __invoke(ContainerInterface $container): CapabilitiesPageAction
     {
         $router   = $container->get(RouterInterface::class);
         $template = $container->get(TemplateRendererInterface::class);
 
-        return new DownloadsPageAction($router, $template);
+        return new CapabilitiesPageAction($router, $template);
     }
 }
