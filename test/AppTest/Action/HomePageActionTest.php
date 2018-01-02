@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types = 1);
 namespace AppTest\Action;
 
 use App\Action\HomePageAction;
@@ -14,30 +14,23 @@ use Zend\Expressive\Template\TemplateRendererInterface;
 
 class HomePageActionTest extends TestCase
 {
-    /** @var RouterInterface */
+    /** @var \Prophecy\Prophecy\ObjectProphecy|\Zend\Expressive\Router\RouterInterface */
     protected $router;
 
-    protected function setUp()
+    /** @var \Prophecy\Prophecy\ObjectProphecy|\Zend\Expressive\Template\TemplateRendererInterface */
+    private $template;
+
+    protected function setUp(): void
     {
-        $this->router = $this->prophesize(RouterInterface::class);
+        $this->router   = $this->prophesize(RouterInterface::class);
+        $this->template = $this->prophesize(TemplateRendererInterface::class);
     }
 
-    public function testReturnsJsonResponseWhenNoTemplateRendererProvided()
-    {
-        $homePage = new HomePageAction($this->router->reveal(), null);
-        $response = $homePage->process(
-            $this->prophesize(ServerRequestInterface::class)->reveal(),
-            $this->prophesize(DelegateInterface::class)->reveal()
-        );
-
-        $this->assertInstanceOf(JsonResponse::class, $response);
-    }
-
-    public function testReturnsHtmlResponseWhenTemplateRendererProvided()
+    public function testReturnsHtmlResponseWhenTemplateRendererProvided(): void
     {
         $renderer = $this->prophesize(TemplateRendererInterface::class);
         $renderer
-            ->render('app::home-page', Argument::type('array'))
+            ->render('app::home-page')
             ->willReturn('');
 
         $homePage = new HomePageAction($this->router->reveal(), $renderer->reveal());
@@ -47,6 +40,6 @@ class HomePageActionTest extends TestCase
             $this->prophesize(DelegateInterface::class)->reveal()
         );
 
-        $this->assertInstanceOf(HtmlResponse::class, $response);
+        self::assertInstanceOf(HtmlResponse::class, $response);
     }
 }

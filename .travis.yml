@@ -32,18 +32,16 @@ before_install:
 
 install: travis_retry composer update --optimize-autoloader --prefer-dist --prefer-stable --no-progress --no-interaction -vv $COMPOSER_FLAGS
 
-script: vendor/bin/phpunit -c phpunit.xml.dist --no-coverage --colors --verbose --exclude-group compare
+script: vendor/bin/phpunit -c phpunit.xml.dist --colors --columns 121 --no-coverage
 
 jobs:
   fast_finish: true
   allow_failures:
-    - php: 7.2
     - php: nightly
   include:
-    - php: 7.2
-      env: COMPOSER_FLAGS="--ignore-platform-reqs"
     - php: nightly
       env: COMPOSER_FLAGS="--ignore-platform-reqs"
+
     - stage: test with coverage
       php: 7.1
       env:
@@ -54,7 +52,7 @@ jobs:
         - echo 'opcache.enable=1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
         - echo 'opcache.enable_cli=1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
         - travis_retry composer self-update
-      script: vendor/bin/phpunit -c phpunit.xml.dist --colors --verbose --exclude-group compare --coverage-text --coverage-clover=coverage.clover
+      script: vendor/bin/phpunit -c phpunit.xml.dist --colors --columns 121 --coverage-text --coverage-clover=coverage.clover
       after_success:
         - bash <(curl -s https://codecov.io/bash) -f coverage.clover -F phpunit
 

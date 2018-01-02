@@ -1,11 +1,9 @@
 <?php
+declare(strict_types = 1);
 namespace App\Model\InputFilter;
 
-use NumberFormatter;
 use Zend\Filter\StringTrim;
 use Zend\Filter\StripTags;
-use Zend\I18n\Filter\NumberFormat;
-use Zend\I18n\Validator\IsFloat;
 use Zend\InputFilter\InputFilter;
 use Zend\Validator\NotEmpty;
 use Zend\Validator\StringLength;
@@ -15,13 +13,13 @@ class UaInputFilter extends InputFilter
     /**
      * Init input filter
      */
-    public function init()
+    public function init(): void
     {
         $this->add(
             [
-                'name'       => 'ua',
-                'required'   => true,
-                'filters'    => [
+                'name'     => 'ua',
+                'required' => true,
+                'filters'  => [
                     [
                         'name' => StripTags::class,
                     ],
@@ -40,8 +38,8 @@ class UaInputFilter extends InputFilter
                     [
                         'name'    => StringLength::class,
                         'options' => [
-                            'min'      => 3,
-                            'message'  => 'Please insert %min% Chars!',
+                            'min'     => 3,
+                            'message' => 'Please insert %min% Chars!',
                         ],
                     ],
                 ],
@@ -50,9 +48,9 @@ class UaInputFilter extends InputFilter
 
         $this->add(
             [
-                'name'       => '__csrf',
-                'required'   => true,
-                'filters'    => [
+                'name'     => '__csrf',
+                'required' => true,
+                'filters'  => [
                     [
                         'name' => StripTags::class,
                     ],

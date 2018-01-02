@@ -7,3 +7,5 @@ parameters:
     - */tests/*/Full2Test.php
   ignoreErrors:
 #    - '~MockObject~'
+    - '~ObjectProphecy~'
+    - '~object given~'

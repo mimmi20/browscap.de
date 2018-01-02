@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types = 1);
 namespace App;
 
 use Monolog\ErrorHandler;
@@ -10,17 +10,16 @@ use Monolog\Logger;
 use Monolog\Processor\MemoryPeakUsageProcessor;
 use Monolog\Processor\MemoryUsageProcessor;
 use Psr\Container\ContainerInterface;
-use Zend\Expressive\Router\RouterInterface;
-use Zend\Expressive\Template\TemplateRendererInterface;
 
 class LoggerFactory
 {
     /**
      * @param \Psr\Container\ContainerInterface $container
      *
-     * @return \Monolog\Logger
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return \Monolog\Logger
      */
     public function __invoke(ContainerInterface $container): Logger
     {

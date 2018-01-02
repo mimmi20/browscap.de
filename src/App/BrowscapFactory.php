@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types = 1);
 namespace App;
 
 use BrowscapPHP\Browscap;
@@ -12,9 +12,10 @@ class BrowscapFactory
     /**
      * @param \Psr\Container\ContainerInterface $container
      *
-     * @return \BrowscapPHP\Browscap
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return \BrowscapPHP\Browscap
      */
     public function __invoke(ContainerInterface $container): Browscap
     {

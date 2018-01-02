@@ -1,22 +1,20 @@
 <?php
-
+declare(strict_types = 1);
 namespace App;
 
-use BrowscapPHP\Browscap;
-use Monolog\Logger;
 use Psr\Container\ContainerInterface;
 use Stickee\Cache\SimpleCache;
 use Zend\Cache\Storage\StorageInterface;
-use Zend\Cache\StorageFactory;
 
 class Psr16CacheFactory
 {
     /**
      * @param \Psr\Container\ContainerInterface $container
      *
-     * @return \Stickee\Cache\SimpleCache
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return \Stickee\Cache\SimpleCache
      */
     public function __invoke(ContainerInterface $container): SimpleCache
     {

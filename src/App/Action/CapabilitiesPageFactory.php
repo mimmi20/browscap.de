@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types = 1);
 namespace App\Action;
 
 use Psr\Container\ContainerInterface;
@@ -11,9 +11,10 @@ class CapabilitiesPageFactory
     /**
      * @param \Psr\Container\ContainerInterface $container
      *
-     * @return \App\Action\CapabilitiesPageAction
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return \App\Action\CapabilitiesPageAction
      */
     public function __invoke(ContainerInterface $container): CapabilitiesPageAction
     {

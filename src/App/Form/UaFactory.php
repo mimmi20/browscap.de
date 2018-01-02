@@ -1,31 +1,20 @@
 <?php
-/**
- * ZF3 book Vote my Pizza Example Application
- *
- * @author     Ralf Eggert <ralf@travello.de>
- * @link       https://github.com/zf3buch/vote-my-pizza
- * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
- */
-
+declare(strict_types = 1);
 namespace App\Form;
 
 use App\Model\InputFilter\UaInputFilter;
 use Interop\Container\ContainerInterface;
 use Zend\Form\Form;
 
-/**
- * Class RestaurantPriceFactory
- *
- * @package Pizza\Form
- */
 class UaFactory extends Form
 {
     /**
      * @param ContainerInterface $container
      *
-     * @return \App\Form\UaForm
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return \App\Form\UaForm
      */
     public function __invoke(ContainerInterface $container): UaForm
     {

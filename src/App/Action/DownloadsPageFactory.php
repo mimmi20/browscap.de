@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types = 1);
 namespace App\Action;
 
 use Psr\Container\ContainerInterface;
@@ -11,9 +11,10 @@ class DownloadsPageFactory
     /**
      * @param \Psr\Container\ContainerInterface $container
      *
-     * @return \App\Action\DownloadsPageAction
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return \App\Action\DownloadsPageAction
      */
     public function __invoke(ContainerInterface $container): DownloadsPageAction
     {

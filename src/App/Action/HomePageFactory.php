@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types = 1);
 namespace App\Action;
 
 use Psr\Container\ContainerInterface;
@@ -11,9 +11,10 @@ class HomePageFactory
     /**
      * @param \Psr\Container\ContainerInterface $container
      *
-     * @return \App\Action\HomePageAction
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return \App\Action\HomePageAction
      */
     public function __invoke(ContainerInterface $container): HomePageAction
     {

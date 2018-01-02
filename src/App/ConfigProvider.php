@@ -1,11 +1,10 @@
 <?php
-
+declare(strict_types = 1);
 namespace App;
 
 use BrowscapPHP\Browscap;
 use Monolog\Logger;
 use Psr\SimpleCache\CacheInterface;
-use Stickee\Cache\SimpleCache;
 use Zend\Cache\Storage\StorageInterface;
 
 /**

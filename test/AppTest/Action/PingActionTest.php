@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types = 1);
 namespace AppTest\Action;
 
 use App\Action\PingAction;
@@ -10,17 +10,17 @@ use Zend\Diactoros\Response\JsonResponse;
 
 class PingActionTest extends TestCase
 {
-    public function testResponse()
+    public function testResponse(): void
     {
         $pingAction = new PingAction();
-        $response = $pingAction->process(
+        $response   = $pingAction->process(
             $this->prophesize(ServerRequestInterface::class)->reveal(),
             $this->prophesize(DelegateInterface::class)->reveal()
         );
 
         $json = json_decode((string) $response->getBody());
 
-        $this->assertInstanceOf(JsonResponse::class, $response);
-        $this->assertTrue(isset($json->ack));
+        self::assertInstanceOf(JsonResponse::class, $response);
+        self::assertTrue(isset($json->ack));
     }
 }

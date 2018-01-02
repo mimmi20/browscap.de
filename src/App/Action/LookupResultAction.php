@@ -1,24 +1,19 @@
 <?php
-
+declare(strict_types = 1);
 namespace App\Action;
 
 use App\Form\UaForm;
 use BrowscapPHP\Browscap;
-use BrowscapPHP\Exception;
 use Interop\Http\ServerMiddleware\DelegateInterface;
 use Interop\Http\ServerMiddleware\MiddlewareInterface as ServerMiddlewareInterface;
 use Monolog\Logger;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\EmptyResponse;
 use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Diactoros\Response\JsonResponse;
 use Zend\Diactoros\Response\RedirectResponse;
 use Zend\Expressive\Csrf\CsrfMiddleware;
 use Zend\Expressive\Router;
 use Zend\Expressive\Template;
-use Zend\Expressive\Plates\PlatesRenderer;
-use Zend\Expressive\Twig\TwigRenderer;
-use Zend\Expressive\ZendView\ZendViewRenderer;
 
 class LookupResultAction implements ServerMiddlewareInterface
 {
@@ -43,8 +38,8 @@ class LookupResultAction implements ServerMiddlewareInterface
 
     public function process(ServerRequestInterface $request, DelegateInterface $delegate)
     {
-        $guard = $request->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE);
-        $result = [];
+        $guard      = $request->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE);
+        $result     = [];
         $showResult = false;
 
         if ('POST' === $request->getMethod()) {
@@ -80,7 +75,7 @@ class LookupResultAction implements ServerMiddlewareInterface
 
             $showResult = true;
         } elseif ('GET' === $request->getMethod()) {
-            $ua = $request->getHeaderLine('user-agent');
+            $ua    = $request->getHeaderLine('user-agent');
             $token = $guard->generateToken();
         } else {
             return new RedirectResponse(

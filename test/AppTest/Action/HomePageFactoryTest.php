@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types = 1);
 namespace AppTest\Action;
 
 use App\Action\HomePageAction;
@@ -11,41 +11,28 @@ use Zend\Expressive\Template\TemplateRendererInterface;
 
 class HomePageFactoryTest extends TestCase
 {
-    /** @var ContainerInterface */
+    /** @var \Prophecy\Prophecy\ObjectProphecy|\Psr\Container\ContainerInterface */
     protected $container;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->container = $this->prophesize(ContainerInterface::class);
-        $router = $this->prophesize(RouterInterface::class);
+        $router          = $this->prophesize(RouterInterface::class);
 
         $this->container->get(RouterInterface::class)->willReturn($router);
     }
 
-    public function testFactoryWithoutTemplate()
+    public function testFactoryWithTemplate(): void
     {
         $factory = new HomePageFactory();
-        $this->container->has(TemplateRendererInterface::class)->willReturn(false);
-
-        $this->assertInstanceOf(HomePageFactory::class, $factory);
-
-        $homePage = $factory($this->container->reveal());
-
-        $this->assertInstanceOf(HomePageAction::class, $homePage);
-    }
-
-    public function testFactoryWithTemplate()
-    {
-        $factory = new HomePageFactory();
-        $this->container->has(TemplateRendererInterface::class)->willReturn(true);
         $this->container
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
-        $this->assertInstanceOf(HomePageFactory::class, $factory);
+        self::assertInstanceOf(HomePageFactory::class, $factory);
 
         $homePage = $factory($this->container->reveal());
 
-        $this->assertInstanceOf(HomePageAction::class, $homePage);
+        self::assertInstanceOf(HomePageAction::class, $homePage);
     }
 }
