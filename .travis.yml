@@ -31,7 +31,7 @@ before_install:
 
 install: travis_retry composer update --optimize-autoloader --prefer-dist --prefer-stable --no-progress --no-interaction -vv $COMPOSER_FLAGS
 
-script: vendor/bin/phpunit -c phpunit.xml.dist --colors --columns 121 --no-coverage
+script: vendor/bin/phpunit -c phpunit.xml.dist --colors --no-coverage
 
 jobs:
   fast_finish: true
@@ -50,7 +50,7 @@ jobs:
         - echo 'opcache.enable=1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
         - echo 'opcache.enable_cli=1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
         - travis_retry composer self-update
-      script: vendor/bin/phpunit -c phpunit.xml.dist --colors --columns 121 --coverage-text --coverage-clover=coverage.clover
+      script: vendor/bin/phpunit -c phpunit.xml.dist --colors --coverage-text --coverage-clover=coverage.clover
       after_success:
         - bash <(curl -s https://codecov.io/bash) -f coverage.clover -F phpunit
 
