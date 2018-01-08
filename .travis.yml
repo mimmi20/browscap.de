@@ -4,12 +4,13 @@ sudo: false
 php:
   - 7.1
   - 7.2
+  - nightly
 
 os: linux
 
 env:
-  - COMPOSER_FLAGS="--prefer-lowest"
-  - COMPOSER_FLAGS=""
+  - COMPOSER_FLAGS="--prefer-lowest --ignore-platform-reqs"
+  - COMPOSER_FLAGS="--ignore-platform-reqs"
 
 cache:
   directories:
@@ -38,9 +39,6 @@ jobs:
   allow_failures:
     - php: nightly
   include:
-    - php: nightly
-      env: COMPOSER_FLAGS="--ignore-platform-reqs"
-
     - stage: test with coverage
       php: 7.1
       env:
