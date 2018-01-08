@@ -9,6 +9,7 @@
     },
     "require": {
         "php": "^7.1",
+        "psr/http-message": "^1.0.1",
         "browscap/browscap-php": "dev-master",
         "http-interop/http-middleware": "^0.4.1",
         "roave/security-advisories": "dev-master",
