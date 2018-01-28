@@ -38,7 +38,7 @@ class LookupResultAction implements ServerMiddlewareInterface
 
     public function process(ServerRequestInterface $request, DelegateInterface $delegate)
     {
-        $guard      = $request->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE);
+        $guard = $request->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE);
 
         if ('POST' === $request->getMethod()) {
             $data = $request->getParsedBody();
@@ -100,11 +100,11 @@ class LookupResultAction implements ServerMiddlewareInterface
             $this->template->render(
                 'app::lookup-result-page',
                 [
-                    '__csrf' => $token,
-                    'form' => $this->form,
-                    'ua' => $ua,
-                    'result' => (array) $result,
-                    'showResult' => $showResult
+                    '__csrf'     => $token,
+                    'form'       => $this->form,
+                    'ua'         => $ua,
+                    'result'     => $result,
+                    'showResult' => $showResult,
                 ]
             )
         );
