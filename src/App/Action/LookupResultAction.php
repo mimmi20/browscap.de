@@ -39,8 +39,6 @@ class LookupResultAction implements ServerMiddlewareInterface
     public function process(ServerRequestInterface $request, DelegateInterface $delegate)
     {
         $guard      = $request->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE);
-        $result     = [];
-        $showResult = false;
 
         if ('POST' === $request->getMethod()) {
             $data = $request->getParsedBody();
@@ -66,17 +64,31 @@ class LookupResultAction implements ServerMiddlewareInterface
             $ua = $data['ua'];
 
             try {
-                $result = $this->browscap->getBrowser($ua);
+                $detectedResult = $this->browscap->getBrowser($ua);
             } catch (\Exception $e) {
                 $this->logger->error($e);
 
                 return new EmptyResponse(500);
             }
 
+            $result     = [];
             $showResult = true;
+
+            foreach ($detectedResult as $key => $value) {
+                if (true === $value) {
+                    $result[$key] = 'true';
+                } elseif (false === $value) {
+                    $result[$key] = 'false';
+                } else {
+                    $result[$key] = $value;
+                }
+            }
         } elseif ('GET' === $request->getMethod()) {
             $ua    = $request->getHeaderLine('user-agent');
             $token = $guard->generateToken();
+
+            $showResult = false;
+            $result     = [];
         } else {
             return new RedirectResponse(
                 $this->router->generateUri('ua-lookup'),
@@ -84,6 +96,17 @@ class LookupResultAction implements ServerMiddlewareInterface
             );
         }
 
-        return new HtmlResponse($this->template->render('app::lookup-result-page', ['__csrf' => $token, 'form' => $this->form, 'ua' => $ua, 'result' => (array) $result, 'showResult' => $showResult]));
+        return new HtmlResponse(
+            $this->template->render(
+                'app::lookup-result-page',
+                [
+                    '__csrf' => $token,
+                    'form' => $this->form,
+                    'ua' => $ua,
+                    'result' => (array) $result,
+                    'showResult' => $showResult
+                ]
+            )
+        );
     }
 }

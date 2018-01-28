@@ -23,6 +23,13 @@ class CapabilitiesPageAction implements ServerMiddlewareInterface
 
     public function process(ServerRequestInterface $request, DelegateInterface $delegate)
     {
-        return new HtmlResponse($this->template->render('app::capabilities-page'));
+        $capabilities = json_decode(file_get_contents(__DIR__ . '/../data/capabilities.json'), true);
+
+        return new HtmlResponse(
+            $this->template->render(
+                'app::capabilities-page',
+                ['capabilities' => $capabilities]
+            )
+        );
     }
 }

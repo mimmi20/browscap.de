@@ -1,0 +1,21 @@
+.features {
+    vertical-align: baseline;
+    line-height: 1em;
+}
+.features .support {
+    float: right;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+footer {
+    font-size: 12px;
+    clear: both;
+    text-align: center;
+    line-height: 1.4;
+    padding-top: 48px;
+}
+
+footer li {
+    display: inline-block;
+}
