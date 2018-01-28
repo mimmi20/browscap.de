@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d95d500320dda40bb806cc36faf25ac9",
+    "content-hash": "38ea21f51a9e7c018518698ffea8d342",
     "packages": [
         {
             "name": "browscap/browscap-php",
@@ -990,14 +990,8 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/stickeeuk/cache.git",
-                "reference": "d54357cfbe167f9348999eda43f2714401324b03"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/stickeeuk/cache/zipball/d54357cfbe167f9348999eda43f2714401324b03",
-                "reference": "d54357cfbe167f9348999eda43f2714401324b03",
-                "shasum": ""
+                "url": "https://github.com/mimmi20/cache.git",
+                "reference": "8c84c2c3d0ec106aa7e78ceda21279ce9473c36f"
             },
             "require": {
                 "php": "^7.1",
@@ -1011,7 +1005,6 @@
                     "Stickee\\Cache\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1022,7 +1015,7 @@
                 }
             ],
             "description": "PSR-16 Cache Implementation using Zend\\Cache",
-            "time": "2017-08-09T16:45:56+00:00"
+            "time": "2018-01-01T16:45:32+00:00"
         },
         {
             "name": "symfony/console",
@@ -4559,16 +4552,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "4.2.0",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "66465776cfc249844bde6d117abff1d22e06c2da"
+                "reference": "94fd0001232e47129dd3504189fa1c7225010d08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/66465776cfc249844bde6d117abff1d22e06c2da",
-                "reference": "66465776cfc249844bde6d117abff1d22e06c2da",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/94fd0001232e47129dd3504189fa1c7225010d08",
+                "reference": "94fd0001232e47129dd3504189fa1c7225010d08",
                 "shasum": ""
             },
             "require": {
@@ -4606,7 +4599,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2017-11-27T17:38:31+00:00"
+            "time": "2017-11-30T07:14:17+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
