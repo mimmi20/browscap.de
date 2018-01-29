@@ -18,9 +18,9 @@ class LoggerFactory
      *
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     * @throws \Exception
      *
      * @return \Monolog\Logger
-     * @throws \Exception
      */
     public function __invoke(ContainerInterface $container): Logger
     {
