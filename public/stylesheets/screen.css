@@ -1,6 +1,6 @@
 .features {
     vertical-align: baseline;
-    line-height: 1em;
+    line-height: 1rem;
 }
 .features .support {
     float: right;
@@ -9,7 +9,7 @@
 }
 
 footer {
-    font-size: 12px;
+    font-size: 1rem;
     clear: both;
     text-align: center;
     line-height: 1.4;
