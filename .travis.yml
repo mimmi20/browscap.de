@@ -19,7 +19,6 @@ cache:
 
 stages:
   - composer validate
-  - check coding style
   - static code analysis
   - test
   - test with coverage
@@ -58,14 +57,14 @@ jobs:
       install: skip
       script: composer validate
 
-    - stage: check coding style
+    - stage: static code analysis
       php: 7.1
       env:
         - TEST=phpcs
         - COMPOSER_FLAGS=""
       script: vendor/bin/phpcs --colors
 
-    - stage: check coding style
+    - stage: static code analysis
       php: 7.1
       env:
         - TEST=php-cs-fixer
@@ -74,5 +73,7 @@ jobs:
 
     - stage: static code analysis
       php: 7.1
-      env: COMPOSER_FLAGS=""
+      env:
+        - TEST=phpstan
+        - COMPOSER_FLAGS=""
       script: vendor/bin/phpstan analyse -l 7 -c phpstan.neon --autoload-file=vendor/autoload.php --memory-limit=768M --no-progress src test

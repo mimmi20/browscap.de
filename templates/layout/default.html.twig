@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{% block title %}{% endblock %} - Browser Capabilities Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/stylesheets/screen.css" />
     <!--
     <style>
         body { padding-top: 60px; }
@@ -18,86 +19,88 @@
     </style>
     -->
     {% block stylesheets %}{% endblock %}
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body class="app">
-    <header class="app-header">
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{ path('home') }}">
-                        <img src="{{ asset('logo100.png') }}" alt="Browser Capabilities Project" />
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="{{ path('ua-lookup') }}">
-                                <i class="fa fa-book"></i> UA Lookup
+    <div class="container-fluid">
+        <header class="card bg-light mb-3">
+            <nav class="card-header navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top" role="navigation">
+                <a class="navbar-brand" href="{{ path('home') }}">
+                    <img src="{{ asset('logo100.png') }}" alt="Browser Capabilities Project" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="nav nav-tabs card-header-tabs collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ path('ua-lookup') }}">
+                                <i class="fa fa-binoculars" aria-hidden="true"></i> UA Lookup
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ path('downloads') }}">
-                                <i class="fa fa-book"></i> Downloads
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('downloads') }}">
+                                <i class="fa fa-download" aria-hidden="true"></i> Downloads
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ path('capabilities') }}">
-                                <i class="fa fa-book"></i> Browser Capabilities
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('capabilities') }}">
+                                <i class="fa fa-tags" aria-hidden="true"></i> Browser Capabilities
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ path('api.ping') }}">
-                                Ping Test
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('api.ping') }}">
+                                <i class="fa fa-heartbeat" aria-hidden="true"></i> Ping Test
                             </a>
                         </li>
                     </ul>
                 </div>
+            </nav>
+            <div class="card-body">
+                <h1 class="card-title">Browser Capabilities Project</h1>
+                <p class="card-text">Providing regularly updated browscap.ini and related downloads since 1998!</p>
             </div>
-        </nav>
+        </header>
+
         <div class="app-content">
-            <main class="container-fluid">
-                <div class="jumbotron">
-                    <h1>Browser Capabilities Project</h1>
-                    <p>
-                        Providing regularly updated browscap.ini and related downloads since 1998!
-                    </p>
-                </div>
-            </main>
-        </div>
-    </header>
-
-    <div class="app-content">
-        <main class="container-fluid">
             {% block content %}{% endblock %}
-        </main>
-    </div>
+        </div>
 
-    <footer class="app-footer">
-        <div class="container-fluid">
+        <footer class="app-footer">
             <hr />
             {% block footer %}
                 <p>
                     &copy; 1998 - {{ "now"|date("Y") }} Browser Capabilities Project
                 </p>
                 <ul>
-                    <li><a href="https://github.com/browscap">GitHub</a></li>
-                    <li><a href="https://groups.google.com/group/browscap">Discussion Forum</a></li>
-                    <li><a href="https://twitter.com/browscap">Twitter</a></li>
-                    <li><a href="https://www.facebook.com/browscap">Facebook</a></li>
+                    <li><a href="https://github.com/browscap"><i class="fa fa-github-square" aria-hidden="true"></i> GitHub</a></li>
+                    <li><a href="https://groups.google.com/group/browscap"><i class="fa fa-google" aria-hidden="true"></i> Discussion Forum</a></li>
+                    <li><a href="https://twitter.com/browscap"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+                    <li><a href="https://www.facebook.com/browscap"><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
                     <li><a href="http://webchat.freenode.net/?channels=%23browscap">#browscap on Freenode</a></li>
                 </ul>
             {% endblock %}
-        </div>
-    </footer>
+        </footer>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
-    {% block javascript %}{% endblock %}
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        {% block javascripts %}{% endblock %}
+    </div>
 </body>
 </html>

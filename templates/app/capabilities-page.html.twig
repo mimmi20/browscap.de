@@ -1,81 +1,50 @@
 {% extends '@layout/default.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Capabilities{% endblock %}
 
 {% block content %}
-    ABC
     <div class="row">
         <div class="col-md-12">
             <h2>
-                Downloads
+                Browser Capabilities
             </h2>
-            <p>
-                The latest version is <strong>6027</strong> (29th Dec 2017)
-            </p>
+            <p>With the help of the awesome <a href="http://www.modernizr.com/">Modernizr</a> library, browscap.de gives you a quick overview of your browser’s support for recent technologies in the world of HTML, CSS and Javascript.</p>
         </div>
 
-        <div class="col-md-12">
-            <h2>
-                ASP Versions
-            </h2>
-            <ul>
-                <li>
-                    <p><a href="https://browscap.org/stream?q=BrowsCapINI" target="_blank" rel="nofollow">browscap.ini</a></p>
-                    <p>This is the standard version of browscap.ini file for IIS 5.x and greater.</p>
-                </li>
-                <li>
-                    <p><a href="https://browscap.org/stream?q=Full_BrowsCapINI" target="_blank" rel="nofollow">full_asp_browscap.ini</a></p>
-                    <p>This is a larger version of browscap.ini with all the new properties.</p>
-                </li>
-                <li>
-                    <p><a href="https://browscap.org/stream?q=Lite_BrowsCapINI" target="_blank" rel="nofollow">lite_asp_browscap.ini</a></p>
-                    <p>This is a smaller version of browscap.ini file containing major browsers &amp; search engines. This file is adequate for most websites.</p>
-                </li>
-            </ul>
-        </div>
-
-        <div class="col-md-12">
-            <h2>
-                PHP Versions
-            </h2>
-            <ul>
-                <li>
-                    <p><a href="https://browscap.org/stream?q=PHP_BrowsCapINI" target="_blank" rel="nofollow">php_browscap.ini</a></p>
-                    <p>This is a special version of browscap.ini for PHP users only!</p>
-                </li>
-                <li>
-                    <p><a href="https://browscap.org/stream?q=Full_PHP_BrowsCapINI" target="_blank" rel="nofollow">full_php_browscap.ini</a></p>
-                    <p>This is a larger version of php_browscap.ini with all the new properties.</p>
-                </li>
-                <li>
-                    <p><a href="https://browscap.org/stream?q=Lite_PHP_BrowsCapINI" target="_blank" rel="nofollow">lite_php_browscap.ini</a></p>
-                    <p>This is a smaller version of php_browscap.ini file containing major browsers &amp; search engines. This file is adequate for most websites.</p>
-                </li>
-            </ul>
-        </div>
-
-        <div class="col-md-12">
-            <h2>
-                Other files (XML/CSV/JSON/ZIP)
-            </h2>
-            <ul>
-                <li>
-                    <p><a href="https://browscap.org/stream?q=BrowsCapXML" target="_blank" rel="nofollow">browscap.xml</a></p>
-                    <p>This is the standard version of browscap.ini file in XML format.</p>
-                </li>
-                <li>
-                    <p><a href="https://browscap.org/stream?q=BrowsCapCSV" target="_blank" rel="nofollow">browscap.csv</a></p>
-                    <p>This is an industry-standard comma-separated-values version of browscap.ini. Easily imported into Access, Excel, MySQL &amp; others.</p>
-                </li>
-                <li>
-                    <p><a href="https://browscap.org/stream?q=BrowsCapJSON" target="_blank" rel="nofollow">browscap.json</a></p>
-                    <p>This is a JSON (JavaScript Object Notation) version of browscap.ini. This is usually used with JavaScript.</p>
-                </li>
-                <li>
-                    <p><a href="https://browscap.org/stream?q=BrowsCapZIP" target="_blank" rel="nofollow">browscap.zip</a></p>
-                    <p>This archive combines all the above files into one download that is smaller than all eight files put together.</p>
-                </li>
-            </ul>
+        <div class="card-columns col-md-12">
+            {% for featureGroup in capabilities.sections %}
+            <section class="card">
+                <h2 class="card-header">{{ featureGroup.title }}</h2>
+                <ul class="list-group list-group-flush">
+                    {% for feature in featureGroup.features %}
+                    <li class="list-group-item features">
+                        {{ feature.title }}
+                        <span data-capability="{{ feature.name }}">
+                            {% if feature.subfeatures is defined %}
+                            <ul class="subfeatures list-group list-group-flush">
+                                {% for subfeature in feature.subfeatures %}
+                                    <li class="feature list-group-item">
+                                        {{ subfeature.title }}
+                                        <span data-capability="{{ subfeature.name }}"></span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% endfor %}
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="/javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="/javascripts/tests/dpi.js"></script>
+    <script type="text/javascript" src="/javascripts/tests/overflowscrolling.js"></script>
+    <script type="text/javascript" src="/javascripts/tests/screenattributes.js"></script>
+    <script type="text/javascript" src="/javascripts/features.js"></script>
+    <script type="text/javascript" src="/javascripts/show-capabilities.js"></script>
 {% endblock %}

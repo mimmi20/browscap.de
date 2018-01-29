@@ -26,7 +26,7 @@ class ZendCacheFactory
                     // so we can simply use the database id as the cache key
                     'options' => [
                         'namespace'   => 'dbtable',
-                        'cache_dir'   => 'cache/',
+                        'cache_dir'   => 'data/cache/',
                         'key_pattern' => '/^[a-z0-9_\+\-\.]*$/Di',
                     ],
                 ],

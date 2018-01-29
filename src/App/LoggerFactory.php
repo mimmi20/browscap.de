@@ -18,6 +18,7 @@ class LoggerFactory
      *
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     * @throws \Exception
      *
      * @return \Monolog\Logger
      */
@@ -25,7 +26,7 @@ class LoggerFactory
     {
         $logger = new Logger('browscap');
 
-        $stream = new StreamHandler('php://output', Logger::INFO);
+        $stream = new StreamHandler('data/error.log', Logger::INFO);
         $stream->setFormatter(new LineFormatter('[%datetime%] %message% %extra%' . PHP_EOL));
 
         /** @var callable $memoryProcessor */

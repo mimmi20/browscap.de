@@ -7,8 +7,7 @@ composer.phar
 clover.xml
 coveralls-upload.json
 phpunit.xml
-cache/*
-!cache/.gitkeep
 data/*
 !data/.gitkeep
+!data/cache/.gitkeep
 .php_cs.cache
