@@ -60,6 +60,12 @@
         "post-create-project-cmd": [
             "@development-enable"
         ],
+        "post-install-cmd": [
+            "@update-browscap-cache"
+        ],
+        "post-update-cmd": [
+            "@update-browscap-cache"
+        ],
         "development-disable": "zf-development-mode disable",
         "development-enable": "zf-development-mode enable",
         "development-status": "zf-development-mode status",
