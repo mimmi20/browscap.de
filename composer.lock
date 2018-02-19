@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "95ee55f7350e3ef8c933a7d02a20f5bb",
+    "content-hash": "79254339a13d76ba71ea5fea58e4d32c",
     "packages": [
         {
             "name": "browscap/browscap-php",
