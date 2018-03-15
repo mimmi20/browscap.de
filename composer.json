@@ -1,23 +1,14 @@
 {
     "name": "mimmi20/browscap.de",
-    "description": "experimental page for the browscap project built with Zend Expressive",
     "type": "project",
+    "description": "experimental page for the browscap project built with Zend Expressive",
     "homepage": "https://github.com/mimmi20/browscap.de",
     "license": "MIT",
-    "config": {
-        "sort-packages": true
-    },
-    "repositories": [
-        {
-            "type": "git",
-            "url":  "https://github.com/mimmi20/cache.git"
-        }
-    ],
     "require": {
         "php": "^7.1",
-        "psr/http-message": "^1.0.1",
         "browscap/browscap-php": "^4.1",
         "http-interop/http-middleware": "^0.4.1",
+        "psr/http-message": "^1.0.1",
         "roave/security-advisories": "dev-master",
         "stickee/cache": "dev-master",
         "zendframework/zend-component-installer": "^1.0",
@@ -39,12 +30,16 @@
         "zendframework/zend-validator": "^2.10"
     },
     "require-dev": {
+        "filp/whoops": "^2.1.7",
+        "friendsofphp/php-cs-fixer": "^2.10 || ^3.0",
+        "localheinz/composer-normalize": "^0.6.0",
+        "phpstan/phpstan": "^0.9",
         "phpunit/phpunit": "^6.5 || ^7.0",
         "squizlabs/php_codesniffer": "^3.2",
-        "friendsofphp/php-cs-fixer": "^2.10",
-        "phpstan/phpstan": "^0.9",
-        "zfcampus/zf-development-mode": "^3.1",
-        "filp/whoops": "^2.1.7"
+        "zfcampus/zf-development-mode": "^3.1"
+    },
+    "config": {
+        "sort-packages": true
     },
     "autoload": {
         "psr-4": {
@@ -56,19 +51,26 @@
             "AppTest\\": "test/AppTest/"
         }
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/mimmi20/Apple-iOS-build.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/mimmi20/Apple-OS-X-build.git"
+        }
+    ],
     "scripts": {
-        "post-create-project-cmd": [
-            "@development-enable"
-        ],
         "post-install-cmd": [
             "@update-browscap-cache"
         ],
         "post-update-cmd": [
             "@update-browscap-cache"
         ],
-        "development-disable": "zf-development-mode disable",
-        "development-enable": "zf-development-mode enable",
-        "development-status": "zf-development-mode status",
+        "post-create-project-cmd": [
+            "@development-enable"
+        ],
         "check": [
             "@cs-check",
             "@test"
@@ -76,6 +78,9 @@
         "clear-config-cache": "php bin/clear-config-cache.php",
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
+        "development-disable": "zf-development-mode disable",
+        "development-enable": "zf-development-mode enable",
+        "development-status": "zf-development-mode status",
         "serve": "php -S 0.0.0.0:8080 -t public public/index.php",
         "test": "phpunit --colors=always",
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
