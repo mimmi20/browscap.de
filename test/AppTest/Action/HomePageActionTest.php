@@ -3,6 +3,7 @@
 declare(strict_types = 1);
 namespace AppTest\Action;
 
+use App\Action\BrowscapVersionTrait;
 use App\Action\HomePageAction;
 use Interop\Http\ServerMiddleware\DelegateInterface;
 use PHPUnit\Framework\TestCase;
@@ -25,11 +26,13 @@ class HomePageActionTest extends TestCase
         $this->template = $this->prophesize(TemplateRendererInterface::class);
     }
 
+    use BrowscapVersionTrait;
+
     public function testReturnsHtmlResponseWhenTemplateRendererProvided(): void
     {
         $renderer = $this->prophesize(TemplateRendererInterface::class);
         $renderer
-            ->render('app::home-page')
+            ->render('app::home-page', ['version' => $this->getBrowscapVersion()])
             ->willReturn('');
 
         $homePage = new HomePageAction($this->router->reveal(), $renderer->reveal());
