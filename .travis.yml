@@ -52,7 +52,7 @@ jobs:
         - travis_retry composer self-update
       script: vendor/bin/phpunit -c phpunit.xml.dist --colors --coverage-text --coverage-clover=clover.xml
       after_success:
-        - wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar && php -n coveralls.phar --verbose --coverage_clover=clover.xml
+        - wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar && php -n php-coveralls.phar --verbose --coverage_clover=clover.xml
         - bash <(curl -s https://codecov.io/bash) -f clover.xml -F phpunit
 
     - stage: composer validate

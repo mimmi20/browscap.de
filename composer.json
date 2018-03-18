@@ -54,16 +54,6 @@
             "AppTest\\": "test/AppTest/"
         }
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/mimmi20/Apple-iOS-build.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/mimmi20/Apple-OS-X-build.git"
-        }
-    ],
     "scripts": {
         "post-install-cmd": [
             "@update-browscap-cache"
