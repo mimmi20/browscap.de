@@ -84,14 +84,16 @@ class LookupAction implements ServerMiddlewareInterface
                     $result[$key] = $value;
                 }
             }
-            $headers = [];
+            $headers     = [];
+            $showHeaders = false;
         } elseif ('GET' === $request->getMethod()) {
             $ua    = $request->getHeaderLine('user-agent');
             $token = $guard->generateToken();
 
-            $showResult = false;
-            $result     = [];
-            $headers    = $request->getHeaders();
+            $showResult  = false;
+            $result      = [];
+            $headers     = $request->getHeaders();
+            $showHeaders = true;
         } else {
             return new RedirectResponse(
                 $this->router->generateUri('ua-lookup'),
@@ -103,12 +105,13 @@ class LookupAction implements ServerMiddlewareInterface
             $this->template->render(
                 'app::lookup-page',
                 [
-                    '__csrf'     => $token,
-                    'form'       => $this->form,
-                    'ua'         => $ua,
-                    'result'     => $result,
-                    'showResult' => $showResult,
-                    'headers'    => $headers,
+                    '__csrf'      => $token,
+                    'form'        => $this->form,
+                    'ua'          => $ua,
+                    'result'      => $result,
+                    'showResult'  => $showResult,
+                    'headers'     => $headers,
+                    'showHeaders' => $showHeaders,
                 ]
             )
         );

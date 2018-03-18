@@ -32,21 +32,33 @@
             </div>
         </div>
 
-        <div class="col-md-12">
-            <div class="panel panel-success">
-                <div class="panel-body">
-                    sent headers
-                    <dl>
-                        {% for key, row in headers %}
-                            <dt>{{ key }}</dt>
-                        {% for innerRow in row %}
-                            <dd>{{ innerRow }}</dd>
-                        {% endfor %}
-                        {% endfor %}
-                    </dl>
-                </div>
-            </div>
+        {% if showHeaders %}
+        <div class="col-md-12 table-responsive">
+            <table class="table table-striped table-hover">
+                <caption>List of sent headers</caption>
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">header name</th>
+                    <th scope="col">hader value</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for key, row in headers %}
+                    <tr>
+                        <th scope="row">{{ key }}</th>
+                        <td>
+                            <ul class="list-group list-group-flush">
+                            {% for innerRow in row %}
+                                <li class="list-group-item features">{{ innerRow }}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
         </div>
+        {% endif %}
 
         {% if showResult %}
         <div class="col-md-12 table-responsive">
