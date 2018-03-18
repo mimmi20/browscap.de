@@ -31,7 +31,7 @@ try {
 
 try {
     /** @var \Monolog\Logger $logger */
-    $logger = $container->get(\Monolog\Logger::class);
+    $logger = $container->get(\Psr\Log\LoggerInterface::class);
 } catch (\Psr\Container\NotFoundExceptionInterface $e) {
     var_dump($e);
     exit(1);

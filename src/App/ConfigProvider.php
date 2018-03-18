@@ -3,8 +3,8 @@
 declare(strict_types = 1);
 namespace App;
 
-use BrowscapPHP\Browscap;
-use Monolog\Logger;
+use BrowscapPHP\BrowscapInterface;
+use Psr\Log\LoggerInterface;
 use Psr\SimpleCache\CacheInterface;
 use Zend\Cache\Storage\StorageInterface;
 use Zend\ServiceManager\Factory\InvokableFactory;
@@ -44,11 +44,11 @@ class ConfigProvider
                 Action\HomePageAction::class           => Action\HomePageFactory::class,
                 Action\DownloadsPageAction::class      => Action\DownloadsPageFactory::class,
                 Action\CapabilitiesPageAction::class   => Action\CapabilitiesPageFactory::class,
-                Action\LookupAction::class             => Action\LookupFactory::class,
-                Logger::class                          => LoggerFactory::class,
+                Action\LookupPageAction::class         => Action\LookupPageFactory::class,
+                LoggerInterface::class                 => LoggerFactory::class,
                 Model\InputFilter\UaInputFilter::class => Model\InputFilter\UaInputFilterFactory::class,
                 Form\UaForm::class                     => Form\UaFactory::class,
-                Browscap::class                        => BrowscapFactory::class,
+                BrowscapInterface::class               => BrowscapFactory::class,
                 StorageInterface::class                => ZendCacheFactory::class,
                 CacheInterface::class                  => Psr16CacheFactory::class,
                 Action\PingAction::class               => InvokableFactory::class,

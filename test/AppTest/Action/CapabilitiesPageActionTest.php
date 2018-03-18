@@ -3,7 +3,6 @@
 declare(strict_types = 1);
 namespace AppTest\Action;
 
-use App\Action\BrowscapVersionTrait;
 use App\Action\CapabilitiesPageAction;
 use Interop\Http\ServerMiddleware\DelegateInterface;
 use PHPUnit\Framework\TestCase;
