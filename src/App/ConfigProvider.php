@@ -7,6 +7,7 @@ use BrowscapPHP\Browscap;
 use Monolog\Logger;
 use Psr\SimpleCache\CacheInterface;
 use Zend\Cache\Storage\StorageInterface;
+use Zend\ServiceManager\Factory\InvokableFactory;
 
 /**
  * The configuration provider for the App module
@@ -39,20 +40,18 @@ class ConfigProvider
     public function getDependencies()
     {
         return [
-            'invokables' => [
-                Action\PingAction::class => Action\PingAction::class,
-            ],
             'factories' => [
                 Action\HomePageAction::class           => Action\HomePageFactory::class,
                 Action\DownloadsPageAction::class      => Action\DownloadsPageFactory::class,
                 Action\CapabilitiesPageAction::class   => Action\CapabilitiesPageFactory::class,
-                Action\LookupResultAction::class       => Action\LookupResultFactory::class,
+                Action\LookupAction::class             => Action\LookupFactory::class,
                 Logger::class                          => LoggerFactory::class,
                 Model\InputFilter\UaInputFilter::class => Model\InputFilter\UaInputFilterFactory::class,
                 Form\UaForm::class                     => Form\UaFactory::class,
                 Browscap::class                        => BrowscapFactory::class,
                 StorageInterface::class                => ZendCacheFactory::class,
                 CacheInterface::class                  => Psr16CacheFactory::class,
+                Action\PingAction::class               => InvokableFactory::class,
             ],
         ];
     }

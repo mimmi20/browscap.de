@@ -19,6 +19,7 @@ $config = include 'config/config.php';
 $container = require 'config/container.php';
 
 try {
+    /** @var \Psr\SimpleCache\CacheInterface $cache */
     $cache = $container->get(\Psr\SimpleCache\CacheInterface::class);
 } catch (\Psr\Container\NotFoundExceptionInterface $e) {
     var_dump($e);
@@ -27,7 +28,9 @@ try {
     var_dump($e);
     exit(1);
 }
+
 try {
+    /** @var \Monolog\Logger $logger */
     $logger = $container->get(\Monolog\Logger::class);
 } catch (\Psr\Container\NotFoundExceptionInterface $e) {
     var_dump($e);
@@ -36,6 +39,7 @@ try {
     var_dump($e);
     exit(1);
 }
+
 $browscap = new \BrowscapPHP\BrowscapUpdater($cache, $logger);
 try {
     $browscap->update(\BrowscapPHP\Helper\IniLoaderInterface::PHP_INI_FULL);

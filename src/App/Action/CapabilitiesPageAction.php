@@ -29,7 +29,9 @@ class CapabilitiesPageAction implements ServerMiddlewareInterface
         return new HtmlResponse(
             $this->template->render(
                 'app::capabilities-page',
-                ['capabilities' => $capabilities]
+                [
+                    'capabilities' => $capabilities,
+                ]
             )
         );
     }

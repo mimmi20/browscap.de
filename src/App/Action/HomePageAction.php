@@ -16,6 +16,8 @@ class HomePageAction implements ServerMiddlewareInterface
 
     private $template;
 
+    use BrowscapVersionTrait;
+
     public function __construct(Router\RouterInterface $router, Template\TemplateRendererInterface $template)
     {
         $this->router   = $router;
@@ -24,6 +26,13 @@ class HomePageAction implements ServerMiddlewareInterface
 
     public function process(ServerRequestInterface $request, DelegateInterface $delegate)
     {
-        return new HtmlResponse($this->template->render('app::home-page'));
+        return new HtmlResponse(
+            $this->template->render(
+                'app::home-page',
+                [
+                    'version' => $this->getBrowscapVersion(),
+                ]
+            )
+        );
     }
 }

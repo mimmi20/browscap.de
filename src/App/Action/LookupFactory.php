@@ -10,7 +10,7 @@ use Psr\Container\ContainerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class LookupResultFactory
+class LookupFactory
 {
     /**
      * @param \Psr\Container\ContainerInterface $container
@@ -18,9 +18,9 @@ class LookupResultFactory
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
      *
-     * @return \App\Action\LookupResultAction
+     * @return \App\Action\LookupAction
      */
-    public function __invoke(ContainerInterface $container): LookupResultAction
+    public function __invoke(ContainerInterface $container): LookupAction
     {
         $router   = $container->get(RouterInterface::class);
         $template = $container->get(TemplateRendererInterface::class);
@@ -28,6 +28,6 @@ class LookupResultFactory
         $browscap = $container->get(Browscap::class);
         $logger   = $container->get(Logger::class);
 
-        return new LookupResultAction($router, $template, $form, $browscap, $logger);
+        return new LookupAction($router, $template, $form, $browscap, $logger);
     }
 }

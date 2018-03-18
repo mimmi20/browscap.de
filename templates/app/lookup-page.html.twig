@@ -37,7 +37,7 @@
                 <div class="panel-body">
                     sent headers
                     <dl>
-                        {% for key, row in result %}
+                        {% for key, row in headers %}
                             <dt>{{ key }}</dt>
                         {% for innerRow in row %}
                             <dd>{{ innerRow }}</dd>

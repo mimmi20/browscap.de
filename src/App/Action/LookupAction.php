@@ -16,7 +16,7 @@ use Zend\Expressive\Csrf\CsrfMiddleware;
 use Zend\Expressive\Router;
 use Zend\Expressive\Template;
 
-class LookupResultAction implements ServerMiddlewareInterface
+class LookupAction implements ServerMiddlewareInterface
 {
     private $router;
 
@@ -84,7 +84,7 @@ class LookupResultAction implements ServerMiddlewareInterface
                     $result[$key] = $value;
                 }
             }
-            $headers    = [];
+            $headers = [];
         } elseif ('GET' === $request->getMethod()) {
             $ua    = $request->getHeaderLine('user-agent');
             $token = $guard->generateToken();
@@ -101,7 +101,7 @@ class LookupResultAction implements ServerMiddlewareInterface
 
         return new HtmlResponse(
             $this->template->render(
-                'app::lookup-result-page',
+                'app::lookup-page',
                 [
                     '__csrf'     => $token,
                     'form'       => $this->form,

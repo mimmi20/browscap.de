@@ -16,6 +16,8 @@ class DownloadsPageAction implements ServerMiddlewareInterface
 
     private $template;
 
+    use BrowscapVersionTrait;
+
     public function __construct(Router\RouterInterface $router, Template\TemplateRendererInterface $template)
     {
         $this->router   = $router;
@@ -24,6 +26,13 @@ class DownloadsPageAction implements ServerMiddlewareInterface
 
     public function process(ServerRequestInterface $request, DelegateInterface $delegate)
     {
-        return new HtmlResponse($this->template->render('app::downloads-page'));
+        return new HtmlResponse(
+            $this->template->render(
+                'app::downloads-page',
+                [
+                    'version' => $this->getBrowscapVersion(),
+                ]
+            )
+        );
     }
 }
