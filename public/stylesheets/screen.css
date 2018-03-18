@@ -2,6 +2,11 @@
     vertical-align: baseline;
     line-height: 1rem;
 }
+
+.list-group-item.features {
+    background-color: transparent;
+}
+
 .features .support {
     float: right;
     text-transform: uppercase;

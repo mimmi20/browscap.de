@@ -33,7 +33,7 @@ class ZendCacheFactory
                 ],
                 'plugins' => [
                     // Don't throw exceptions on cache errors
-                    'exception_handler' => [
+                    'ExceptionHandler' => [
                         'throw_exceptions' => false,
                     ],
                     // We store database rows on filesystem so we need to serialize them

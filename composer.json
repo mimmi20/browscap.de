@@ -6,14 +6,17 @@
     "license": "MIT",
     "require": {
         "php": "^7.1",
+        "beberlei/assert": "^2.9",
+        "browscap/browscap": "^6.0.28",
         "browscap/browscap-php": "^4.1",
         "http-interop/http-middleware": "^0.4.1",
         "psr/http-message": "^1.0.1",
         "roave/security-advisories": "dev-master",
         "stickee/cache": "dev-master",
+        "thadafinser/package-info": "^1.0",
         "zendframework/zend-component-installer": "^2.0",
         "zendframework/zend-config-aggregator": "^1.0",
-        "zendframework/zend-expressive": "^2.0.5",
+        "zendframework/zend-expressive": "~2.2.0",
         "zendframework/zend-expressive-csrf": "^0.1.1",
         "zendframework/zend-expressive-helpers": "^4.0",
         "zendframework/zend-expressive-session-ext": "^0.1.2",
@@ -21,6 +24,7 @@
         "zendframework/zend-expressive-zendrouter": "^2.0.1",
         "zendframework/zend-filter": "^2.7",
         "zendframework/zend-form": "^2.11",
+        "zendframework/zend-hydrator": "^2.2",
         "zendframework/zend-i18n": "^2.7",
         "zendframework/zend-inputfilter": "^2.8",
         "zendframework/zend-serializer": "^2.8",
@@ -51,16 +55,6 @@
             "AppTest\\": "test/AppTest/"
         }
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/mimmi20/Apple-iOS-build.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/mimmi20/Apple-OS-X-build.git"
-        }
-    ],
     "scripts": {
         "post-install-cmd": [
             "@update-browscap-cache"

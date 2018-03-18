@@ -3,8 +3,7 @@
 declare(strict_types = 1);
 namespace AppTest\Action;
 
-use App\Action\BrowscapVersionTrait;
-use App\Action\HomePageAction;
+use App\Action\CapabilitiesPageAction;
 use Interop\Http\ServerMiddleware\DelegateInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
@@ -12,7 +11,7 @@ use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class HomePageActionTest extends TestCase
+class CapabilitiesPageActionTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Zend\Expressive\Router\RouterInterface */
     private $router;
@@ -26,18 +25,18 @@ class HomePageActionTest extends TestCase
         $this->template = $this->prophesize(TemplateRendererInterface::class);
     }
 
-    use BrowscapVersionTrait;
-
     public function testReturnsHtmlResponseWhenTemplateRendererProvided(): void
     {
+        $capabilities = json_decode(file_get_contents(__DIR__ . '/../../../src/App/data/capabilities.json'), true);
+
         $renderer = $this->prophesize(TemplateRendererInterface::class);
         $renderer
-            ->render('app::home-page', ['version' => $this->getBrowscapVersion()])
+            ->render('app::capabilities-page', ['capabilities' => $capabilities])
             ->willReturn('');
 
-        $homePage = new HomePageAction($this->router->reveal(), $renderer->reveal());
+        $CapabilitiesPage = new CapabilitiesPageAction($this->router->reveal(), $renderer->reveal());
 
-        $response = $homePage->process(
+        $response = $CapabilitiesPage->process(
             $this->prophesize(ServerRequestInterface::class)->reveal(),
             $this->prophesize(DelegateInterface::class)->reveal()
         );

@@ -4,7 +4,7 @@ declare(strict_types = 1);
 namespace AppTest\Action;
 
 use App\Action\BrowscapVersionTrait;
-use App\Action\HomePageAction;
+use App\Action\DownloadsPageAction;
 use Interop\Http\ServerMiddleware\DelegateInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
@@ -12,7 +12,7 @@ use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class HomePageActionTest extends TestCase
+class DownloadsPageActionTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Zend\Expressive\Router\RouterInterface */
     private $router;
@@ -32,12 +32,12 @@ class HomePageActionTest extends TestCase
     {
         $renderer = $this->prophesize(TemplateRendererInterface::class);
         $renderer
-            ->render('app::home-page', ['version' => $this->getBrowscapVersion()])
+            ->render('app::downloads-page', ['version' => $this->getBrowscapVersion()])
             ->willReturn('');
 
-        $homePage = new HomePageAction($this->router->reveal(), $renderer->reveal());
+        $DownloadsPage = new DownloadsPageAction($this->router->reveal(), $renderer->reveal());
 
-        $response = $homePage->process(
+        $response = $DownloadsPage->process(
             $this->prophesize(ServerRequestInterface::class)->reveal(),
             $this->prophesize(DelegateInterface::class)->reveal()
         );

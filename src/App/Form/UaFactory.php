@@ -4,7 +4,7 @@ declare(strict_types = 1);
 namespace App\Form;
 
 use App\Model\InputFilter\UaInputFilter;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use Zend\Form\Form;
 
 class UaFactory extends Form

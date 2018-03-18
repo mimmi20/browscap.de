@@ -1,16 +1,17 @@
 <?php
 
 declare(strict_types = 1);
-namespace AppTest\Action;
+namespace AppTest\Form;
 
-use App\Action\HomePageAction;
-use App\Action\HomePageFactory;
+use App\Form\UaFactory;
+use App\Form\UaForm;
+use App\Model\InputFilter\UaInputFilter;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class HomePageFactoryTest extends TestCase
+class UaFactoryTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Psr\Container\ContainerInterface */
     private $container;
@@ -25,6 +26,9 @@ class HomePageFactoryTest extends TestCase
         $router          = $this->prophesize(RouterInterface::class);
 
         $this->container->get(RouterInterface::class)->willReturn($router);
+        $this->container
+            ->get(UaInputFilter::class)
+            ->willReturn($this->prophesize(UaInputFilter::class));
     }
 
     /**
@@ -33,15 +37,15 @@ class HomePageFactoryTest extends TestCase
      */
     public function testFactoryWithTemplate(): void
     {
-        $factory = new HomePageFactory();
+        $factory = new UaFactory();
         $this->container
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
-        self::assertInstanceOf(HomePageFactory::class, $factory);
+        self::assertInstanceOf(UaFactory::class, $factory);
 
-        $homePage = $factory($this->container->reveal());
+        $Ua = $factory($this->container->reveal());
 
-        self::assertInstanceOf(HomePageAction::class, $homePage);
+        self::assertInstanceOf(UaForm::class, $Ua);
     }
 }

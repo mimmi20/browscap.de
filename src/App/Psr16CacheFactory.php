@@ -19,8 +19,6 @@ class Psr16CacheFactory
      */
     public function __invoke(ContainerInterface $container): SimpleCache
     {
-        $cache = new SimpleCache($container->get(StorageInterface::class));
-
-        return $cache;
+        return new SimpleCache($container->get(StorageInterface::class));
     }
 }

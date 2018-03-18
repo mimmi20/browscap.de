@@ -1,16 +1,16 @@
 <?php
 
 declare(strict_types = 1);
-namespace AppTest\Action;
+namespace AppTest\Model\InputFilter;
 
-use App\Action\HomePageAction;
-use App\Action\HomePageFactory;
+use App\Model\InputFilter\UaInputFilter;
+use App\Model\InputFilter\UaInputFilterFactory;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class HomePageFactoryTest extends TestCase
+class UaInputFilterFactoryTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Psr\Container\ContainerInterface */
     private $container;
@@ -33,15 +33,15 @@ class HomePageFactoryTest extends TestCase
      */
     public function testFactoryWithTemplate(): void
     {
-        $factory = new HomePageFactory();
+        $factory = new UaInputFilterFactory();
         $this->container
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
-        self::assertInstanceOf(HomePageFactory::class, $factory);
+        self::assertInstanceOf(UaInputFilterFactory::class, $factory);
 
-        $homePage = $factory($this->container->reveal());
+        $UaInputFilter = $factory($this->container->reveal());
 
-        self::assertInstanceOf(HomePageAction::class, $homePage);
+        self::assertInstanceOf(UaInputFilter::class, $UaInputFilter);
     }
 }

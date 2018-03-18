@@ -3,14 +3,17 @@
 declare(strict_types = 1);
 namespace AppTest\Action;
 
-use App\Action\HomePageAction;
-use App\Action\HomePageFactory;
+use App\Action\LookupPageAction;
+use App\Action\LookupPageFactory;
+use App\Form\UaForm;
+use BrowscapPHP\BrowscapInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
+use Psr\Log\LoggerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class HomePageFactoryTest extends TestCase
+class LookupPageFactoryTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Psr\Container\ContainerInterface */
     private $container;
@@ -25,6 +28,18 @@ class HomePageFactoryTest extends TestCase
         $router          = $this->prophesize(RouterInterface::class);
 
         $this->container->get(RouterInterface::class)->willReturn($router);
+
+        $this->container
+            ->get(UaForm::class)
+            ->willReturn($this->prophesize(UaForm::class));
+
+        $this->container
+            ->get(BrowscapInterface::class)
+            ->willReturn($this->prophesize(BrowscapInterface::class));
+
+        $this->container
+            ->get(LoggerInterface::class)
+            ->willReturn($this->prophesize(LoggerInterface::class));
     }
 
     /**
@@ -33,15 +48,15 @@ class HomePageFactoryTest extends TestCase
      */
     public function testFactoryWithTemplate(): void
     {
-        $factory = new HomePageFactory();
+        $factory = new LookupPageFactory();
         $this->container
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
-        self::assertInstanceOf(HomePageFactory::class, $factory);
+        self::assertInstanceOf(LookupPageFactory::class, $factory);
 
         $homePage = $factory($this->container->reveal());
 
-        self::assertInstanceOf(HomePageAction::class, $homePage);
+        self::assertInstanceOf(LookupPageAction::class, $homePage);
     }
 }

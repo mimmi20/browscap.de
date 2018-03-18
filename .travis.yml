@@ -1,7 +1,9 @@
 language: php
 sudo: false
 
-php: 7.1
+php:
+  - 7.1
+  - 7.2
 
 os: linux
 
@@ -33,12 +35,8 @@ script: vendor/bin/phpunit -c phpunit.xml.dist --colors --no-coverage
 jobs:
   fast_finish: true
   allow_failures:
-    - php: 7.2
     - php: nightly
-    - env: COMPOSER_FLAGS="--prefer-lowest"
   include:
-    - php: 7.2
-      env: COMPOSER_FLAGS="--ignore-platform-reqs"
     - php: nightly
       env: COMPOSER_FLAGS="--ignore-platform-reqs"
 
@@ -51,9 +49,10 @@ jobs:
         - echo 'opcache.enable=1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
         - echo 'opcache.enable_cli=1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
         - travis_retry composer self-update
-      script: vendor/bin/phpunit -c phpunit.xml.dist --colors --coverage-text --coverage-clover=coverage.clover
+      script: vendor/bin/phpunit -c phpunit.xml.dist --colors --coverage-text --coverage-clover=clover.xml
       after_success:
-        - bash <(curl -s https://codecov.io/bash) -f coverage.clover -F phpunit
+        - wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar && php -n php-coveralls.phar --verbose --coverage_clover=clover.xml
+        - bash <(curl -s https://codecov.io/bash) -f clover.xml -F phpunit
 
     - stage: composer validate
       php: 7.1
