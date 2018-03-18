@@ -6,7 +6,7 @@ namespace AppTest;
 use App\ZendCacheFactory;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
-use Stickee\Cache\SimpleCache;
+use Zend\Cache\Storage\Adapter\Filesystem;
 
 class ZendCacheFactoryTest extends TestCase
 {
@@ -34,6 +34,6 @@ class ZendCacheFactoryTest extends TestCase
 
         $ZendCache = $factory($this->container->reveal());
 
-        self::assertInstanceOf(SimpleCache::class, $ZendCache);
+        self::assertInstanceOf(Filesystem::class, $ZendCache);
     }
 }
