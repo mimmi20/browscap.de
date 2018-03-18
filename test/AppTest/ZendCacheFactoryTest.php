@@ -11,7 +11,7 @@ use Zend\Cache\Storage\Adapter\Filesystem;
 class ZendCacheFactoryTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Psr\Container\ContainerInterface */
-    protected $container;
+    private $container;
 
     /**
      * @throws \Psr\Container\ContainerExceptionInterface

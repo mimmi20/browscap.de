@@ -13,7 +13,7 @@ use Zend\Expressive\Template\TemplateRendererInterface;
 class DownloadsPageFactoryTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Psr\Container\ContainerInterface */
-    protected $container;
+    private $container;
 
     /**
      * @throws \Psr\Container\ContainerExceptionInterface

@@ -24,7 +24,7 @@ class ConfigProvider
      *
      * @return array
      */
-    public function __invoke()
+    public function __invoke(): array
     {
         return [
             'dependencies' => $this->getDependencies(),
@@ -37,7 +37,7 @@ class ConfigProvider
      *
      * @return array
      */
-    public function getDependencies()
+    public function getDependencies(): array
     {
         return [
             'factories' => [
@@ -61,7 +61,7 @@ class ConfigProvider
      *
      * @return array
      */
-    public function getTemplates()
+    public function getTemplates(): array
     {
         return [
             'paths' => [

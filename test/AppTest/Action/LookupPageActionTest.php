@@ -21,7 +21,7 @@ use Zend\Expressive\Template\TemplateRendererInterface;
 class LookupPageActionTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Zend\Expressive\Router\RouterInterface */
-    protected $router;
+    private $router;
 
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Zend\Expressive\Template\TemplateRendererInterface */
     private $template;

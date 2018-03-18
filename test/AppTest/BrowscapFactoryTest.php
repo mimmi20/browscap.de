@@ -13,7 +13,7 @@ use Psr\SimpleCache\CacheInterface;
 class BrowscapFactoryTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Psr\Container\ContainerInterface */
-    protected $container;
+    private $container;
 
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
