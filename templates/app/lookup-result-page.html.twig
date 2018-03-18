@@ -32,6 +32,22 @@
             </div>
         </div>
 
+        <div class="col-md-12">
+            <div class="panel panel-success">
+                <div class="panel-body">
+                    sent headers
+                    <dl>
+                        {% for key, row in result %}
+                            <dt>{{ key }}</dt>
+                        {% for innerRow in row %}
+                            <dd>{{ innerRow }}</dd>
+                        {% endfor %}
+                        {% endfor %}
+                    </dl>
+                </div>
+            </div>
+        </div>
+
         {% if showResult %}
         <div class="col-md-12 table-responsive">
             <table class="table table-striped table-hover">

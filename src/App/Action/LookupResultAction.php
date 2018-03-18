@@ -84,12 +84,14 @@ class LookupResultAction implements ServerMiddlewareInterface
                     $result[$key] = $value;
                 }
             }
+            $headers    = [];
         } elseif ('GET' === $request->getMethod()) {
             $ua    = $request->getHeaderLine('user-agent');
             $token = $guard->generateToken();
 
             $showResult = false;
             $result     = [];
+            $headers    = $request->getHeaders();
         } else {
             return new RedirectResponse(
                 $this->router->generateUri('ua-lookup'),
@@ -106,6 +108,7 @@ class LookupResultAction implements ServerMiddlewareInterface
                     'ua'         => $ua,
                     'result'     => $result,
                     'showResult' => $showResult,
+                    'headers'    => $headers,
                 ]
             )
         );
