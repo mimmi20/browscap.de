@@ -117,8 +117,9 @@ class LookupPageAction implements ServerMiddlewareInterface
                     $result[$key] = $value;
                 }
             }
-            $headers     = [];
-            $showHeaders = false;
+            $headers      = [];
+            $otherHeaders = [];
+            $showHeaders  = false;
         } elseif ('GET' === $request->getMethod()) {
             $ua    = $request->getHeaderLine('user-agent');
             $token = $guard->generateToken();
@@ -127,8 +128,9 @@ class LookupPageAction implements ServerMiddlewareInterface
             $result         = [];
             $genericRequest = (new GenericRequestFactory())->createRequestFromPsr7Message($request);
 
-            $headers     = $genericRequest->getFilteredHeaders();
-            $showHeaders = true;
+            $headers      = $genericRequest->getFilteredHeaders();
+            $otherHeaders = array_diff_key($genericRequest->getHeaders(), $genericRequest->getFilteredHeaders());
+            $showHeaders  = true;
         } else {
             $response = new EmptyResponse(
                 405
@@ -144,13 +146,14 @@ class LookupPageAction implements ServerMiddlewareInterface
             $this->template->render(
                 'app::lookup-page',
                 [
-                    '__csrf'      => $token,
-                    'form'        => $this->form,
-                    'ua'          => $ua,
-                    'result'      => $result,
-                    'showResult'  => $showResult,
-                    'headers'     => $headers,
-                    'showHeaders' => $showHeaders,
+                    '__csrf'       => $token,
+                    'form'         => $this->form,
+                    'ua'           => $ua,
+                    'result'       => $result,
+                    'showResult'   => $showResult,
+                    'headers'      => $headers,
+                    'otherHeaders' => $otherHeaders,
+                    'showHeaders'  => $showHeaders,
                 ]
             )
         );
