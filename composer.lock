@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "29f0c60c66c873ac2a5224a27147d1e1",
+    "content-hash": "ab9114e836a8fcb4041a06c1e7bbea4c",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -643,6 +643,60 @@
             ],
             "abandoned": "http-interop/http-server-middleware",
             "time": "2017-01-14T15:23:42+00:00"
+        },
+        {
+            "name": "mimmi20/ua-generic-request",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mimmi20/ua-generic-request.git",
+                "reference": "9fe2f0ddc214cddc0a4bec7ca04cfd799975e2dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mimmi20/ua-generic-request/zipball/9fe2f0ddc214cddc0a4bec7ca04cfd799975e2dd",
+                "reference": "9fe2f0ddc214cddc0a4bec7ca04cfd799975e2dd",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1",
+                "psr/http-message": "^1.0.1",
+                "zendframework/zend-diactoros": "^1.7"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.10 || ^3.0",
+                "localheinz/composer-normalize": "^0.6.0",
+                "phpstan/phpstan": "^0.9",
+                "phpunit/phpunit": "^6.5 || ^7.0",
+                "squizlabs/php_codesniffer": "^3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "UaRequest\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Müller",
+                    "homepage": "https://github.com/mimmi20",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/mimmi20/ua-generic-request/graphs/contributors"
+                }
+            ],
+            "description": "the Generic Request Object extracted from Wurfl for PHP 7.1+",
+            "homepage": "https://github.com/mimmi20/ua-generic-request",
+            "keywords": [
+                "generic request"
+            ],
+            "time": "2018-03-19T18:47:10+00:00"
         },
         {
             "name": "monolog/monolog",

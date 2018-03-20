@@ -10,6 +10,7 @@ use Interop\Http\ServerMiddleware\MiddlewareInterface as ServerMiddlewareInterfa
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
+use UaRequest\GenericRequestFactory;
 use Zend\Diactoros\Response\EmptyResponse;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Diactoros\Response\RedirectResponse;
@@ -122,9 +123,11 @@ class LookupPageAction implements ServerMiddlewareInterface
             $ua    = $request->getHeaderLine('user-agent');
             $token = $guard->generateToken();
 
-            $showResult  = false;
-            $result      = [];
-            $headers     = $request->getHeaders();
+            $showResult     = false;
+            $result         = [];
+            $genericRequest = (new GenericRequestFactory())->createRequestFromPsr7Message($request);
+
+            $headers     = $genericRequest->getFilteredHeaders();
             $showHeaders = true;
         } else {
             $response = new EmptyResponse(
