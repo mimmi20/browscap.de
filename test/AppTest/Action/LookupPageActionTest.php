@@ -294,9 +294,10 @@ class LookupPageActionTest extends TestCase
                         'Crawler'  => 'true',
                         'isMobile' => 'false',
                     ],
-                    'showResult'  => true,
-                    'headers'     => [],
-                    'showHeaders' => false,
+                    'showResult'   => true,
+                    'headers'      => [],
+                    'otherHeaders' => [],
+                    'showHeaders'  => false,
                 ]
             )
             ->willReturn('');
@@ -379,13 +380,14 @@ class LookupPageActionTest extends TestCase
             ->render(
                 'app::lookup-page',
                 [
-                    '__csrf'      => $secret,
-                    'form'        => $form->reveal(),
-                    'ua'          => $ua,
-                    'result'      => [],
-                    'showResult'  => false,
-                    'headers'     => [], //$headers,
-                    'showHeaders' => true,
+                    '__csrf'       => $secret,
+                    'form'         => $form->reveal(),
+                    'ua'           => $ua,
+                    'result'       => [],
+                    'showResult'   => false,
+                    'headers'      => [],
+                    'otherHeaders' => [],
+                    'showHeaders'  => true,
                 ]
             )
             ->willReturn('');
