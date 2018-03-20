@@ -10,6 +10,7 @@
         "browscap/browscap": "^6.0.28",
         "browscap/browscap-php": "^4.1",
         "http-interop/http-middleware": "^0.4.1",
+        "mimmi20/ua-generic-request": "^3.0.1",
         "psr/http-message": "^1.0.1",
         "roave/security-advisories": "dev-master",
         "stickee/cache": "dev-master",
