@@ -123,8 +123,8 @@ class LookupPageAction implements ServerMiddlewareInterface
             $ua    = $request->getHeaderLine('user-agent');
             $token = $guard->generateToken();
 
-            $showResult  = false;
-            $result      = [];
+            $showResult     = false;
+            $result         = [];
             $genericRequest = (new GenericRequestFactory())->createRequestFromPsr7Message($request);
 
             $headers     = $genericRequest->getFilteredHeaders();
