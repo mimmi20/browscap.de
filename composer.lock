@@ -1774,16 +1774,16 @@
         },
         {
             "name": "zendframework/zend-config-aggregator",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-config-aggregator.git",
-                "reference": "46460b25c09fb572f807a00cf9dfe9c466792a76"
+                "reference": "2a08547b64119a73b6700bde3301d978258dfcb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-config-aggregator/zipball/46460b25c09fb572f807a00cf9dfe9c466792a76",
-                "reference": "46460b25c09fb572f807a00cf9dfe9c466792a76",
+                "url": "https://api.github.com/repos/zendframework/zend-config-aggregator/zipball/2a08547b64119a73b6700bde3301d978258dfcb5",
+                "reference": "2a08547b64119a73b6700bde3301d978258dfcb5",
                 "shasum": ""
             },
             "require": {
@@ -1799,7 +1799,9 @@
                 "zendframework/zend-servicemanager": "^2.7.7 || ^3.1.1"
             },
             "suggest": {
-                "zendframework/zend-config": "Allows loading configuration from XML, INI, YAML, and JSON files"
+                "zendframework/zend-config": "Allows loading configuration from XML, INI, YAML, and JSON files",
+                "zendframework/zend-config-aggregator-modulemanager": "Allows loading configuration from zend-mvc Module classes",
+                "zendframework/zend-config-aggregator-parameters": "Allows usage of templated parameters within your configuration"
             },
             "type": "library",
             "extra": {
@@ -1823,7 +1825,7 @@
                 "config-aggregator",
                 "zf"
             ],
-            "time": "2018-02-26T16:46:30+00:00"
+            "time": "2018-04-04T20:37:31+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
@@ -2720,16 +2722,16 @@
         },
         {
             "name": "zendframework/zend-hydrator",
-            "version": "2.3.1",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-hydrator.git",
-                "reference": "de0d6465fbc4b7ca345fddc148834c321c4b361f"
+                "reference": "bd48bc3bc046df007a94125f868dd1aa1b73a813"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-hydrator/zipball/de0d6465fbc4b7ca345fddc148834c321c4b361f",
-                "reference": "de0d6465fbc4b7ca345fddc148834c321c4b361f",
+                "url": "https://api.github.com/repos/zendframework/zend-hydrator/zipball/bd48bc3bc046df007a94125f868dd1aa1b73a813",
+                "reference": "bd48bc3bc046df007a94125f868dd1aa1b73a813",
                 "shasum": ""
             },
             "require": {
@@ -2737,9 +2739,9 @@
                 "zendframework/zend-stdlib": "^3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.7.21 || ^6.3",
+                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.2",
                 "zendframework/zend-coding-standard": "~1.0.0",
-                "zendframework/zend-eventmanager": "^3.0",
+                "zendframework/zend-eventmanager": "^2.6.2 || ^3.0",
                 "zendframework/zend-filter": "^2.6",
                 "zendframework/zend-inputfilter": "^2.6",
                 "zendframework/zend-serializer": "^2.6.1",
@@ -2754,10 +2756,10 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-release-1.0": "1.0-dev",
-                    "dev-release-1.1": "1.1-dev",
-                    "dev-master": "2.3-dev",
-                    "dev-develop": "2.4-dev"
+                    "dev-release-1.0": "1.0.x-dev",
+                    "dev-release-1.1": "1.1.x-dev",
+                    "dev-master": "2.4.x-dev",
+                    "dev-develop": "2.5.x-dev"
                 },
                 "zf": {
                     "component": "Zend\\Hydrator",
@@ -2773,12 +2775,13 @@
             "license": [
                 "BSD-3-Clause"
             ],
-            "homepage": "https://github.com/zendframework/zend-hydrator",
+            "description": "Serialize objects to arrays, and vice versa",
             "keywords": [
+                "ZendFramework",
                 "hydrator",
-                "zf2"
+                "zf"
             ],
-            "time": "2017-10-02T15:01:27+00:00"
+            "time": "2018-04-30T21:22:14+00:00"
         },
         {
             "name": "zendframework/zend-i18n",
@@ -2849,16 +2852,16 @@
         },
         {
             "name": "zendframework/zend-inputfilter",
-            "version": "2.8.1",
+            "version": "2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-inputfilter.git",
-                "reference": "55d1430db559e9781b147e73c2c0ce6635d8efe2"
+                "reference": "3f02179e014d9ef0faccda2ad6c65d38adc338d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-inputfilter/zipball/55d1430db559e9781b147e73c2c0ce6635d8efe2",
-                "reference": "55d1430db559e9781b147e73c2c0ce6635d8efe2",
+                "url": "https://api.github.com/repos/zendframework/zend-inputfilter/zipball/3f02179e014d9ef0faccda2ad6c65d38adc338d8",
+                "reference": "3f02179e014d9ef0faccda2ad6c65d38adc338d8",
                 "shasum": ""
             },
             "require": {
@@ -2898,7 +2901,7 @@
                 "inputfilter",
                 "zf"
             ],
-            "time": "2018-01-22T19:41:18+00:00"
+            "time": "2018-05-14T17:38:03+00:00"
         },
         {
             "name": "zendframework/zend-json",
