@@ -646,16 +646,16 @@
         },
         {
             "name": "mimmi20/ua-generic-request",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mimmi20/ua-generic-request.git",
-                "reference": "9fe2f0ddc214cddc0a4bec7ca04cfd799975e2dd"
+                "reference": "a5b5a6338fabc9acbe2233b9e5475bf8c9c07bc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mimmi20/ua-generic-request/zipball/9fe2f0ddc214cddc0a4bec7ca04cfd799975e2dd",
-                "reference": "9fe2f0ddc214cddc0a4bec7ca04cfd799975e2dd",
+                "url": "https://api.github.com/repos/mimmi20/ua-generic-request/zipball/a5b5a6338fabc9acbe2233b9e5475bf8c9c07bc0",
+                "reference": "a5b5a6338fabc9acbe2233b9e5475bf8c9c07bc0",
                 "shasum": ""
             },
             "require": {
@@ -696,7 +696,7 @@
             "keywords": [
                 "generic request"
             ],
-            "time": "2018-03-19T18:47:10+00:00"
+            "time": "2018-04-26T07:21:40+00:00"
         },
         {
             "name": "monolog/monolog",
