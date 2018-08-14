@@ -3,15 +3,15 @@
 declare(strict_types = 1);
 namespace App\Action;
 
-use Interop\Http\ServerMiddleware\DelegateInterface;
-use Interop\Http\ServerMiddleware\MiddlewareInterface as ServerMiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
+use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Router;
 use Zend\Expressive\Template;
 
-class HomePageAction implements ServerMiddlewareInterface
+class HomePageAction implements MiddlewareInterface
 {
     /**
      * @var \Zend\Expressive\Router\RouterInterface
@@ -39,11 +39,11 @@ class HomePageAction implements ServerMiddlewareInterface
 
     /**
      * @param \Psr\Http\Message\ServerRequestInterface         $request
-     * @param \Interop\Http\ServerMiddleware\DelegateInterface $delegate
+     * @param \Psr\Http\Server\RequestHandlerInterface $handler
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function process(ServerRequestInterface $request, DelegateInterface $delegate): ResponseInterface
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         return new HtmlResponse(
             $this->template->render(

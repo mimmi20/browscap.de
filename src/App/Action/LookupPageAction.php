@@ -5,10 +5,10 @@ namespace App\Action;
 
 use App\Form\UaForm;
 use BrowscapPHP\BrowscapInterface;
-use Interop\Http\ServerMiddleware\DelegateInterface;
-use Interop\Http\ServerMiddleware\MiddlewareInterface as ServerMiddlewareInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;
 use UaRequest\GenericRequestFactory;
 use Zend\Diactoros\Response\EmptyResponse;
@@ -18,7 +18,7 @@ use Zend\Expressive\Csrf\CsrfMiddleware;
 use Zend\Expressive\Router;
 use Zend\Expressive\Template;
 
-class LookupPageAction implements ServerMiddlewareInterface
+class LookupPageAction implements MiddlewareInterface
 {
     /**
      * @var \Zend\Expressive\Router\RouterInterface
@@ -64,12 +64,12 @@ class LookupPageAction implements ServerMiddlewareInterface
     }
 
     /**
-     * @param \Psr\Http\Message\ServerRequestInterface         $request
-     * @param \Interop\Http\ServerMiddleware\DelegateInterface $delegate
+     * @param \Psr\Http\Message\ServerRequestInterface     $request
+     * @param \Psr\Http\Server\RequestHandlerInterface $handler
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function process(ServerRequestInterface $request, DelegateInterface $delegate): ResponseInterface
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         /** @var \Zend\Expressive\Csrf\CsrfGuardInterface $guard */
         $guard = $request->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE);
