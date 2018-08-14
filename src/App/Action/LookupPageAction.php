@@ -64,7 +64,7 @@ class LookupPageAction implements MiddlewareInterface
     }
 
     /**
-     * @param \Psr\Http\Message\ServerRequestInterface     $request
+     * @param \Psr\Http\Message\ServerRequestInterface $request
      * @param \Psr\Http\Server\RequestHandlerInterface $handler
      *
      * @return \Psr\Http\Message\ResponseInterface
@@ -75,9 +75,9 @@ class LookupPageAction implements MiddlewareInterface
         $guard = $request->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE);
 
         if ('POST' === $request->getMethod()) {
-            $data = $request->getParsedBody();
+            $data = (array) $request->getParsedBody();
 
-            $this->form->setData((array) $data);
+            $this->form->setData($data);
 
             if (!$this->form->isValid()) {
                 return new RedirectResponse(

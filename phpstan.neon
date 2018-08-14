@@ -17,6 +17,7 @@ parameters:
     - */tests/*/data/*
     - */tests/*/Full2Test.php
   ignoreErrors:
-#    - '~MockObject~'
+    - '~is not subtype of Throwable~'
     - '~ObjectProphecy~'
     - '~object given~'
+    - '~expects string, Exception given~'

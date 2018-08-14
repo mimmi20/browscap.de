@@ -4,9 +4,9 @@ declare(strict_types = 1);
 namespace AppTest\Action;
 
 use App\Action\CapabilitiesPageAction;
-use Interop\Http\ServerMiddleware\DelegateInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
@@ -27,7 +27,7 @@ class CapabilitiesPageActionTest extends TestCase
 
     public function testReturnsHtmlResponseWhenTemplateRendererProvided(): void
     {
-        $capabilities = json_decode(file_get_contents(__DIR__ . '/../../../src/App/data/capabilities.json'), true);
+        $capabilities = json_decode((string) file_get_contents(__DIR__ . '/../../../src/App/data/capabilities.json'), true);
 
         $renderer = $this->prophesize(TemplateRendererInterface::class);
         $renderer
@@ -38,7 +38,7 @@ class CapabilitiesPageActionTest extends TestCase
 
         $response = $CapabilitiesPage->process(
             $this->prophesize(ServerRequestInterface::class)->reveal(),
-            $this->prophesize(DelegateInterface::class)->reveal()
+            $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
         self::assertInstanceOf(HtmlResponse::class, $response);

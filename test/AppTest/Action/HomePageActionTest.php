@@ -5,9 +5,9 @@ namespace AppTest\Action;
 
 use App\Action\BrowscapVersionTrait;
 use App\Action\HomePageAction;
-use Interop\Http\ServerMiddleware\DelegateInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
@@ -39,7 +39,7 @@ class HomePageActionTest extends TestCase
 
         $response = $homePage->process(
             $this->prophesize(ServerRequestInterface::class)->reveal(),
-            $this->prophesize(DelegateInterface::class)->reveal()
+            $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
         self::assertInstanceOf(HtmlResponse::class, $response);

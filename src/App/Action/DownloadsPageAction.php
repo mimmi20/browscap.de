@@ -3,10 +3,10 @@
 declare(strict_types = 1);
 namespace App\Action;
 
-use Psr\Http\Server\RequestHandlerInterface;
-use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Router;
 use Zend\Expressive\Template;
@@ -38,7 +38,7 @@ class DownloadsPageAction implements MiddlewareInterface
     }
 
     /**
-     * @param \Psr\Http\Message\ServerRequestInterface     $request
+     * @param \Psr\Http\Message\ServerRequestInterface $request
      * @param \Psr\Http\Server\RequestHandlerInterface $handler
      *
      * @return \Psr\Http\Message\ResponseInterface
