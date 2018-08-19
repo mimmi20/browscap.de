@@ -1,12 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 use Zend\Expressive\Template\TemplateRendererInterface;
 use Zend\Expressive\Twig\TwigEnvironmentFactory;
+use Zend\Expressive\Twig\TwigExtension;
+use Zend\Expressive\Twig\TwigExtensionFactory;
 use Zend\Expressive\Twig\TwigRendererFactory;
 
 return [
     'dependencies' => [
         'factories' => [
+            TwigExtension::class => TwigExtensionFactory::class,
             Twig_Environment::class => TwigEnvironmentFactory::class,
             TemplateRendererInterface::class => TwigRendererFactory::class,
         ],

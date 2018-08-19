@@ -6,9 +6,9 @@ namespace AppTest\Action;
 use App\Action\LookupPageAction;
 use App\Form\UaForm;
 use BrowscapPHP\BrowscapInterface;
-use Interop\Http\ServerMiddleware\DelegateInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;
 use Zend\Diactoros\Response\EmptyResponse;
 use Zend\Diactoros\Response\HtmlResponse;
@@ -53,7 +53,7 @@ class LookupPageActionTest extends TestCase
 
         $response = $homePage->process(
             $this->prophesize(ServerRequestInterface::class)->reveal(),
-            $this->prophesize(DelegateInterface::class)->reveal()
+            $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
         self::assertInstanceOf(EmptyResponse::class, $response);
@@ -103,7 +103,7 @@ class LookupPageActionTest extends TestCase
 
         $response = $homePage->process(
             $request->reveal(),
-            $this->prophesize(DelegateInterface::class)->reveal()
+            $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
         self::assertInstanceOf(RedirectResponse::class, $response);
@@ -158,7 +158,7 @@ class LookupPageActionTest extends TestCase
 
         $response = $homePage->process(
             $request->reveal(),
-            $this->prophesize(DelegateInterface::class)->reveal()
+            $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
         self::assertInstanceOf(RedirectResponse::class, $response);
@@ -221,7 +221,7 @@ class LookupPageActionTest extends TestCase
 
         $response = $homePage->process(
             $request->reveal(),
-            $this->prophesize(DelegateInterface::class)->reveal()
+            $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
         self::assertInstanceOf(EmptyResponse::class, $response);
@@ -312,7 +312,7 @@ class LookupPageActionTest extends TestCase
 
         $response = $homePage->process(
             $request->reveal(),
-            $this->prophesize(DelegateInterface::class)->reveal()
+            $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
         self::assertInstanceOf(HtmlResponse::class, $response);
@@ -402,7 +402,7 @@ class LookupPageActionTest extends TestCase
 
         $response = $homePage->process(
             $request->reveal(),
-            $this->prophesize(DelegateInterface::class)->reveal()
+            $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
         self::assertInstanceOf(HtmlResponse::class, $response);
