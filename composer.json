@@ -39,7 +39,6 @@
     "zendframework/zend-validator": "~2.10.2"
   },
   "require-dev": {
-    "infection/infection": "^0.11.2",
     "localheinz/phpstan-rules": "^0.4 || ^0.5",
     "filp/whoops": "^2.2.0",
     "friendsofphp/php-cs-fixer": "^2.13",
