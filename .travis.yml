@@ -38,7 +38,7 @@ before_install:
 
 install: travis_retry composer update --optimize-autoloader --prefer-dist --prefer-stable --no-progress --no-interaction --no-suggest $COMPOSER_FLAGS -vv
 
-script: vendor/bin/phpunit -c phpunit.xml.dist --columns 117 --colors --no-coverage
+script: vendor/bin/phpunit -c phpunit.xml --columns 117 --colors --no-coverage
 
 jobs:
   allow_failures:
