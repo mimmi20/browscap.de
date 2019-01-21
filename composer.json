@@ -28,7 +28,7 @@
     "zendframework/zend-expressive-twigrenderer": "~2.2.0",
     "zendframework/zend-expressive-zendrouter": "~3.0.0",
     "zendframework/zend-filter": "~2.8.0",
-    "zendframework/zend-form": "~2.12.0",
+    "zendframework/zend-form": "~2.14.0",
     "zendframework/zend-hydrator": "~2.4.0",
     "zendframework/zend-i18n": "~2.9.0",
     "zendframework/zend-inputfilter": "~2.8.2",
