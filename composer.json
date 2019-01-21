@@ -25,7 +25,7 @@
     "zendframework/zend-expressive-csrf": "~1.0.0",
     "zendframework/zend-expressive-helpers": "~5.1.2",
     "zendframework/zend-expressive-session-ext": "~1.1.1",
-    "zendframework/zend-expressive-twigrenderer": "~2.1.0",
+    "zendframework/zend-expressive-twigrenderer": "~2.2.0",
     "zendframework/zend-expressive-zendrouter": "~3.0.0",
     "zendframework/zend-filter": "~2.8.0",
     "zendframework/zend-form": "~2.12.0",
