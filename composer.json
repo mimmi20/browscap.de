@@ -39,7 +39,7 @@
     "zendframework/zend-validator": "~2.12.0"
   },
   "require-dev": {
-    "localheinz/phpstan-rules": "^0.7.1",
+    "localheinz/phpstan-rules": "^0.8.1",
     "filp/whoops": "^2.2.0",
     "friendsofphp/php-cs-fixer": "^2.13",
     "pepakriz/phpstan-exception-rules": "^0.3 || ^0.4",
