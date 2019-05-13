@@ -934,16 +934,16 @@
         },
         {
             "name": "mimmi20/ua-generic-request",
-            "version": "4.0.1",
+            "version": "4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mimmi20/ua-generic-request.git",
-                "reference": "e20c1e5021d78d1f5ec2099a8d0eb48b61edef0f"
+                "reference": "de24175d94dc3bc0336a2123d7eb0b9c2b9a3775"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mimmi20/ua-generic-request/zipball/e20c1e5021d78d1f5ec2099a8d0eb48b61edef0f",
-                "reference": "e20c1e5021d78d1f5ec2099a8d0eb48b61edef0f",
+                "url": "https://api.github.com/repos/mimmi20/ua-generic-request/zipball/de24175d94dc3bc0336a2123d7eb0b9c2b9a3775",
+                "reference": "de24175d94dc3bc0336a2123d7eb0b9c2b9a3775",
                 "shasum": ""
             },
             "require": {
@@ -952,15 +952,15 @@
                 "zendframework/zend-diactoros": "^1.8 || ^2.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.13",
-                "infection/infection": "^0.11.2",
-                "localheinz/composer-normalize": "^1.0.0",
-                "localheinz/phpstan-rules": "^0.4 || ^0.5",
-                "pepakriz/phpstan-exception-rules": "^0.3 || ^0.4",
-                "phpstan/phpstan": "^0.10",
-                "phpstan/phpstan-deprecation-rules": "^0.10",
-                "phpstan/phpstan-phpunit": "^0.10",
-                "phpstan/phpstan-strict-rules": "^0.10",
+                "friendsofphp/php-cs-fixer": "^2.14",
+                "infection/infection": "^0.12.0",
+                "localheinz/composer-normalize": "^1.1.0",
+                "localheinz/phpstan-rules": "^0.7",
+                "pepakriz/phpstan-exception-rules": "^0.6",
+                "phpstan/phpstan": "^0.11",
+                "phpstan/phpstan-deprecation-rules": "^0.11",
+                "phpstan/phpstan-phpunit": "^0.11",
+                "phpstan/phpstan-strict-rules": "^0.11",
                 "phpunit/phpunit": "^7.5",
                 "squizlabs/php_codesniffer": "^3.4"
             },
@@ -990,7 +990,7 @@
             "keywords": [
                 "generic request"
             ],
-            "time": "2019-01-03T09:55:55+00:00"
+            "time": "2019-02-16T09:14:18+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1167,16 +1167,16 @@
         },
         {
             "name": "psr/http-factory",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-factory.git",
-                "reference": "378bfe27931ecc54ff824a20d6f6bfc303bbd04c"
+                "reference": "12ac7fcd07e5b077433f5f2bee95b3a771bf61be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-factory/zipball/378bfe27931ecc54ff824a20d6f6bfc303bbd04c",
-                "reference": "378bfe27931ecc54ff824a20d6f6bfc303bbd04c",
+                "url": "https://api.github.com/repos/php-fig/http-factory/zipball/12ac7fcd07e5b077433f5f2bee95b3a771bf61be",
+                "reference": "12ac7fcd07e5b077433f5f2bee95b3a771bf61be",
                 "shasum": ""
             },
             "require": {
@@ -1215,7 +1215,7 @@
                 "request",
                 "response"
             ],
-            "time": "2018-07-30T21:54:04+00:00"
+            "time": "2019-04-30T12:38:16+00:00"
         },
         {
             "name": "psr/http-message",
@@ -2606,16 +2606,16 @@
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "c3c330192bc9cc51b7e9ce968ff721dc32ffa986"
+                "reference": "37bf68b428850ee26ed7c3be6c26236dd95a95f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/c3c330192bc9cc51b7e9ce968ff721dc32ffa986",
-                "reference": "c3c330192bc9cc51b7e9ce968ff721dc32ffa986",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/37bf68b428850ee26ed7c3be6c26236dd95a95f1",
+                "reference": "37bf68b428850ee26ed7c3be6c26236dd95a95f1",
                 "shasum": ""
             },
             "require": {
@@ -2668,7 +2668,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2019-01-05T20:13:32+00:00"
+            "time": "2019-04-29T21:11:00+00:00"
         },
         {
             "name": "zendframework/zend-escaper",
