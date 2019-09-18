@@ -2990,16 +2990,16 @@
         },
         {
             "name": "zendframework/zend-expressive-csrf",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-expressive-csrf.git",
-                "reference": "07beb03eb0a0fb3771e699774cf2164a3523d6bc"
+                "reference": "018fecfc207ec8884944131ffa271669295b44d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive-csrf/zipball/07beb03eb0a0fb3771e699774cf2164a3523d6bc",
-                "reference": "07beb03eb0a0fb3771e699774cf2164a3523d6bc",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive-csrf/zipball/018fecfc207ec8884944131ffa271669295b44d8",
+                "reference": "018fecfc207ec8884944131ffa271669295b44d8",
                 "shasum": ""
             },
             "require": {
@@ -3050,7 +3050,7 @@
                 "zend-expressive",
                 "zf"
             ],
-            "time": "2018-03-15T14:59:38+00:00"
+            "time": "2019-06-24T22:33:26+00:00"
         },
         {
             "name": "zendframework/zend-expressive-helpers",
