@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da8a859d41982ddac1834714b7ae1b29",
+    "content-hash": "5d13cdfd9ebbba84fa506e0a33725c30",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -3351,16 +3351,16 @@
         },
         {
             "name": "zendframework/zend-expressive-twigrenderer",
-            "version": "2.3.0",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-expressive-twigrenderer.git",
-                "reference": "b913efdb3155d74dcd7e1909bd4f03fbe2b578e3"
+                "reference": "17df00d1025362c7bfe743e7b9f51be2838a0181"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive-twigrenderer/zipball/b913efdb3155d74dcd7e1909bd4f03fbe2b578e3",
-                "reference": "b913efdb3155d74dcd7e1909bd4f03fbe2b578e3",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive-twigrenderer/zipball/17df00d1025362c7bfe743e7b9f51be2838a0181",
+                "reference": "17df00d1025362c7bfe743e7b9f51be2838a0181",
                 "shasum": ""
             },
             "require": {
@@ -3382,8 +3382,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3.x-dev",
-                    "dev-develop": "2.4.x-dev"
+                    "dev-master": "2.4.x-dev",
+                    "dev-develop": "2.5.x-dev"
                 },
                 "zf": {
                     "config-provider": "Zend\\Expressive\\Twig\\ConfigProvider"
@@ -3410,7 +3410,7 @@
                 "zend-expressive",
                 "zf"
             ],
-            "time": "2019-01-23T17:35:01+00:00"
+            "time": "2019-06-12T15:06:52+00:00"
         },
         {
             "name": "zendframework/zend-expressive-zendrouter",
