@@ -3915,16 +3915,16 @@
         },
         {
             "name": "zendframework/zend-json",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-json.git",
-                "reference": "4dd940e8e6f32f1d36ea6b0677ea57c540c7c19c"
+                "reference": "21c6027f3c4a5177cbef8ed08d1037b17188a0d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-json/zipball/4dd940e8e6f32f1d36ea6b0677ea57c540c7c19c",
-                "reference": "4dd940e8e6f32f1d36ea6b0677ea57c540c7c19c",
+                "url": "https://api.github.com/repos/zendframework/zend-json/zipball/21c6027f3c4a5177cbef8ed08d1037b17188a0d8",
+                "reference": "21c6027f3c4a5177cbef8ed08d1037b17188a0d8",
                 "shasum": ""
             },
             "require": {
@@ -3961,7 +3961,7 @@
                 "json",
                 "zf"
             ],
-            "time": "2018-01-04T17:51:34+00:00"
+            "time": "2019-06-18T10:54:52+00:00"
         },
         {
             "name": "zendframework/zend-loader",
