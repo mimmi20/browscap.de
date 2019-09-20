@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d13cdfd9ebbba84fa506e0a33725c30",
+    "content-hash": "5bb332359edc4f5666e92535862f6b29",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -4251,28 +4251,28 @@
         },
         {
             "name": "zendframework/zend-session",
-            "version": "2.8.5",
+            "version": "2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-session.git",
-                "reference": "2cfd90e1a2f6b066b9f908599251d8f64f07021b"
+                "reference": "0a0c7ae4d8be608e30ecff714c86164ccca19ca3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-session/zipball/2cfd90e1a2f6b066b9f908599251d8f64f07021b",
-                "reference": "2cfd90e1a2f6b066b9f908599251d8f64f07021b",
+                "url": "https://api.github.com/repos/zendframework/zend-session/zipball/0a0c7ae4d8be608e30ecff714c86164ccca19ca3",
+                "reference": "0a0c7ae4d8be608e30ecff714c86164ccca19ca3",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.6 || ^7.0",
                 "zendframework/zend-eventmanager": "^2.6.2 || ^3.0",
-                "zendframework/zend-stdlib": "^2.7 || ^3.0"
+                "zendframework/zend-stdlib": "^3.2.1"
             },
             "require-dev": {
                 "container-interop/container-interop": "^1.1",
                 "mongodb/mongodb": "^1.0.1",
                 "php-mock/php-mock-phpunit": "^1.1.2 || ^2.0",
-                "phpunit/phpunit": "^5.7.5 || >=6.0.13 <6.5.0",
+                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.16",
                 "zendframework/zend-cache": "^2.6.1",
                 "zendframework/zend-coding-standard": "~1.0.0",
                 "zendframework/zend-db": "^2.7",
@@ -4291,8 +4291,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev",
-                    "dev-develop": "2.9-dev"
+                    "dev-master": "2.9.x-dev",
+                    "dev-develop": "2.10.x-dev"
                 },
                 "zf": {
                     "component": "Zend\\Session",
@@ -4308,13 +4308,13 @@
             "license": [
                 "BSD-3-Clause"
             ],
-            "description": "manage and preserve session data, a logical complement of cookie data, across multiple page requests by the same client",
+            "description": "Object-oriented interface to PHP sessions and storage",
             "keywords": [
                 "ZendFramework",
                 "session",
                 "zf"
             ],
-            "time": "2018-02-22T16:33:54+00:00"
+            "time": "2019-09-20T12:50:51+00:00"
         },
         {
             "name": "zendframework/zend-stdlib",
