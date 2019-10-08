@@ -26,3 +26,4 @@ parameters:
     - '~ObjectProphecy~'
     - '~object given~'
     - '~expects string, Exception given~'
+    - '~Cannot call method willReturn\(\) on string~'
