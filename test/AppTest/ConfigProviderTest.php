@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file is part of the mimmi20/browscap.de package.
+ *
+ * Copyright (c) 2015-2019, Thomas Mueller <mimmi20@live.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types = 1);
 namespace AppTest;
@@ -6,7 +14,7 @@ namespace AppTest;
 use App\ConfigProvider;
 use PHPUnit\Framework\TestCase;
 
-class ConfigProviderTest extends TestCase
+final class ConfigProviderTest extends TestCase
 {
     /**
      * @throws \Exception
@@ -17,11 +25,11 @@ class ConfigProviderTest extends TestCase
     {
         $factory = new ConfigProvider();
 
-        self::assertInstanceOf(ConfigProvider::class, $factory);
+        static::assertInstanceOf(ConfigProvider::class, $factory);
 
         $array = $factory();
 
-        self::assertInternalType('array', $array);
+        static::assertIsArray($array);
     }
 
     /**
@@ -33,11 +41,11 @@ class ConfigProviderTest extends TestCase
     {
         $factory = new ConfigProvider();
 
-        self::assertInstanceOf(ConfigProvider::class, $factory);
+        static::assertInstanceOf(ConfigProvider::class, $factory);
 
         $array = $factory->getDependencies();
 
-        self::assertInternalType('array', $array);
+        static::assertIsArray($array);
     }
 
     /**
@@ -49,10 +57,10 @@ class ConfigProviderTest extends TestCase
     {
         $factory = new ConfigProvider();
 
-        self::assertInstanceOf(ConfigProvider::class, $factory);
+        static::assertInstanceOf(ConfigProvider::class, $factory);
 
         $array = $factory->getTemplates();
 
-        self::assertInternalType('array', $array);
+        static::assertIsArray($array);
     }
 }

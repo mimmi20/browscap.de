@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file is part of the mimmi20/browscap.de package.
+ *
+ * Copyright (c) 2015-2019, Thomas Mueller <mimmi20@live.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types = 1);
 namespace AppTest\Model\InputFilter;
@@ -10,7 +18,7 @@ use Psr\Container\ContainerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class UaInputFilterFactoryTest extends TestCase
+final class UaInputFilterFactoryTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Psr\Container\ContainerInterface */
     private $container;
@@ -38,10 +46,10 @@ class UaInputFilterFactoryTest extends TestCase
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
-        self::assertInstanceOf(UaInputFilterFactory::class, $factory);
+        static::assertInstanceOf(UaInputFilterFactory::class, $factory);
 
         $UaInputFilter = $factory($this->container->reveal());
 
-        self::assertInstanceOf(UaInputFilter::class, $UaInputFilter);
+        static::assertInstanceOf(UaInputFilter::class, $UaInputFilter);
     }
 }

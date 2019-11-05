@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file is part of the mimmi20/browscap.de package.
+ *
+ * Copyright (c) 2015-2019, Thomas Mueller <mimmi20@live.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types = 1);
 namespace AppTest\Form;
@@ -11,7 +19,7 @@ use Psr\Container\ContainerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class UaFactoryTest extends TestCase
+final class UaFactoryTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Psr\Container\ContainerInterface */
     private $container;
@@ -42,10 +50,10 @@ class UaFactoryTest extends TestCase
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
-        self::assertInstanceOf(UaFactory::class, $factory);
+        static::assertInstanceOf(UaFactory::class, $factory);
 
         $Ua = $factory($this->container->reveal());
 
-        self::assertInstanceOf(UaForm::class, $Ua);
+        static::assertInstanceOf(UaForm::class, $Ua);
     }
 }

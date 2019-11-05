@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file is part of the mimmi20/browscap.de package.
+ *
+ * Copyright (c) 2015-2019, Thomas Mueller <mimmi20@live.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types = 1);
 namespace AppTest;
@@ -9,7 +17,7 @@ use Psr\Container\ContainerInterface;
 use Stickee\Cache\SimpleCache;
 use Zend\Cache\Storage\StorageInterface;
 
-class Psr16CacheFactoryTest extends TestCase
+final class Psr16CacheFactoryTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Psr\Container\ContainerInterface */
     private $container;
@@ -35,10 +43,10 @@ class Psr16CacheFactoryTest extends TestCase
     {
         $factory = new Psr16CacheFactory();
 
-        self::assertInstanceOf(Psr16CacheFactory::class, $factory);
+        static::assertInstanceOf(Psr16CacheFactory::class, $factory);
 
         $Psr16Cache = $factory($this->container->reveal());
 
-        self::assertInstanceOf(SimpleCache::class, $Psr16Cache);
+        static::assertInstanceOf(SimpleCache::class, $Psr16Cache);
     }
 }

@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file is part of the mimmi20/browscap.de package.
+ *
+ * Copyright (c) 2015-2019, Thomas Mueller <mimmi20@live.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types = 1);
 namespace AppTest;
@@ -8,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 
-class LoggerFactoryTest extends TestCase
+final class LoggerFactoryTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Psr\Container\ContainerInterface */
     private $container;
@@ -31,10 +39,10 @@ class LoggerFactoryTest extends TestCase
     {
         $factory = new LoggerFactory();
 
-        self::assertInstanceOf(LoggerFactory::class, $factory);
+        static::assertInstanceOf(LoggerFactory::class, $factory);
 
         $logger = $factory($this->container->reveal());
 
-        self::assertInstanceOf(LoggerInterface::class, $logger);
+        static::assertInstanceOf(LoggerInterface::class, $logger);
     }
 }

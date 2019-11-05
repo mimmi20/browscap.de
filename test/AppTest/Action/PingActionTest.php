@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file is part of the mimmi20/browscap.de package.
+ *
+ * Copyright (c) 2015-2019, Thomas Mueller <mimmi20@live.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types = 1);
 namespace AppTest\Action;
@@ -9,7 +17,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\JsonResponse;
 
-class PingActionTest extends TestCase
+final class PingActionTest extends TestCase
 {
     public function testResponse(): void
     {
@@ -21,7 +29,7 @@ class PingActionTest extends TestCase
 
         $json = json_decode((string) $response->getBody());
 
-        self::assertInstanceOf(JsonResponse::class, $response);
-        self::assertTrue(isset($json->ack));
+        static::assertInstanceOf(JsonResponse::class, $response);
+        static::assertTrue(isset($json->ack));
     }
 }

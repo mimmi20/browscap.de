@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file is part of the mimmi20/browscap.de package.
+ *
+ * Copyright (c) 2015-2019, Thomas Mueller <mimmi20@live.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types = 1);
 namespace AppTest\Action;
@@ -18,7 +26,7 @@ use Zend\Expressive\Csrf\CsrfMiddleware;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class LookupPageActionTest extends TestCase
+final class LookupPageActionTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Zend\Expressive\Router\RouterInterface */
     private $router;
@@ -56,7 +64,7 @@ class LookupPageActionTest extends TestCase
             $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
-        self::assertInstanceOf(EmptyResponse::class, $response);
+        static::assertInstanceOf(EmptyResponse::class, $response);
     }
 
     public function testReturnsRedirectResponseWhenFormIsInvalid(): void
@@ -106,7 +114,7 @@ class LookupPageActionTest extends TestCase
             $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
-        self::assertInstanceOf(RedirectResponse::class, $response);
+        static::assertInstanceOf(RedirectResponse::class, $response);
     }
 
     public function testReturnsRedirectResponseWhenGuardIsInvalid(): void
@@ -161,7 +169,7 @@ class LookupPageActionTest extends TestCase
             $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
-        self::assertInstanceOf(RedirectResponse::class, $response);
+        static::assertInstanceOf(RedirectResponse::class, $response);
     }
 
     public function testReturnsRedirectResponseWhenBrowscapThrowsException(): void
@@ -191,7 +199,7 @@ class LookupPageActionTest extends TestCase
 
         $body = [
             '__csrf' => $secret,
-            'ua'     => 'test-useragent',
+            'ua' => 'test-useragent',
         ];
         $request
             ->getParsedBody()
@@ -224,7 +232,7 @@ class LookupPageActionTest extends TestCase
             $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
-        self::assertInstanceOf(EmptyResponse::class, $response);
+        static::assertInstanceOf(EmptyResponse::class, $response);
     }
 
     public function testReturnsHtmlResponseOnPost(): void
@@ -250,7 +258,7 @@ class LookupPageActionTest extends TestCase
         $ua   = 'test-useragent';
         $body = [
             '__csrf' => $secret,
-            'ua'     => $ua,
+            'ua' => $ua,
         ];
         $request
             ->getParsedBody()
@@ -266,8 +274,8 @@ class LookupPageActionTest extends TestCase
             ->willReturn(false);
 
         $detectedResult = [
-            'Browser'  => 'Test',
-            'Crawler'  => true,
+            'Browser' => 'Test',
+            'Crawler' => true,
             'isMobile' => false,
         ];
 
@@ -287,17 +295,17 @@ class LookupPageActionTest extends TestCase
                 'app::lookup-page',
                 [
                     '__csrf' => $secret,
-                    'form'   => $form->reveal(),
-                    'ua'     => $ua,
+                    'form' => $form->reveal(),
+                    'ua' => $ua,
                     'result' => [
-                        'Browser'  => 'Test',
-                        'Crawler'  => 'true',
+                        'Browser' => 'Test',
+                        'Crawler' => 'true',
                         'isMobile' => 'false',
                     ],
-                    'showResult'   => true,
-                    'headers'      => [],
+                    'showResult' => true,
+                    'headers' => [],
                     'otherHeaders' => [],
-                    'showHeaders'  => false,
+                    'showHeaders' => false,
                 ]
             )
             ->willReturn('');
@@ -315,7 +323,7 @@ class LookupPageActionTest extends TestCase
             $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
-        self::assertInstanceOf(HtmlResponse::class, $response);
+        static::assertInstanceOf(HtmlResponse::class, $response);
     }
 
     public function testReturnsHtmlResponseOnGet(): void
@@ -341,7 +349,7 @@ class LookupPageActionTest extends TestCase
         $ua   = 'test-useragent';
         $body = [
             '__csrf' => $secret,
-            'ua'     => $ua,
+            'ua' => $ua,
         ];
         $request
             ->getHeaderLine('user-agent')
@@ -360,8 +368,8 @@ class LookupPageActionTest extends TestCase
             ->willReturn(false);
 
         $detectedResult = [
-            'Browser'  => 'Test',
-            'Crawler'  => true,
+            'Browser' => 'Test',
+            'Crawler' => true,
             'isMobile' => false,
         ];
 
@@ -380,14 +388,14 @@ class LookupPageActionTest extends TestCase
             ->render(
                 'app::lookup-page',
                 [
-                    '__csrf'       => $secret,
-                    'form'         => $form->reveal(),
-                    'ua'           => $ua,
-                    'result'       => [],
-                    'showResult'   => false,
-                    'headers'      => [],
+                    '__csrf' => $secret,
+                    'form' => $form->reveal(),
+                    'ua' => $ua,
+                    'result' => [],
+                    'showResult' => false,
+                    'headers' => [],
                     'otherHeaders' => [],
-                    'showHeaders'  => true,
+                    'showHeaders' => true,
                 ]
             )
             ->willReturn('');
@@ -405,6 +413,6 @@ class LookupPageActionTest extends TestCase
             $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
-        self::assertInstanceOf(HtmlResponse::class, $response);
+        static::assertInstanceOf(HtmlResponse::class, $response);
     }
 }

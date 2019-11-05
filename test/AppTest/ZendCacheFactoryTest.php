@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file is part of the mimmi20/browscap.de package.
+ *
+ * Copyright (c) 2015-2019, Thomas Mueller <mimmi20@live.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types = 1);
 namespace AppTest;
@@ -8,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Zend\Cache\Storage\Adapter\Filesystem;
 
-class ZendCacheFactoryTest extends TestCase
+final class ZendCacheFactoryTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Psr\Container\ContainerInterface */
     private $container;
@@ -30,10 +38,10 @@ class ZendCacheFactoryTest extends TestCase
     {
         $factory = new ZendCacheFactory();
 
-        self::assertInstanceOf(ZendCacheFactory::class, $factory);
+        static::assertInstanceOf(ZendCacheFactory::class, $factory);
 
         $ZendCache = $factory($this->container->reveal());
 
-        self::assertInstanceOf(Filesystem::class, $ZendCache);
+        static::assertInstanceOf(Filesystem::class, $ZendCache);
     }
 }

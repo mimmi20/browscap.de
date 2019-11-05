@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file is part of the mimmi20/browscap.de package.
+ *
+ * Copyright (c) 2015-2019, Thomas Mueller <mimmi20@live.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types = 1);
 namespace App;
@@ -14,7 +22,7 @@ use Zend\ServiceManager\Factory\InvokableFactory;
  *
  * @see https://docs.zendframework.com/zend-component-installer/
  */
-class ConfigProvider
+final class ConfigProvider
 {
     /**
      * Returns the configuration array
@@ -28,7 +36,7 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencies(),
-            'templates'    => $this->getTemplates(),
+            'templates' => $this->getTemplates(),
         ];
     }
 
@@ -41,17 +49,17 @@ class ConfigProvider
     {
         return [
             'factories' => [
-                Action\HomePageAction::class           => Action\HomePageFactory::class,
-                Action\DownloadsPageAction::class      => Action\DownloadsPageFactory::class,
-                Action\CapabilitiesPageAction::class   => Action\CapabilitiesPageFactory::class,
-                Action\LookupPageAction::class         => Action\LookupPageFactory::class,
-                LoggerInterface::class                 => LoggerFactory::class,
+                Action\HomePageAction::class => Action\HomePageFactory::class,
+                Action\DownloadsPageAction::class => Action\DownloadsPageFactory::class,
+                Action\CapabilitiesPageAction::class => Action\CapabilitiesPageFactory::class,
+                Action\LookupPageAction::class => Action\LookupPageFactory::class,
+                LoggerInterface::class => LoggerFactory::class,
                 Model\InputFilter\UaInputFilter::class => Model\InputFilter\UaInputFilterFactory::class,
-                Form\UaForm::class                     => Form\UaFactory::class,
-                BrowscapInterface::class               => BrowscapFactory::class,
-                StorageInterface::class                => ZendCacheFactory::class,
-                CacheInterface::class                  => Psr16CacheFactory::class,
-                Action\PingAction::class               => InvokableFactory::class,
+                Form\UaForm::class => Form\UaFactory::class,
+                BrowscapInterface::class => BrowscapFactory::class,
+                StorageInterface::class => ZendCacheFactory::class,
+                CacheInterface::class => Psr16CacheFactory::class,
+                Action\PingAction::class => InvokableFactory::class,
             ],
         ];
     }
@@ -65,8 +73,8 @@ class ConfigProvider
     {
         return [
             'paths' => [
-                'app'    => ['templates/app'],
-                'error'  => ['templates/error'],
+                'app' => ['templates/app'],
+                'error' => ['templates/error'],
                 'layout' => ['templates/layout'],
             ],
         ];

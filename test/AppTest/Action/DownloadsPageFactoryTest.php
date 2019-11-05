@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file is part of the mimmi20/browscap.de package.
+ *
+ * Copyright (c) 2015-2019, Thomas Mueller <mimmi20@live.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types = 1);
 namespace AppTest\Action;
@@ -10,7 +18,7 @@ use Psr\Container\ContainerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class DownloadsPageFactoryTest extends TestCase
+final class DownloadsPageFactoryTest extends TestCase
 {
     /** @var \Prophecy\Prophecy\ObjectProphecy|\Psr\Container\ContainerInterface */
     private $container;
@@ -38,10 +46,10 @@ class DownloadsPageFactoryTest extends TestCase
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
-        self::assertInstanceOf(DownloadsPageFactory::class, $factory);
+        static::assertInstanceOf(DownloadsPageFactory::class, $factory);
 
         $DownloadsPage = $factory($this->container->reveal());
 
-        self::assertInstanceOf(DownloadsPageAction::class, $DownloadsPage);
+        static::assertInstanceOf(DownloadsPageAction::class, $DownloadsPage);
     }
 }

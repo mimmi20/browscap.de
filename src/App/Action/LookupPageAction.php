@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file is part of the mimmi20/browscap.de package.
+ *
+ * Copyright (c) 2015-2019, Thomas Mueller <mimmi20@live.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types = 1);
 namespace App\Action;
@@ -18,7 +26,7 @@ use Zend\Expressive\Csrf\CsrfMiddleware;
 use Zend\Expressive\Router;
 use Zend\Expressive\Template;
 
-class LookupPageAction implements MiddlewareInterface
+final class LookupPageAction implements MiddlewareInterface
 {
     /**
      * @var \Zend\Expressive\Router\RouterInterface
@@ -137,23 +145,22 @@ class LookupPageAction implements MiddlewareInterface
             );
 
             $response = $response->withAddedHeader('Allow', 'GET, POST');
-            $response = $response->withAddedHeader('Location', $this->router->generateUri('ua-lookup'));
 
-            return $response;
+            return $response->withAddedHeader('Location', $this->router->generateUri('ua-lookup'));
         }
 
         return new HtmlResponse(
             $this->template->render(
                 'app::lookup-page',
                 [
-                    '__csrf'       => $token,
-                    'form'         => $this->form,
-                    'ua'           => $ua,
-                    'result'       => $result,
-                    'showResult'   => $showResult,
-                    'headers'      => $headers,
+                    '__csrf' => $token,
+                    'form' => $this->form,
+                    'ua' => $ua,
+                    'result' => $result,
+                    'showResult' => $showResult,
+                    'headers' => $headers,
                     'otherHeaders' => $otherHeaders,
-                    'showHeaders'  => $showHeaders,
+                    'showHeaders' => $showHeaders,
                 ]
             )
         );

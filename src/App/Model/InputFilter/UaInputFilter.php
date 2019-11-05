@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file is part of the mimmi20/browscap.de package.
+ *
+ * Copyright (c) 2015-2019, Thomas Mueller <mimmi20@live.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types = 1);
 namespace App\Model\InputFilter;
@@ -18,9 +26,9 @@ class UaInputFilter extends InputFilter
     {
         $this->add(
             [
-                'name'     => 'ua',
+                'name' => 'ua',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     [
                         'name' => StripTags::class,
                     ],
@@ -30,16 +38,16 @@ class UaInputFilter extends InputFilter
                 ],
                 'validators' => [
                     [
-                        'name'                   => NotEmpty::class,
+                        'name' => NotEmpty::class,
                         'break_chain_on_failure' => true,
-                        'options'                => [
+                        'options' => [
                             'message' => 'Please insert a user agent!',
                         ],
                     ],
                     [
-                        'name'    => StringLength::class,
+                        'name' => StringLength::class,
                         'options' => [
-                            'min'     => 3,
+                            'min' => 3,
                             'message' => 'Please insert %min% Chars!',
                         ],
                     ],
@@ -49,9 +57,9 @@ class UaInputFilter extends InputFilter
 
         $this->add(
             [
-                'name'     => '__csrf',
+                'name' => '__csrf',
                 'required' => true,
-                'filters'  => [
+                'filters' => [
                     [
                         'name' => StripTags::class,
                     ],
@@ -61,9 +69,9 @@ class UaInputFilter extends InputFilter
                 ],
                 'validators' => [
                     [
-                        'name'                   => NotEmpty::class,
+                        'name' => NotEmpty::class,
                         'break_chain_on_failure' => true,
-                        'options'                => [
+                        'options' => [
                             'message' => 'the CSRF token is missing!',
                         ],
                     ],
