@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab818b5391b2a1de9009df4177a84c56",
+    "content-hash": "66fcfa1386305a54eaf5ecf82136283c",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1761,7 +1761,7 @@
                 "symfony/security-guard": ">=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
                 "symfony/security-http": ">=2.3,<2.3.41|>=2.4,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.2.12|>=4.3,<4.3.8",
                 "symfony/serializer": ">=2,<2.0.11",
-                "symfony/symfony": ">=2,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
+                "symfony/symfony": ">=2,<2.8.52|>=3,<3.4.35|>=4,<4.2.12|>=4.3,<4.3.8",
                 "symfony/translation": ">=2,<2.0.17",
                 "symfony/validator": ">=2,<2.0.24|>=2.1,<2.1.12|>=2.2,<2.2.5|>=2.3,<2.3.3",
                 "symfony/var-exporter": ">=4.2,<4.2.12|>=4.3,<4.3.8",
@@ -1829,7 +1829,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2019-11-13T10:25:51+00:00"
+            "time": "2019-11-15T09:15:43+00:00"
         },
         {
             "name": "seld/jsonlint",
@@ -5880,16 +5880,16 @@
         },
         {
             "name": "pepakriz/phpstan-exception-rules",
-            "version": "v0.8.3",
+            "version": "v0.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pepakriz/phpstan-exception-rules.git",
-                "reference": "db16cb7b14e637cec8844b7d870727132fecc5ec"
+                "reference": "9599ce2136a807906ea799d3afaa8557e00a48ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pepakriz/phpstan-exception-rules/zipball/db16cb7b14e637cec8844b7d870727132fecc5ec",
-                "reference": "db16cb7b14e637cec8844b7d870727132fecc5ec",
+                "url": "https://api.github.com/repos/pepakriz/phpstan-exception-rules/zipball/9599ce2136a807906ea799d3afaa8557e00a48ec",
+                "reference": "9599ce2136a807906ea799d3afaa8557e00a48ec",
                 "shasum": ""
             },
             "require": {
@@ -5912,7 +5912,7 @@
             "type": "phpstan-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.8-dev"
+                    "dev-master": "0.9-dev"
                 },
                 "phpstan": {
                     "includes": [
@@ -5930,7 +5930,7 @@
                 "MIT"
             ],
             "description": "Exception rules for PHPStan",
-            "time": "2019-08-17T10:24:29+00:00"
+            "time": "2019-11-18T13:51:07+00:00"
         },
         {
             "name": "phar-io/manifest",
