@@ -216,7 +216,7 @@ final class LookupPageActionTest extends TestCase
 
         $browscap = $this->prophesize(BrowscapInterface::class);
         $browscap
-            ->getBrowser()
+            ->getBrowser($body['ua'])
             ->willThrow(new \Exception('something went wrong'));
 
         $homePage = new LookupPageAction(

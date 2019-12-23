@@ -7,18 +7,19 @@ parameters:
     - %currentWorkingDirectory%/vendor/autoload.php
     - %currentWorkingDirectory%/vendor/squizlabs/php_codesniffer/autoload.php
     - %currentWorkingDirectory%/vendor/squizlabs/php_codesniffer/src/Util/Tokens.php
-  exceptionRules:
-    reportUnusedCatchesOfUncheckedExceptions: false
-    uncheckedExceptions: []
+#  exceptionRules:
+#    reportUnusedCatchesOfUncheckedExceptions: false
+#    uncheckedExceptions: []
   excludes_analyse:
     - */tests/*/data/*
     - */tests/*/Full2Test.php
   ignoreErrors:
     - '~is not subtype of Throwable~'
-    - '~ObjectProphecy~'
-    - '~object given~'
+#    - '~ObjectProphecy~'
+#    - '~object given~'
     - '~expects string, Exception given~'
-    - '~Cannot call method willReturn\(\) on string~'
+#    - '~Cannot call method willReturn\(\) on string~'
+  checkMissingIterableValueType: false
 
 includes:
   - vendor/phpstan/phpstan-strict-rules/rules.neon
@@ -27,3 +28,4 @@ includes:
   #- vendor/pepakriz/phpstan-exception-rules/extension.neon
   - vendor/phpstan/phpstan-deprecation-rules/rules.neon
   - vendor/phpstan/phpstan-beberlei-assert/extension.neon
+  - vendor/jangregor/phpstan-prophecy/src/extension.neon
