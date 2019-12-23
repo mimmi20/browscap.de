@@ -44,7 +44,7 @@
     "friendsofphp/php-cs-fixer": "^2.16.0",
     "jangregor/phpstan-prophecy": "^0.5.1",
     "pepakriz/phpstan-exception-rules": "^0.10.1",
-    "phpspec/prophecy": "^1.8.1",
+    "phpspec/prophecy": "^1.10.1",
     "phpstan/phpstan": "^0.12.3",
     "phpstan/phpstan-beberlei-assert": "^0.12.0",
     "phpstan/phpstan-deprecation-rules": "^0.12.0",
