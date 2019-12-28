@@ -20,7 +20,7 @@
     "thadafinser/package-info": "^1.0",
     "zendframework/zend-cache": "^2.8.0",
     "zendframework/zend-component-installer": "~2.1.1",
-    "zendframework/zend-config-aggregator": "~1.1.1",
+    "zendframework/zend-config-aggregator": "~1.2.0",
     "zendframework/zend-expressive": "~3.2.1",
     "zendframework/zend-expressive-csrf": "~1.0.0",
     "zendframework/zend-expressive-helpers": "~5.3.0",
