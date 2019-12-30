@@ -42,7 +42,7 @@
     "ergebnis/phpstan-rules": "^0.14.0",
     "filp/whoops": "^2.2.0",
     "friendsofphp/php-cs-fixer": "^2.16.0",
-    "jangregor/phpstan-prophecy": "^0.5.1",
+    "jangregor/phpstan-prophecy": "^0.6.0",
     "pepakriz/phpstan-exception-rules": "^0.10.1",
     "phpspec/prophecy": "^1.10.1",
     "phpstan/phpstan": "^0.12.3",
