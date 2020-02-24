@@ -18,12 +18,10 @@ update_configs:
       - match:
           dependency_name: "phpunit/phpunit"
       - match:
-          dependency_name: "beberlei/assert"
-      - match:
           dependency_name: "browscap/browscap-php"
-      - match:
-          dependency_name: "mimmi20/ua-generic-request"
       - match:
           dependency_name: "monolog/monolog"
       - match:
-          dependency_name: "zendframework/zend-session"
+          dependency_name: "laminas/laminas-hydrator"
+      - match:
+          dependency_name: "symfony/twig-bridge"

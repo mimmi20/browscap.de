@@ -40,7 +40,7 @@ try {
     exit(1);
 }
 
-$browscap = new \BrowscapPHP\BrowscapUpdater($cache, $logger);
+$browscap = new \BrowscapPHP\BrowscapUpdater($cache, $logger, null, 10);
 try {
     $browscap->update(\BrowscapPHP\Helper\IniLoaderInterface::PHP_INI_FULL);
 } catch (\BrowscapPHP\Exception\FileNotFoundException $e) {
