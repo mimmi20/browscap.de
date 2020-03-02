@@ -4056,7 +4056,7 @@
                 "serluck/phpwhois": "<=4.2.6",
                 "shopware/shopware": "<5.3.7",
                 "silverstripe/admin": ">=1.0.3,<1.0.4|>=1.1,<1.1.1",
-                "silverstripe/assets": ">=1,<1.3.5",
+                "silverstripe/assets": ">=1,<1.3.5|>=1.4,<1.4.4",
                 "silverstripe/cms": "<4.3.6|>=4.4,<4.4.4",
                 "silverstripe/comments": ">=1.3,<1.9.99|>=2,<2.9.99|>=3,<3.1.1",
                 "silverstripe/forum": "<=0.6.1|>=0.7,<=0.7.3",
@@ -4184,7 +4184,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2020-02-29T00:01:08+00:00"
+            "time": "2020-03-02T07:11:48+00:00"
         },
         {
             "name": "seld/jsonlint",
@@ -6258,16 +6258,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.12",
+            "version": "0.12.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "aa7877f4240a92bdd51524b4305c380df0e73a83"
+                "reference": "d74fb5ce1ab9f24a7128db90e99dec82440975c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/aa7877f4240a92bdd51524b4305c380df0e73a83",
-                "reference": "aa7877f4240a92bdd51524b4305c380df0e73a83",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d74fb5ce1ab9f24a7128db90e99dec82440975c3",
+                "reference": "d74fb5ce1ab9f24a7128db90e99dec82440975c3",
                 "shasum": ""
             },
             "require": {
@@ -6293,7 +6293,7 @@
                 "MIT"
             ],
             "description": "PHPStan - PHP Static Analysis Tool",
-            "time": "2020-03-01T22:09:42+00:00"
+            "time": "2020-03-02T13:08:55+00:00"
         },
         {
             "name": "phpstan/phpstan-beberlei-assert",
