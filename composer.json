@@ -20,7 +20,7 @@
     "laminas/laminas-inputfilter": "~2.10.1",
     "laminas/laminas-serializer": "~2.9.1",
     "laminas/laminas-servicemanager": "~3.4.0",
-    "laminas/laminas-session": "~2.9.1",
+    "laminas/laminas-session": "~2.9.2",
     "laminas/laminas-stdlib": "~3.2.1",
     "laminas/laminas-validator": "~2.13.1",
     "mezzio/mezzio": "~3.2.1",
@@ -35,7 +35,7 @@
     "psr/http-server-middleware": "^1.0.1",
     "roave/security-advisories": "dev-master",
     "stickee/cache": "dev-master",
-    "symfony/twig-bridge": "^4.4.4 || ^5.0.4",
+    "symfony/twig-bridge": "^4.4.5 || ^5.0.5",
     "thadafinser/package-info": "^1.0"
   },
   "require-dev": {
@@ -46,8 +46,8 @@
     "jangregor/phpstan-prophecy": "^0.6.2",
     "laminas/laminas-development-mode": "~3.2.0",
     "pepakriz/phpstan-exception-rules": "^0.10.1",
-    "phpspec/prophecy": "^1.10.2",
-    "phpstan/phpstan": "^0.12.11",
+    "phpspec/prophecy": "^1.10.3",
+    "phpstan/phpstan": "^0.12.14",
     "phpstan/phpstan-beberlei-assert": "^0.12.2",
     "phpstan/phpstan-deprecation-rules": "^0.12.2",
     "phpstan/phpstan-phpunit": "^0.12.6",
