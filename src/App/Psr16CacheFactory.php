@@ -11,9 +11,9 @@
 declare(strict_types = 1);
 namespace App;
 
+use Laminas\Cache\Storage\StorageInterface;
 use Psr\Container\ContainerInterface;
 use Stickee\Cache\SimpleCache;
-use Zend\Cache\Storage\StorageInterface;
 
 final class Psr16CacheFactory
 {

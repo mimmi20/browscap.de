@@ -13,10 +13,10 @@ namespace AppTest\Model\InputFilter;
 
 use App\Model\InputFilter\UaInputFilter;
 use App\Model\InputFilter\UaInputFilterFactory;
+use Mezzio\Router\RouterInterface;
+use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
-use Zend\Expressive\Router\RouterInterface;
-use Zend\Expressive\Template\TemplateRendererInterface;
 
 final class UaInputFilterFactoryTest extends TestCase
 {

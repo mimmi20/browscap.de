@@ -14,24 +14,24 @@ namespace AppTest\Action;
 use App\Action\LookupPageAction;
 use App\Form\UaForm;
 use BrowscapPHP\BrowscapInterface;
+use Laminas\Diactoros\Response\EmptyResponse;
+use Laminas\Diactoros\Response\HtmlResponse;
+use Laminas\Diactoros\Response\RedirectResponse;
+use Mezzio\Csrf\CsrfGuardInterface;
+use Mezzio\Csrf\CsrfMiddleware;
+use Mezzio\Router\RouterInterface;
+use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;
-use Zend\Diactoros\Response\EmptyResponse;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Diactoros\Response\RedirectResponse;
-use Zend\Expressive\Csrf\CsrfGuardInterface;
-use Zend\Expressive\Csrf\CsrfMiddleware;
-use Zend\Expressive\Router\RouterInterface;
-use Zend\Expressive\Template\TemplateRendererInterface;
 
 final class LookupPageActionTest extends TestCase
 {
-    /** @var \Prophecy\Prophecy\ObjectProphecy|\Zend\Expressive\Router\RouterInterface */
+    /** @var \Mezzio\Router\RouterInterface|\Prophecy\Prophecy\ObjectProphecy */
     private $router;
 
-    /** @var \Prophecy\Prophecy\ObjectProphecy|\Zend\Expressive\Template\TemplateRendererInterface */
+    /** @var \Mezzio\Template\TemplateRendererInterface|\Prophecy\Prophecy\ObjectProphecy */
     private $template;
 
     protected function setUp(): void

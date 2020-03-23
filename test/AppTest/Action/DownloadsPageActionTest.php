@@ -13,19 +13,19 @@ namespace AppTest\Action;
 
 use App\Action\BrowscapVersionTrait;
 use App\Action\DownloadsPageAction;
+use Laminas\Diactoros\Response\HtmlResponse;
+use Mezzio\Router\RouterInterface;
+use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Expressive\Router\RouterInterface;
-use Zend\Expressive\Template\TemplateRendererInterface;
 
 final class DownloadsPageActionTest extends TestCase
 {
-    /** @var \Prophecy\Prophecy\ObjectProphecy|\Zend\Expressive\Router\RouterInterface */
+    /** @var \Mezzio\Router\RouterInterface|\Prophecy\Prophecy\ObjectProphecy */
     private $router;
 
-    /** @var \Prophecy\Prophecy\ObjectProphecy|\Zend\Expressive\Template\TemplateRendererInterface */
+    /** @var \Mezzio\Template\TemplateRendererInterface|\Prophecy\Prophecy\ObjectProphecy */
     private $template;
 
     protected function setUp(): void

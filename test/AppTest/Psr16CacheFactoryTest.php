@@ -12,10 +12,10 @@ declare(strict_types = 1);
 namespace AppTest;
 
 use App\Psr16CacheFactory;
+use Laminas\Cache\Storage\StorageInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Stickee\Cache\SimpleCache;
-use Zend\Cache\Storage\StorageInterface;
 
 final class Psr16CacheFactoryTest extends TestCase
 {

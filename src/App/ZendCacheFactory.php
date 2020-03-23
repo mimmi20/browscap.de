@@ -11,9 +11,9 @@
 declare(strict_types = 1);
 namespace App;
 
+use Laminas\Cache\Storage\StorageInterface;
+use Laminas\Cache\StorageFactory;
 use Psr\Container\ContainerInterface;
-use Zend\Cache\Storage\StorageInterface;
-use Zend\Cache\StorageFactory;
 
 final class ZendCacheFactory
 {
@@ -23,7 +23,7 @@ final class ZendCacheFactory
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
      *
-     * @return \Zend\Cache\Storage\StorageInterface
+     * @return \Laminas\Cache\Storage\StorageInterface
      */
     public function __invoke(ContainerInterface $container): StorageInterface
     {

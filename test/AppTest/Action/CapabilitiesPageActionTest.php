@@ -12,19 +12,19 @@ declare(strict_types = 1);
 namespace AppTest\Action;
 
 use App\Action\CapabilitiesPageAction;
+use Laminas\Diactoros\Response\HtmlResponse;
+use Mezzio\Router\RouterInterface;
+use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Expressive\Router\RouterInterface;
-use Zend\Expressive\Template\TemplateRendererInterface;
 
 final class CapabilitiesPageActionTest extends TestCase
 {
-    /** @var \Prophecy\Prophecy\ObjectProphecy|\Zend\Expressive\Router\RouterInterface */
+    /** @var \Mezzio\Router\RouterInterface|\Prophecy\Prophecy\ObjectProphecy */
     private $router;
 
-    /** @var \Prophecy\Prophecy\ObjectProphecy|\Zend\Expressive\Template\TemplateRendererInterface */
+    /** @var \Mezzio\Template\TemplateRendererInterface|\Prophecy\Prophecy\ObjectProphecy */
     private $template;
 
     protected function setUp(): void

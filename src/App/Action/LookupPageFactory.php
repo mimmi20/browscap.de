@@ -13,10 +13,10 @@ namespace App\Action;
 
 use App\Form\UaForm;
 use BrowscapPHP\BrowscapInterface;
+use Mezzio\Router\RouterInterface;
+use Mezzio\Template\TemplateRendererInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
-use Zend\Expressive\Router\RouterInterface;
-use Zend\Expressive\Template\TemplateRendererInterface;
 
 final class LookupPageFactory
 {

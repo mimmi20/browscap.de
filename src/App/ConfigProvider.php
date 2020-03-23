@@ -12,10 +12,10 @@ declare(strict_types = 1);
 namespace App;
 
 use BrowscapPHP\BrowscapInterface;
+use Laminas\Cache\Storage\StorageInterface;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 use Psr\Log\LoggerInterface;
 use Psr\SimpleCache\CacheInterface;
-use Zend\Cache\Storage\StorageInterface;
-use Zend\ServiceManager\Factory\InvokableFactory;
 
 /**
  * The configuration provider for the App module

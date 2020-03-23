@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "37617c53fcdff647b52ca19cdb8a53f2",
+    "content-hash": "eac85c2a5c7d609fd1f5be7644ccbd6f",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -70,25 +70,25 @@
         },
         {
             "name": "browscap/browscap",
-            "version": "6.0.37",
+            "version": "6.0.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/browscap/browscap.git",
-                "reference": "c71b1b2d6738395a03ec55cd59cd462dac6929be"
+                "reference": "c7f7660d14048f8881109e09e291308d851499b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/browscap/browscap/zipball/c71b1b2d6738395a03ec55cd59cd462dac6929be",
-                "reference": "c71b1b2d6738395a03ec55cd59cd462dac6929be",
+                "url": "https://api.github.com/repos/browscap/browscap/zipball/c7f7660d14048f8881109e09e291308d851499b4",
+                "reference": "c7f7660d14048f8881109e09e291308d851499b4",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^3.2.7",
                 "ergebnis/json-normalizer": "^0.11.0",
                 "ext-json": "*",
-                "mimmi20/json-class": "~2.0.8",
-                "mimmi20/ua-browser-type": "^7.0.7",
-                "mimmi20/ua-device-type": "^7.1.6",
+                "mimmi20/json-class": "~2.0.9",
+                "mimmi20/ua-browser-type": "^7.0.8",
+                "mimmi20/ua-device-type": "^7.1.7",
                 "monolog/monolog": "^1.25.3 || ^2.0.2",
                 "php": "^7.1",
                 "seld/jsonlint": "^1.7.2",
@@ -104,7 +104,7 @@
                 "friendsofphp/php-cs-fixer": "^2.16.1",
                 "mikey179/vfsstream": "^1.6.8",
                 "pepakriz/phpstan-exception-rules": "^0.10.1",
-                "phpstan/phpstan": "^0.12.8",
+                "phpstan/phpstan": "^0.12.9",
                 "phpstan/phpstan-beberlei-assert": "^0.12.2",
                 "phpstan/phpstan-deprecation-rules": "^0.12.2",
                 "phpstan/phpstan-phpunit": "^0.12.6",
@@ -153,7 +153,7 @@
             "keywords": [
                 "Browscap"
             ],
-            "time": "2020-01-30T20:40:00+00:00"
+            "time": "2020-03-17T13:57:16+00:00"
         },
         {
             "name": "browscap/browscap-php",
@@ -1004,22 +1004,23 @@
         },
         {
             "name": "laminas/laminas-config-aggregator",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-config-aggregator.git",
-                "reference": "8d86bbb5338f5c66ed0bb77b5cbfe5a82d762fd7"
+                "reference": "ac742facfa367091c823ae44b2eed80d6d613d7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-config-aggregator/zipball/8d86bbb5338f5c66ed0bb77b5cbfe5a82d762fd7",
-                "reference": "8d86bbb5338f5c66ed0bb77b5cbfe5a82d762fd7",
+                "url": "https://api.github.com/repos/laminas/laminas-config-aggregator/zipball/ac742facfa367091c823ae44b2eed80d6d613d7a",
+                "reference": "ac742facfa367091c823ae44b2eed80d6d613d7a",
                 "shasum": ""
             },
             "require": {
                 "laminas/laminas-stdlib": "^2.7.7 || ^3.1.0",
                 "laminas/laminas-zendframework-bridge": "^1.0",
-                "php": "^5.6 || ^7.0"
+                "php": "^5.6 || ^7.0",
+                "webimpress/safe-writer": "^1.0.2 || ^2.0.1"
             },
             "replace": {
                 "zendframework/zend-config-aggregator": "self.version"
@@ -1029,7 +1030,7 @@
                 "laminas/laminas-config": "^2.6 || ^3.0",
                 "laminas/laminas-servicemanager": "^2.7.7 || ^3.1.1",
                 "malukenho/docheader": "^0.1.5",
-                "phpunit/phpunit": "^5.7.21 || ^6.3"
+                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.20"
             },
             "suggest": {
                 "laminas/laminas-config": "Allows loading configuration from XML, INI, YAML, and JSON files",
@@ -1058,7 +1059,7 @@
                 "config-aggregator",
                 "laminas"
             ],
-            "time": "2019-12-31T16:30:18+00:00"
+            "time": "2020-03-21T19:01:21+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
@@ -1322,16 +1323,16 @@
         },
         {
             "name": "laminas/laminas-form",
-            "version": "2.14.3",
+            "version": "2.14.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-form.git",
-                "reference": "012aae01366cb8c8fb64e39a887363ef82f388dd"
+                "reference": "8b985f74bfe32910edb4ba9503877c4310228cd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-form/zipball/012aae01366cb8c8fb64e39a887363ef82f388dd",
-                "reference": "012aae01366cb8c8fb64e39a887363ef82f388dd",
+                "url": "https://api.github.com/repos/laminas/laminas-form/zipball/8b985f74bfe32910edb4ba9503877c4310228cd2",
+                "reference": "8b985f74bfe32910edb4ba9503877c4310228cd2",
                 "shasum": ""
             },
             "require": {
@@ -1360,7 +1361,7 @@
                 "laminas/laminas-text": "^2.6",
                 "laminas/laminas-validator": "^2.6",
                 "laminas/laminas-view": "^2.6.2",
-                "phpunit/phpunit": "^5.7.23 || ^6.5.3"
+                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.20"
             },
             "suggest": {
                 "laminas/laminas-captcha": "^2.7.1, required for using CAPTCHA form elements",
@@ -1400,7 +1401,7 @@
                 "form",
                 "laminas"
             ],
-            "time": "2019-12-31T16:56:34+00:00"
+            "time": "2020-03-18T22:38:54+00:00"
         },
         {
             "name": "laminas/laminas-http",
@@ -1585,16 +1586,16 @@
         },
         {
             "name": "laminas/laminas-i18n",
-            "version": "2.10.1",
+            "version": "2.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-i18n.git",
-                "reference": "815be447f1c77f70a86bf24d00087fcb975b39ff"
+                "reference": "9699c98d97d2f519def3da8d4128dfe6e6ad11bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-i18n/zipball/815be447f1c77f70a86bf24d00087fcb975b39ff",
-                "reference": "815be447f1c77f70a86bf24d00087fcb975b39ff",
+                "url": "https://api.github.com/repos/laminas/laminas-i18n/zipball/9699c98d97d2f519def3da8d4128dfe6e6ad11bf",
+                "reference": "9699c98d97d2f519def3da8d4128dfe6e6ad11bf",
                 "shasum": ""
             },
             "require": {
@@ -1656,7 +1657,7 @@
                 "i18n",
                 "laminas"
             ],
-            "time": "2019-12-31T17:07:17+00:00"
+            "time": "2020-03-20T11:57:14+00:00"
         },
         {
             "name": "laminas/laminas-inputfilter",
@@ -2325,16 +2326,16 @@
         },
         {
             "name": "laminas/laminas-validator",
-            "version": "2.13.1",
+            "version": "2.13.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-validator.git",
-                "reference": "36702f033486bf1953e254f5299aad205302e79d"
+                "reference": "e7bf6a2eedc0508ebde0ebc66662efeb0abbcb2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-validator/zipball/36702f033486bf1953e254f5299aad205302e79d",
-                "reference": "36702f033486bf1953e254f5299aad205302e79d",
+                "url": "https://api.github.com/repos/laminas/laminas-validator/zipball/e7bf6a2eedc0508ebde0ebc66662efeb0abbcb2c",
+                "reference": "e7bf6a2eedc0508ebde0ebc66662efeb0abbcb2c",
                 "shasum": ""
             },
             "require": {
@@ -2400,7 +2401,7 @@
                 "laminas",
                 "validator"
             ],
-            "time": "2020-01-15T09:59:30+00:00"
+            "time": "2020-03-16T11:38:27+00:00"
         },
         {
             "name": "laminas/laminas-zendframework-bridge",
@@ -2877,16 +2878,16 @@
         },
         {
             "name": "mezzio/mezzio-session-ext",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mezzio/mezzio-session-ext.git",
-                "reference": "b28cd7dbb95c94b3c5056fa2c8e80cab2cc30166"
+                "reference": "1baacbee109e74dd62b2fd8d052ffbcbc692a407"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mezzio/mezzio-session-ext/zipball/b28cd7dbb95c94b3c5056fa2c8e80cab2cc30166",
-                "reference": "b28cd7dbb95c94b3c5056fa2c8e80cab2cc30166",
+                "url": "https://api.github.com/repos/mezzio/mezzio-session-ext/zipball/1baacbee109e74dd62b2fd8d052ffbcbc692a407",
+                "reference": "1baacbee109e74dd62b2fd8d052ffbcbc692a407",
                 "shasum": ""
             },
             "require": {
@@ -2905,7 +2906,7 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "laminas/laminas-diactoros": "^1.6",
-                "phpunit/phpunit": "^7.0.2"
+                "phpunit/phpunit": "^7.5.20 || ^8.5.2 || ^9.0.1"
             },
             "type": "library",
             "extra": {
@@ -2936,7 +2937,7 @@
                 "psr-7",
                 "session"
             ],
-            "time": "2019-12-31T15:46:24+00:00"
+            "time": "2020-03-19T19:52:10+00:00"
         },
         {
             "name": "mezzio/mezzio-template",
@@ -2996,16 +2997,16 @@
         },
         {
             "name": "mezzio/mezzio-twigrenderer",
-            "version": "2.5.0",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mezzio/mezzio-twigrenderer.git",
-                "reference": "ce6c8755e4caf47480a0b26c401ebbef39c9de83"
+                "reference": "cbd5c99886d8682ec6a37f1fa3aabc01c2e354ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mezzio/mezzio-twigrenderer/zipball/ce6c8755e4caf47480a0b26c401ebbef39c9de83",
-                "reference": "ce6c8755e4caf47480a0b26c401ebbef39c9de83",
+                "url": "https://api.github.com/repos/mezzio/mezzio-twigrenderer/zipball/cbd5c99886d8682ec6a37f1fa3aabc01c2e354ca",
+                "reference": "cbd5c99886d8682ec6a37f1fa3aabc01c2e354ca",
                 "shasum": ""
             },
             "require": {
@@ -3015,7 +3016,7 @@
                 "mezzio/mezzio-template": "^2.0",
                 "php": "^7.1",
                 "psr/container": "^1.0",
-                "twig/twig": "^1.34 || ^2.4 || ^3.0"
+                "twig/twig": "^1.42.5 || ^2.12.5 || ^3.0.3"
             },
             "conflict": {
                 "container-interop/container-interop": "<1.2.0"
@@ -3026,13 +3027,14 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "malukenho/docheader": "^0.1.5",
-                "phpunit/phpunit": "^7.5.17 || ^8.4.3"
+                "phpspec/prophecy": "^1.10.3",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5.x-dev",
-                    "dev-develop": "2.6.x-dev"
+                    "dev-master": "2.6.x-dev",
+                    "dev-develop": "2.7.x-dev"
                 },
                 "laminas": {
                     "config-provider": "Mezzio\\Twig\\ConfigProvider"
@@ -3058,7 +3060,7 @@
                 "psr-7",
                 "twig"
             ],
-            "time": "2019-12-31T15:48:49+00:00"
+            "time": "2020-03-20T08:41:58+00:00"
         },
         {
             "name": "mimmi20/browser-detector-loader-interface",
@@ -3932,12 +3934,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "f0eca1ac3194cc94726f0bb366672f38629272b4"
+                "reference": "b81a572cb1acffadea621e55c95af4ba94a91624"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/f0eca1ac3194cc94726f0bb366672f38629272b4",
-                "reference": "f0eca1ac3194cc94726f0bb366672f38629272b4",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/b81a572cb1acffadea621e55c95af4ba94a91624",
+                "reference": "b81a572cb1acffadea621e55c95af4ba94a91624",
                 "shasum": ""
             },
             "conflict": {
@@ -3995,6 +3997,7 @@
                 "firebase/php-jwt": "<2",
                 "fooman/tcpdf": "<6.2.22",
                 "fossar/tcpdf-parser": "<6.2.22",
+                "friendsofsymfony/oauth2-php": "<1.3",
                 "friendsofsymfony/rest-bundle": ">=1.2,<1.2.2",
                 "friendsofsymfony/user-bundle": ">=1.2,<1.3.5",
                 "fuel/core": "<1.8.1",
@@ -4006,6 +4009,7 @@
                 "illuminate/cookie": ">=4,<=4.0.11|>=4.1,<=4.1.31|>=4.2,<=4.2.22|>=5,<=5.0.35|>=5.1,<=5.1.46|>=5.2,<=5.2.45|>=5.3,<=5.3.31|>=5.4,<=5.4.36|>=5.5,<5.5.42|>=5.6,<5.6.30",
                 "illuminate/database": ">=4,<4.0.99|>=4.1,<4.1.29",
                 "illuminate/encryption": ">=4,<=4.0.11|>=4.1,<=4.1.31|>=4.2,<=4.2.22|>=5,<=5.0.35|>=5.1,<=5.1.46|>=5.2,<=5.2.45|>=5.3,<=5.3.31|>=5.4,<=5.4.36|>=5.5,<5.5.40|>=5.6,<5.6.15",
+                "illuminate/view": ">=7,<7.1.2",
                 "ivankristianto/phpwhois": "<=4.3",
                 "james-heinrich/getid3": "<1.9.9",
                 "joomla/session": "<1.3.1",
@@ -4013,7 +4017,7 @@
                 "kazist/phpwhois": "<=4.2.6",
                 "kreait/firebase-php": ">=3.2,<3.8.1",
                 "la-haute-societe/tcpdf": "<6.2.22",
-                "laravel/framework": ">=4,<4.0.99|>=4.1,<=4.1.31|>=4.2,<=4.2.22|>=5,<=5.0.35|>=5.1,<=5.1.46|>=5.2,<=5.2.45|>=5.3,<=5.3.31|>=5.4,<=5.4.36|>=5.5,<5.5.42|>=5.6,<5.6.30",
+                "laravel/framework": ">=4,<4.0.99|>=4.1,<=4.1.31|>=4.2,<=4.2.22|>=5,<=5.0.35|>=5.1,<=5.1.46|>=5.2,<=5.2.45|>=5.3,<=5.3.31|>=5.4,<=5.4.36|>=5.5,<5.5.42|>=5.6,<5.6.30|>=7,<7.1.2",
                 "laravel/socialite": ">=1,<1.0.99|>=2,<2.0.10",
                 "league/commonmark": "<0.18.3",
                 "librenms/librenms": "<1.53",
@@ -4077,6 +4081,7 @@
                 "socalnick/scn-social-auth": "<1.15.2",
                 "spoonity/tcpdf": "<6.2.22",
                 "squizlabs/php_codesniffer": ">=1,<2.8.1|>=3,<3.0.1",
+                "ssddanbrown/bookstack": "<0.25.3",
                 "stormpath/sdk": ">=0,<9.9.99",
                 "studio-42/elfinder": "<2.1.49",
                 "swiftmailer/swiftmailer": ">=4,<5.4.5",
@@ -4184,7 +4189,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2020-03-03T17:52:54+00:00"
+            "time": "2020-03-15T11:13:32+00:00"
         },
         {
             "name": "seld/jsonlint",
@@ -4950,6 +4955,53 @@
                 "templating"
             ],
             "time": "2020-02-11T15:31:23+00:00"
+        },
+        {
+            "name": "webimpress/safe-writer",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webimpress/safe-writer.git",
+                "reference": "8edfb101df370d340e2e0970982d4edbfd82f0df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webimpress/safe-writer/zipball/8edfb101df370d340e2e0970982d4edbfd82f0df",
+                "reference": "8edfb101df370d340e2e0970982d4edbfd82f0df",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.16",
+                "squizlabs/php_codesniffer": "^3.5.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev",
+                    "dev-develop": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webimpress\\SafeWriter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "description": "Tool to write files safely, to avoid race conditions",
+            "keywords": [
+                "concurrent write",
+                "file writer",
+                "race condition",
+                "safe writer",
+                "webimpress"
+            ],
+            "time": "2020-03-21T15:34:50+00:00"
         }
     ],
     "packages-dev": [
@@ -5244,16 +5296,16 @@
         },
         {
             "name": "ergebnis/composer-normalize",
-            "version": "2.2.4",
+            "version": "2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/composer-normalize.git",
-                "reference": "069fadf1ecf277c878affeb4f4e8c2881d7b141d"
+                "reference": "d171b088ff9dcfda53277200a9ecc9a1d0deaef5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/069fadf1ecf277c878affeb4f4e8c2881d7b141d",
-                "reference": "069fadf1ecf277c878affeb4f4e8c2881d7b141d",
+                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/d171b088ff9dcfda53277200a9ecc9a1d0deaef5",
+                "reference": "d171b088ff9dcfda53277200a9ecc9a1d0deaef5",
                 "shasum": ""
             },
             "require": {
@@ -5264,21 +5316,21 @@
                 "php": "^7.1"
             },
             "require-dev": {
-                "composer/composer": "^1.7.0",
+                "composer/composer": "^1.10.1",
                 "ergebnis/license": "~0.1.0",
-                "ergebnis/php-cs-fixer-config": "^2.0.0",
+                "ergebnis/php-cs-fixer-config": "^2.1.0",
                 "ergebnis/phpstan-rules": "~0.14.3",
-                "ergebnis/test-util": "~0.9.1",
+                "ergebnis/test-util": "~1.0.0",
                 "jangregor/phpstan-prophecy": "~0.6.2",
                 "phpstan/extension-installer": "^1.0.3",
-                "phpstan/phpstan": "~0.12.11",
+                "phpstan/phpstan": "~0.12.14",
                 "phpstan/phpstan-deprecation-rules": "~0.12.2",
                 "phpstan/phpstan-phpunit": "~0.12.6",
                 "phpstan/phpstan-strict-rules": "~0.12.2",
                 "phpunit/phpunit": "^7.5.20",
                 "psalm/plugin-phpunit": "~0.9.0",
-                "symfony/filesystem": "^4.4.4",
-                "vimeo/psalm": "^3.9.3"
+                "symfony/filesystem": "^4.4.5",
+                "vimeo/psalm": "^3.9.5"
             },
             "type": "composer-plugin",
             "extra": {
@@ -5307,20 +5359,20 @@
                 "normalizer",
                 "plugin"
             ],
-            "time": "2020-02-22T12:20:17+00:00"
+            "time": "2020-03-13T20:09:01+00:00"
         },
         {
             "name": "ergebnis/phpstan-rules",
-            "version": "0.14.3",
+            "version": "0.14.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/phpstan-rules.git",
-                "reference": "313171f4fe52cc5cf1fe3e0eed20a293076da75e"
+                "reference": "72eeba43afe81837d67349b3794c2f4157a2640c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/phpstan-rules/zipball/313171f4fe52cc5cf1fe3e0eed20a293076da75e",
-                "reference": "313171f4fe52cc5cf1fe3e0eed20a293076da75e",
+                "url": "https://api.github.com/repos/ergebnis/phpstan-rules/zipball/72eeba43afe81837d67349b3794c2f4157a2640c",
+                "reference": "72eeba43afe81837d67349b3794c2f4157a2640c",
                 "shasum": ""
             },
             "require": {
@@ -5330,18 +5382,18 @@
                 "phpstan/phpstan": "~0.11.15 || ~0.12.0"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.2.2",
+                "ergebnis/composer-normalize": "^2.3.0",
                 "ergebnis/license": "~0.1.0",
-                "ergebnis/php-cs-fixer-config": "^2.0.0",
-                "ergebnis/test-util": "~0.9.1",
+                "ergebnis/php-cs-fixer-config": "^2.1.0",
+                "ergebnis/test-util": "~1.0.0",
                 "infection/infection": "~0.13.6",
                 "nette/di": "^3.0.1",
                 "phpstan/phpstan-deprecation-rules": "~0.11.2",
                 "phpstan/phpstan-strict-rules": "~0.11.1",
                 "phpunit/phpunit": "^7.5.20",
-                "psalm/plugin-phpunit": "~0.8.1",
+                "psalm/plugin-phpunit": "~0.9.0",
                 "psr/container": "^1.0.0",
-                "vimeo/psalm": "^3.8.3",
+                "vimeo/psalm": "^3.9.5",
                 "zendframework/zend-servicemanager": "^2.0.0"
             },
             "type": "phpstan-extension",
@@ -5374,7 +5426,7 @@
                 "phpstan-extreme-rules",
                 "phpstan-rules"
             ],
-            "time": "2020-01-28T14:41:43+00:00"
+            "time": "2020-03-13T20:00:07+00:00"
         },
         {
             "name": "filp/whoops",
@@ -6258,16 +6310,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.14",
+            "version": "0.12.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "37bdd26a80235d0f9045b49f4151102b7831cbe2"
+                "reference": "1ce27fe29c8660a27926127d350d53d80c4d4286"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/37bdd26a80235d0f9045b49f4151102b7831cbe2",
-                "reference": "37bdd26a80235d0f9045b49f4151102b7831cbe2",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/1ce27fe29c8660a27926127d350d53d80c4d4286",
+                "reference": "1ce27fe29c8660a27926127d350d53d80c4d4286",
                 "shasum": ""
             },
             "require": {
@@ -6293,7 +6345,7 @@
                 "MIT"
             ],
             "description": "PHPStan - PHP Static Analysis Tool",
-            "time": "2020-03-02T22:29:43+00:00"
+            "time": "2020-03-22T16:51:47+00:00"
         },
         {
             "name": "phpstan/phpstan-beberlei-assert",

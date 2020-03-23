@@ -14,10 +14,10 @@ namespace AppTest\Form;
 use App\Form\UaFactory;
 use App\Form\UaForm;
 use App\Model\InputFilter\UaInputFilter;
+use Mezzio\Router\RouterInterface;
+use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
-use Zend\Expressive\Router\RouterInterface;
-use Zend\Expressive\Template\TemplateRendererInterface;
 
 final class UaFactoryTest extends TestCase
 {

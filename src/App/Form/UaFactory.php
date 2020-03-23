@@ -13,9 +13,8 @@ namespace App\Form;
 
 use App\Model\InputFilter\UaInputFilter;
 use Psr\Container\ContainerInterface;
-use Zend\Form\Form;
 
-final class UaFactory extends Form
+final class UaFactory
 {
     /**
      * @param ContainerInterface $container

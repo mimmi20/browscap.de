@@ -12,9 +12,9 @@ declare(strict_types = 1);
 namespace AppTest;
 
 use App\ZendCacheFactory;
+use Laminas\Cache\Storage\Adapter\Filesystem;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
-use Zend\Cache\Storage\Adapter\Filesystem;
 
 final class ZendCacheFactoryTest extends TestCase
 {

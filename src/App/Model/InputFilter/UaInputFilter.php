@@ -11,11 +11,11 @@
 declare(strict_types = 1);
 namespace App\Model\InputFilter;
 
-use Zend\Filter\StringTrim;
-use Zend\Filter\StripTags;
-use Zend\InputFilter\InputFilter;
-use Zend\Validator\NotEmpty;
-use Zend\Validator\StringLength;
+use Laminas\Filter\StringTrim;
+use Laminas\Filter\StripTags;
+use Laminas\InputFilter\InputFilter;
+use Laminas\Validator\NotEmpty;
+use Laminas\Validator\StringLength;
 
 class UaInputFilter extends InputFilter
 {

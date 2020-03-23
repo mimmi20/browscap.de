@@ -13,28 +13,28 @@ namespace App\Action;
 
 use App\Form\UaForm;
 use BrowscapPHP\BrowscapInterface;
+use Laminas\Diactoros\Response\EmptyResponse;
+use Laminas\Diactoros\Response\HtmlResponse;
+use Laminas\Diactoros\Response\RedirectResponse;
+use Mezzio\Csrf\CsrfMiddleware;
+use Mezzio\Router;
+use Mezzio\Template;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;
 use UaRequest\GenericRequestFactory;
-use Zend\Diactoros\Response\EmptyResponse;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Diactoros\Response\RedirectResponse;
-use Zend\Expressive\Csrf\CsrfMiddleware;
-use Zend\Expressive\Router;
-use Zend\Expressive\Template;
 
 final class LookupPageAction implements MiddlewareInterface
 {
     /**
-     * @var \Zend\Expressive\Router\RouterInterface
+     * @var \Mezzio\Router\RouterInterface
      */
     private $router;
 
     /**
-     * @var \Zend\Expressive\Template\TemplateRendererInterface
+     * @var \Mezzio\Template\TemplateRendererInterface
      */
     private $template;
 
@@ -56,11 +56,11 @@ final class LookupPageAction implements MiddlewareInterface
     /**
      * LookupPageAction constructor.
      *
-     * @param \Zend\Expressive\Router\RouterInterface             $router
-     * @param \Zend\Expressive\Template\TemplateRendererInterface $template
-     * @param \App\Form\UaForm                                    $form
-     * @param \BrowscapPHP\BrowscapInterface                      $browscap
-     * @param \Psr\Log\LoggerInterface                            $logger
+     * @param \Mezzio\Router\RouterInterface             $router
+     * @param \Mezzio\Template\TemplateRendererInterface $template
+     * @param \App\Form\UaForm                           $form
+     * @param \BrowscapPHP\BrowscapInterface             $browscap
+     * @param \Psr\Log\LoggerInterface                   $logger
      */
     public function __construct(Router\RouterInterface $router, Template\TemplateRendererInterface $template, UaForm $form, BrowscapInterface $browscap, LoggerInterface $logger)
     {
@@ -79,7 +79,7 @@ final class LookupPageAction implements MiddlewareInterface
      */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        /** @var \Zend\Expressive\Csrf\CsrfGuardInterface $guard */
+        /** @var \Mezzio\Csrf\CsrfGuardInterface $guard */
         $guard = $request->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE);
 
         if ('POST' === $request->getMethod()) {

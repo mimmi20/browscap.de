@@ -13,10 +13,10 @@ namespace AppTest\Action;
 
 use App\Action\CapabilitiesPageAction;
 use App\Action\CapabilitiesPageFactory;
+use Mezzio\Router\RouterInterface;
+use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
-use Zend\Expressive\Router\RouterInterface;
-use Zend\Expressive\Template\TemplateRendererInterface;
 
 final class CapabilitiesPageFactoryTest extends TestCase
 {

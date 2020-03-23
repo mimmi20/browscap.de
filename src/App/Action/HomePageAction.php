@@ -11,23 +11,23 @@
 declare(strict_types = 1);
 namespace App\Action;
 
+use Laminas\Diactoros\Response\HtmlResponse;
+use Mezzio\Router;
+use Mezzio\Template;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Expressive\Router;
-use Zend\Expressive\Template;
 
 final class HomePageAction implements MiddlewareInterface
 {
     /**
-     * @var \Zend\Expressive\Router\RouterInterface
+     * @var \Mezzio\Router\RouterInterface
      */
     private $router;
 
     /**
-     * @var \Zend\Expressive\Template\TemplateRendererInterface
+     * @var \Mezzio\Template\TemplateRendererInterface
      */
     private $template;
 
@@ -36,8 +36,8 @@ final class HomePageAction implements MiddlewareInterface
     /**
      * HomePageAction constructor.
      *
-     * @param \Zend\Expressive\Router\RouterInterface             $router
-     * @param \Zend\Expressive\Template\TemplateRendererInterface $template
+     * @param \Mezzio\Router\RouterInterface             $router
+     * @param \Mezzio\Template\TemplateRendererInterface $template
      */
     public function __construct(Router\RouterInterface $router, Template\TemplateRendererInterface $template)
     {

@@ -1,35 +1,43 @@
 <?php
 
-use Zend\ConfigAggregator\ArrayProvider;
-use Zend\ConfigAggregator\ConfigAggregator;
-use Zend\ConfigAggregator\PhpFileProvider;
-
 // To enable or disable caching, set the `ConfigAggregator::ENABLE_CACHE` boolean in
 // `config/autoload/local.php`.
+
+use Laminas\ConfigAggregator\ArrayProvider;
+use Laminas\ConfigAggregator\ConfigAggregator;
+use Laminas\ConfigAggregator\PhpFileProvider;
+
 $cacheConfig = [
     'config_cache_path' => 'data/config-cache.php',
 ];
 
 $aggregator = new ConfigAggregator([
-    \Zend\Expressive\Router\ZendRouter\ConfigProvider::class,
-    \Zend\Expressive\Twig\ConfigProvider::class,
-    \Zend\Expressive\Helper\ConfigProvider::class,
-    \Zend\HttpHandlerRunner\ConfigProvider::class,
-    \Zend\Expressive\ConfigProvider::class,
-    \Zend\Expressive\Router\ConfigProvider::class,
-    \Zend\Serializer\ConfigProvider::class,
-    \Zend\Expressive\Session\Ext\ConfigProvider::class,
-    \Zend\Expressive\Csrf\ConfigProvider::class,
-    \Zend\Expressive\Session\ConfigProvider::class,
-    \Zend\I18n\ConfigProvider::class,
-    \Zend\Form\ConfigProvider::class,
-    \Zend\Hydrator\ConfigProvider::class,
-    \Zend\InputFilter\ConfigProvider::class,
-    \Zend\Filter\ConfigProvider::class,
-    \Zend\Cache\ConfigProvider::class,
-    \Zend\Session\ConfigProvider::class,
-    \Zend\Router\ConfigProvider::class,
-    \Zend\Validator\ConfigProvider::class,
+    \Mezzio\Session\Ext\ConfigProvider::class,
+    \Mezzio\Router\LaminasRouter\ConfigProvider::class,
+    \Laminas\Router\ConfigProvider::class,
+    \Mezzio\Csrf\ConfigProvider::class,
+    \Mezzio\Session\ConfigProvider::class,
+    \Mezzio\ConfigProvider::class,
+    \Laminas\HttpHandlerRunner\ConfigProvider::class,
+    \Laminas\Session\ConfigProvider::class,
+    \Laminas\Serializer\ConfigProvider::class,
+    \Laminas\I18n\ConfigProvider::class,
+    \Laminas\Form\ConfigProvider::class,
+    \Laminas\Hydrator\ConfigProvider::class,
+    \Laminas\InputFilter\ConfigProvider::class,
+    \Laminas\Filter\ConfigProvider::class,
+    \Laminas\Validator\ConfigProvider::class,
+    \Mezzio\Twig\ConfigProvider::class,
+    \Mezzio\Helper\ConfigProvider::class,
+    \Mezzio\Router\ConfigProvider::class,
+    \Laminas\Cache\ConfigProvider::class,
+    \Mezzio\Twig\ConfigProvider::class,
+    \Mezzio\Helper\ConfigProvider::class,
+    \Mezzio\ConfigProvider::class,
+    \Mezzio\Router\ConfigProvider::class,
+    \Mezzio\Session\Ext\ConfigProvider::class,
+    \Mezzio\Csrf\ConfigProvider::class,
+    \Mezzio\Session\ConfigProvider::class,
     // Include cache configuration
     new ArrayProvider($cacheConfig),
 

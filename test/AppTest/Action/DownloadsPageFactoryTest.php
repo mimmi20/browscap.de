@@ -13,10 +13,10 @@ namespace AppTest\Action;
 
 use App\Action\DownloadsPageAction;
 use App\Action\DownloadsPageFactory;
+use Mezzio\Router\RouterInterface;
+use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
-use Zend\Expressive\Router\RouterInterface;
-use Zend\Expressive\Template\TemplateRendererInterface;
 
 final class DownloadsPageFactoryTest extends TestCase
 {

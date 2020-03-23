@@ -1,21 +1,21 @@
 <?php
 
-use Zend\Expressive\Csrf\CsrfMiddleware;
-use Zend\Expressive\Helper\ServerUrlMiddleware;
-use Zend\Expressive\Helper\UrlHelperMiddleware;
-use Zend\Expressive\Router\Middleware\DispatchMiddleware;
-use Zend\Expressive\Router\Middleware\ImplicitHeadMiddleware;
-use Zend\Expressive\Router\Middleware\ImplicitOptionsMiddleware;
-use Zend\Expressive\Middleware\NotFoundHandler;
-use Zend\Expressive\Router\Middleware\RouteMiddleware;
-use Zend\Expressive\Session\SessionMiddleware;
-use Zend\Stratigility\Middleware\ErrorHandler;
+use Mezzio\Csrf\CsrfMiddleware;
+use Mezzio\Helper\ServerUrlMiddleware;
+use Mezzio\Helper\UrlHelperMiddleware;
+use Mezzio\Router\Middleware\DispatchMiddleware;
+use Mezzio\Router\Middleware\ImplicitHeadMiddleware;
+use Mezzio\Router\Middleware\ImplicitOptionsMiddleware;
+use Mezzio\Middleware\NotFoundHandler;
+use Mezzio\Router\Middleware\RouteMiddleware;
+use Mezzio\Session\SessionMiddleware;
+use Laminas\Stratigility\Middleware\ErrorHandler;
 
 /**
  * Setup middleware pipeline:
  */
 
-/** @var \Zend\Expressive\Application $app */
+/** @var \Mezzio\Application $app */
 
 // The error handler should be the first (most outer) middleware to catch
 // all Exceptions.
