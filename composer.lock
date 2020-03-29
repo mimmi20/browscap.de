@@ -2878,16 +2878,16 @@
         },
         {
             "name": "mezzio/mezzio-session-ext",
-            "version": "1.7.1",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mezzio/mezzio-session-ext.git",
-                "reference": "1baacbee109e74dd62b2fd8d052ffbcbc692a407"
+                "reference": "447360ce5b260f834588686e4d879fb3a9bf5860"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mezzio/mezzio-session-ext/zipball/1baacbee109e74dd62b2fd8d052ffbcbc692a407",
-                "reference": "1baacbee109e74dd62b2fd8d052ffbcbc692a407",
+                "url": "https://api.github.com/repos/mezzio/mezzio-session-ext/zipball/447360ce5b260f834588686e4d879fb3a9bf5860",
+                "reference": "447360ce5b260f834588686e4d879fb3a9bf5860",
                 "shasum": ""
             },
             "require": {
@@ -2901,7 +2901,7 @@
                 "phpspec/prophecy": "<1.7.2"
             },
             "replace": {
-                "zendframework/zend-expressive-session-ext": "self.version"
+                "zendframework/zend-expressive-session-ext": "^1.7.0"
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
@@ -2937,7 +2937,7 @@
                 "psr-7",
                 "session"
             ],
-            "time": "2020-03-19T19:52:10+00:00"
+            "time": "2020-03-28T22:18:16+00:00"
         },
         {
             "name": "mezzio/mezzio-template",
