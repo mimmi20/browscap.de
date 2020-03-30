@@ -2326,16 +2326,16 @@
         },
         {
             "name": "laminas/laminas-validator",
-            "version": "2.13.2",
+            "version": "2.13.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-validator.git",
-                "reference": "e7bf6a2eedc0508ebde0ebc66662efeb0abbcb2c"
+                "reference": "a4e57af743eb751a8e6fa75460e439841c97833e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-validator/zipball/e7bf6a2eedc0508ebde0ebc66662efeb0abbcb2c",
-                "reference": "e7bf6a2eedc0508ebde0ebc66662efeb0abbcb2c",
+                "url": "https://api.github.com/repos/laminas/laminas-validator/zipball/a4e57af743eb751a8e6fa75460e439841c97833e",
+                "reference": "a4e57af743eb751a8e6fa75460e439841c97833e",
                 "shasum": ""
             },
             "require": {
@@ -2345,7 +2345,7 @@
                 "php": "^7.1"
             },
             "replace": {
-                "zendframework/zend-validator": "self.version"
+                "zendframework/zend-validator": "^2.13.0"
             },
             "require-dev": {
                 "laminas/laminas-cache": "^2.6.1",
@@ -2401,7 +2401,7 @@
                 "laminas",
                 "validator"
             ],
-            "time": "2020-03-16T11:38:27+00:00"
+            "time": "2020-03-29T13:43:20+00:00"
         },
         {
             "name": "laminas/laminas-zendframework-bridge",
