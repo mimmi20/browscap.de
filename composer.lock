@@ -1323,16 +1323,16 @@
         },
         {
             "name": "laminas/laminas-form",
-            "version": "2.14.4",
+            "version": "2.14.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-form.git",
-                "reference": "8b985f74bfe32910edb4ba9503877c4310228cd2"
+                "reference": "3e22e09751cf6ae031be87a44e092e7925ce5b7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-form/zipball/8b985f74bfe32910edb4ba9503877c4310228cd2",
-                "reference": "8b985f74bfe32910edb4ba9503877c4310228cd2",
+                "url": "https://api.github.com/repos/laminas/laminas-form/zipball/3e22e09751cf6ae031be87a44e092e7925ce5b7b",
+                "reference": "3e22e09751cf6ae031be87a44e092e7925ce5b7b",
                 "shasum": ""
             },
             "require": {
@@ -1343,7 +1343,7 @@
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
-                "zendframework/zend-form": "self.version"
+                "zendframework/zend-form": "^2.14.3"
             },
             "require-dev": {
                 "doctrine/annotations": "~1.0",
@@ -1401,7 +1401,7 @@
                 "form",
                 "laminas"
             ],
-            "time": "2020-03-18T22:38:54+00:00"
+            "time": "2020-03-29T12:46:16+00:00"
         },
         {
             "name": "laminas/laminas-http",
