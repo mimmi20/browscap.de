@@ -76,9 +76,11 @@
   "prefer-stable": true,
   "scripts": {
     "post-install-cmd": [
+      "@clear-config-cache",
       "@update-browscap-cache"
     ],
     "post-update-cmd": [
+      "@clear-config-cache",
       "@update-browscap-cache"
     ],
     "post-create-project-cmd": [
