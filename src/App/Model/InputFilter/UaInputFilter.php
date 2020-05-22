@@ -17,10 +17,12 @@ use Laminas\InputFilter\InputFilter;
 use Laminas\Validator\NotEmpty;
 use Laminas\Validator\StringLength;
 
-class UaInputFilter extends InputFilter
+final class UaInputFilter extends InputFilter implements UaInputFilterInterface
 {
     /**
      * Init input filter
+     *
+     * @return void
      */
     public function init(): void
     {
@@ -40,9 +42,7 @@ class UaInputFilter extends InputFilter
                     [
                         'name' => NotEmpty::class,
                         'break_chain_on_failure' => true,
-                        'options' => [
-                            'message' => 'Please insert a user agent!',
-                        ],
+                        'options' => ['message' => 'Please insert a user agent!'],
                     ],
                     [
                         'name' => StringLength::class,
@@ -71,9 +71,7 @@ class UaInputFilter extends InputFilter
                     [
                         'name' => NotEmpty::class,
                         'break_chain_on_failure' => true,
-                        'options' => [
-                            'message' => 'the CSRF token is missing!',
-                        ],
+                        'options' => ['message' => 'the CSRF token is missing!'],
                     ],
                 ],
             ]

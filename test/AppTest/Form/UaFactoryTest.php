@@ -13,7 +13,7 @@ namespace AppTest\Form;
 
 use App\Form\UaFactory;
 use App\Form\UaForm;
-use App\Model\InputFilter\UaInputFilter;
+use App\Model\InputFilter\UaInputFilterInterface;
 use Mezzio\Router\RouterInterface;
 use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
@@ -27,6 +27,8 @@ final class UaFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     protected function setUp(): void
     {
@@ -35,13 +37,15 @@ final class UaFactoryTest extends TestCase
 
         $this->container->get(RouterInterface::class)->willReturn($router);
         $this->container
-            ->get(UaInputFilter::class)
-            ->willReturn($this->prophesize(UaInputFilter::class));
+            ->get(UaInputFilterInterface::class)
+            ->willReturn($this->prophesize(UaInputFilterInterface::class));
     }
 
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     public function testFactoryWithTemplate(): void
     {
@@ -50,10 +54,10 @@ final class UaFactoryTest extends TestCase
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
-        static::assertInstanceOf(UaFactory::class, $factory);
+        self::assertInstanceOf(UaFactory::class, $factory);
 
-        $Ua = $factory($this->container->reveal());
+        $uaForm = $factory($this->container->reveal());
 
-        static::assertInstanceOf(UaForm::class, $Ua);
+        self::assertInstanceOf(UaForm::class, $uaForm);
     }
 }

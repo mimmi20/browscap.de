@@ -19,6 +19,9 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 final class PingActionTest extends TestCase
 {
+    /**
+     * @return void
+     */
     public function testResponse(): void
     {
         $pingAction = new PingAction();
@@ -29,7 +32,7 @@ final class PingActionTest extends TestCase
 
         $json = json_decode((string) $response->getBody());
 
-        static::assertInstanceOf(JsonResponse::class, $response);
-        static::assertTrue(isset($json->ack));
+        self::assertInstanceOf(JsonResponse::class, $response);
+        self::assertTrue(isset($json->ack));
     }
 }

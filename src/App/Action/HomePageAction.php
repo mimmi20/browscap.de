@@ -12,7 +12,6 @@ declare(strict_types = 1);
 namespace App\Action;
 
 use Laminas\Diactoros\Response\HtmlResponse;
-use Mezzio\Router;
 use Mezzio\Template;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -21,27 +20,15 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 final class HomePageAction implements MiddlewareInterface
 {
-    /**
-     * @var \Mezzio\Router\RouterInterface
-     */
-    private $router;
-
-    /**
-     * @var \Mezzio\Template\TemplateRendererInterface
-     */
+    /** @var \Mezzio\Template\TemplateRendererInterface */
     private $template;
-
     use BrowscapVersionTrait;
 
     /**
-     * HomePageAction constructor.
-     *
-     * @param \Mezzio\Router\RouterInterface             $router
      * @param \Mezzio\Template\TemplateRendererInterface $template
      */
-    public function __construct(Router\RouterInterface $router, Template\TemplateRendererInterface $template)
+    public function __construct(Template\TemplateRendererInterface $template)
     {
-        $this->router   = $router;
         $this->template = $template;
     }
 

@@ -26,6 +26,8 @@ final class DownloadsPageFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     protected function setUp(): void
     {
@@ -38,6 +40,8 @@ final class DownloadsPageFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     public function testFactoryWithTemplate(): void
     {
@@ -46,10 +50,10 @@ final class DownloadsPageFactoryTest extends TestCase
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
-        static::assertInstanceOf(DownloadsPageFactory::class, $factory);
+        self::assertInstanceOf(DownloadsPageFactory::class, $factory);
 
-        $DownloadsPage = $factory($this->container->reveal());
+        $downloadsPage = $factory($this->container->reveal());
 
-        static::assertInstanceOf(DownloadsPageAction::class, $DownloadsPage);
+        self::assertInstanceOf(DownloadsPageAction::class, $downloadsPage);
     }
 }

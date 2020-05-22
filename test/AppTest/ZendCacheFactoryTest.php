@@ -24,6 +24,8 @@ final class ZendCacheFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     protected function setUp(): void
     {
@@ -33,15 +35,17 @@ final class ZendCacheFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     public function testFactoryWithTemplate(): void
     {
         $factory = new ZendCacheFactory();
 
-        static::assertInstanceOf(ZendCacheFactory::class, $factory);
+        self::assertInstanceOf(ZendCacheFactory::class, $factory);
 
-        $ZendCache = $factory($this->container->reveal());
+        $zendCache = $factory($this->container->reveal());
 
-        static::assertInstanceOf(Filesystem::class, $ZendCache);
+        self::assertInstanceOf(Filesystem::class, $zendCache);
     }
 }

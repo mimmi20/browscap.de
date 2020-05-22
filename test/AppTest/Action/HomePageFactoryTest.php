@@ -26,6 +26,8 @@ final class HomePageFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     protected function setUp(): void
     {
@@ -38,6 +40,8 @@ final class HomePageFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     public function testFactoryWithTemplate(): void
     {
@@ -46,10 +50,10 @@ final class HomePageFactoryTest extends TestCase
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
-        static::assertInstanceOf(HomePageFactory::class, $factory);
+        self::assertInstanceOf(HomePageFactory::class, $factory);
 
         $homePage = $factory($this->container->reveal());
 
-        static::assertInstanceOf(HomePageAction::class, $homePage);
+        self::assertInstanceOf(HomePageAction::class, $homePage);
     }
 }

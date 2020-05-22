@@ -11,7 +11,6 @@
 declare(strict_types = 1);
 namespace App\Action;
 
-use Mezzio\Router\RouterInterface;
 use Mezzio\Template\TemplateRendererInterface;
 use Psr\Container\ContainerInterface;
 
@@ -27,9 +26,8 @@ final class CapabilitiesPageFactory
      */
     public function __invoke(ContainerInterface $container): CapabilitiesPageAction
     {
-        $router   = $container->get(RouterInterface::class);
         $template = $container->get(TemplateRendererInterface::class);
 
-        return new CapabilitiesPageAction($router, $template);
+        return new CapabilitiesPageAction($template);
     }
 }

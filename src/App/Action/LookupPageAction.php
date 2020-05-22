@@ -11,11 +11,12 @@
 declare(strict_types = 1);
 namespace App\Action;
 
-use App\Form\UaForm;
+use App\Form\UaFormInterface;
 use BrowscapPHP\BrowscapInterface;
 use Laminas\Diactoros\Response\EmptyResponse;
 use Laminas\Diactoros\Response\HtmlResponse;
 use Laminas\Diactoros\Response\RedirectResponse;
+use Mezzio\Csrf\CsrfGuardInterface;
 use Mezzio\Csrf\CsrfMiddleware;
 use Mezzio\Router;
 use Mezzio\Template;
@@ -28,41 +29,29 @@ use UaRequest\GenericRequestFactory;
 
 final class LookupPageAction implements MiddlewareInterface
 {
-    /**
-     * @var \Mezzio\Router\RouterInterface
-     */
+    /** @var \Mezzio\Router\RouterInterface */
     private $router;
 
-    /**
-     * @var \Mezzio\Template\TemplateRendererInterface
-     */
+    /** @var \Mezzio\Template\TemplateRendererInterface */
     private $template;
 
-    /**
-     * @var \App\Form\UaForm
-     */
+    /** @var \App\Form\UaFormInterface */
     private $form;
 
-    /**
-     * @var \BrowscapPHP\BrowscapInterface
-     */
+    /** @var \BrowscapPHP\BrowscapInterface */
     private $browscap;
 
-    /**
-     * @var \Psr\Log\LoggerInterface
-     */
+    /** @var \Psr\Log\LoggerInterface */
     private $logger;
 
     /**
-     * LookupPageAction constructor.
-     *
      * @param \Mezzio\Router\RouterInterface             $router
      * @param \Mezzio\Template\TemplateRendererInterface $template
-     * @param \App\Form\UaForm                           $form
+     * @param \App\Form\UaFormInterface                  $form
      * @param \BrowscapPHP\BrowscapInterface             $browscap
      * @param \Psr\Log\LoggerInterface                   $logger
      */
-    public function __construct(Router\RouterInterface $router, Template\TemplateRendererInterface $template, UaForm $form, BrowscapInterface $browscap, LoggerInterface $logger)
+    public function __construct(Router\RouterInterface $router, Template\TemplateRendererInterface $template, UaFormInterface $form, BrowscapInterface $browscap, LoggerInterface $logger)
     {
         $this->router   = $router;
         $this->template = $template;
@@ -79,8 +68,8 @@ final class LookupPageAction implements MiddlewareInterface
      */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        /** @var \Mezzio\Csrf\CsrfGuardInterface $guard */
         $guard = $request->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE);
+        \assert($guard instanceof CsrfGuardInterface, sprintf('$guard should be an instance of %s, but is %s', CsrfGuardInterface::class, get_class($guard)));
 
         if ('POST' === $request->getMethod()) {
             $data = (array) $request->getParsedBody();
@@ -107,7 +96,7 @@ final class LookupPageAction implements MiddlewareInterface
 
             try {
                 $detectedResult = $this->browscap->getBrowser($ua);
-            } catch (\Exception $e) {
+            } catch (\Throwable $e) {
                 $this->logger->error($e);
 
                 return new EmptyResponse(500);
@@ -125,6 +114,7 @@ final class LookupPageAction implements MiddlewareInterface
                     $result[$key] = $value;
                 }
             }
+
             $headers      = [];
             $otherHeaders = [];
             $showHeaders  = false;

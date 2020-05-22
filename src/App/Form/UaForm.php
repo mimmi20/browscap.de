@@ -16,7 +16,7 @@ use Laminas\Form\Element\Submit;
 use Laminas\Form\Element\Text;
 use Laminas\Form\Form;
 
-class UaForm extends Form
+final class UaForm extends Form implements UaFormInterface
 {
     /**
      * Add form elements
@@ -34,13 +34,9 @@ class UaForm extends Form
                 'type' => Text::class,
                 'options' => [
                     'label' => 'Name des Restaurants',
-                    'label_attributes' => [
-                        'class' => 'col-sm-4 control-label',
-                    ],
+                    'label_attributes' => ['class' => 'col-sm-4 control-label'],
                 ],
-                'attributes' => [
-                    'class' => 'form-control',
-                ],
+                'attributes' => ['class' => 'form-control'],
             ]
         );
 

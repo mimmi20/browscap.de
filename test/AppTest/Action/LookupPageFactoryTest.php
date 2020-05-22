@@ -13,7 +13,7 @@ namespace AppTest\Action;
 
 use App\Action\LookupPageAction;
 use App\Action\LookupPageFactory;
-use App\Form\UaForm;
+use App\Form\UaFormInterface;
 use BrowscapPHP\BrowscapInterface;
 use Mezzio\Router\RouterInterface;
 use Mezzio\Template\TemplateRendererInterface;
@@ -29,6 +29,8 @@ final class LookupPageFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     protected function setUp(): void
     {
@@ -38,8 +40,8 @@ final class LookupPageFactoryTest extends TestCase
         $this->container->get(RouterInterface::class)->willReturn($router);
 
         $this->container
-            ->get(UaForm::class)
-            ->willReturn($this->prophesize(UaForm::class));
+            ->get(UaFormInterface::class)
+            ->willReturn($this->prophesize(UaFormInterface::class));
 
         $this->container
             ->get(BrowscapInterface::class)
@@ -53,6 +55,8 @@ final class LookupPageFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     public function testFactoryWithTemplate(): void
     {
@@ -61,10 +65,10 @@ final class LookupPageFactoryTest extends TestCase
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
-        static::assertInstanceOf(LookupPageFactory::class, $factory);
+        self::assertInstanceOf(LookupPageFactory::class, $factory);
 
         $homePage = $factory($this->container->reveal());
 
-        static::assertInstanceOf(LookupPageAction::class, $homePage);
+        self::assertInstanceOf(LookupPageAction::class, $homePage);
     }
 }

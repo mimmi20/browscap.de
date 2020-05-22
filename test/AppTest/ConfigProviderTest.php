@@ -20,47 +20,53 @@ final class ConfigProviderTest extends TestCase
      * @throws \Exception
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     public function testInvoke(): void
     {
         $factory = new ConfigProvider();
 
-        static::assertInstanceOf(ConfigProvider::class, $factory);
+        self::assertInstanceOf(ConfigProvider::class, $factory);
 
         $array = $factory();
 
-        static::assertIsArray($array);
+        self::assertIsArray($array);
     }
 
     /**
      * @throws \Exception
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     public function testGetDependencies(): void
     {
         $factory = new ConfigProvider();
 
-        static::assertInstanceOf(ConfigProvider::class, $factory);
+        self::assertInstanceOf(ConfigProvider::class, $factory);
 
         $array = $factory->getDependencies();
 
-        static::assertIsArray($array);
+        self::assertIsArray($array);
     }
 
     /**
      * @throws \Exception
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     public function testGetTemplates(): void
     {
         $factory = new ConfigProvider();
 
-        static::assertInstanceOf(ConfigProvider::class, $factory);
+        self::assertInstanceOf(ConfigProvider::class, $factory);
 
         $array = $factory->getTemplates();
 
-        static::assertIsArray($array);
+        self::assertIsArray($array);
     }
 }

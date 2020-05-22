@@ -13,7 +13,6 @@ namespace AppTest\Action;
 
 use App\Action\CapabilitiesPageAction;
 use Laminas\Diactoros\Response\HtmlResponse;
-use Mezzio\Router\RouterInterface;
 use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
@@ -21,18 +20,9 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 final class CapabilitiesPageActionTest extends TestCase
 {
-    /** @var \Mezzio\Router\RouterInterface|\Prophecy\Prophecy\ObjectProphecy */
-    private $router;
-
-    /** @var \Mezzio\Template\TemplateRendererInterface|\Prophecy\Prophecy\ObjectProphecy */
-    private $template;
-
-    protected function setUp(): void
-    {
-        $this->router   = $this->prophesize(RouterInterface::class);
-        $this->template = $this->prophesize(TemplateRendererInterface::class);
-    }
-
+    /**
+     * @return void
+     */
     public function testReturnsHtmlResponseWhenTemplateRendererProvided(): void
     {
         $capabilities = json_decode((string) file_get_contents(__DIR__ . '/../../../src/App/data/capabilities.json'), true);
@@ -42,13 +32,13 @@ final class CapabilitiesPageActionTest extends TestCase
             ->render('app::capabilities-page', ['capabilities' => $capabilities])
             ->willReturn('');
 
-        $CapabilitiesPage = new CapabilitiesPageAction($this->router->reveal(), $renderer->reveal());
+        $capabilitiesPage = new CapabilitiesPageAction($renderer->reveal());
 
-        $response = $CapabilitiesPage->process(
+        $response = $capabilitiesPage->process(
             $this->prophesize(ServerRequestInterface::class)->reveal(),
             $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
-        static::assertInstanceOf(HtmlResponse::class, $response);
+        self::assertInstanceOf(HtmlResponse::class, $response);
     }
 }

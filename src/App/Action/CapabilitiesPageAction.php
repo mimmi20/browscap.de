@@ -12,7 +12,6 @@ declare(strict_types = 1);
 namespace App\Action;
 
 use Laminas\Diactoros\Response\HtmlResponse;
-use Mezzio\Router\RouterInterface;
 use Mezzio\Template\TemplateRendererInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -21,25 +20,14 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 final class CapabilitiesPageAction implements MiddlewareInterface
 {
-    /**
-     * @var \Mezzio\Router\RouterInterface
-     */
-    private $router;
-
-    /**
-     * @var \Mezzio\Template\TemplateRendererInterface
-     */
+    /** @var \Mezzio\Template\TemplateRendererInterface */
     private $template;
 
     /**
-     * CapabilitiesPageAction constructor.
-     *
-     * @param \Mezzio\Router\RouterInterface             $router
      * @param \Mezzio\Template\TemplateRendererInterface $template
      */
-    public function __construct(RouterInterface $router, TemplateRendererInterface $template)
+    public function __construct(TemplateRendererInterface $template)
     {
-        $this->router   = $router;
         $this->template = $template;
     }
 
@@ -56,9 +44,7 @@ final class CapabilitiesPageAction implements MiddlewareInterface
         return new HtmlResponse(
             $this->template->render(
                 'app::capabilities-page',
-                [
-                    'capabilities' => $capabilities,
-                ]
+                ['capabilities' => $capabilities]
             )
         );
     }

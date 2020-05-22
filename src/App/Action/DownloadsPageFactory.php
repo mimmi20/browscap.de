@@ -11,7 +11,6 @@
 declare(strict_types = 1);
 namespace App\Action;
 
-use Mezzio\Router\RouterInterface;
 use Mezzio\Template\TemplateRendererInterface;
 use Psr\Container\ContainerInterface;
 
@@ -27,9 +26,8 @@ final class DownloadsPageFactory
      */
     public function __invoke(ContainerInterface $container): DownloadsPageAction
     {
-        $router   = $container->get(RouterInterface::class);
         $template = $container->get(TemplateRendererInterface::class);
 
-        return new DownloadsPageAction($router, $template);
+        return new DownloadsPageAction($template);
     }
 }

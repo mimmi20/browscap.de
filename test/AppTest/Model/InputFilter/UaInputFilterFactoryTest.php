@@ -11,8 +11,8 @@
 declare(strict_types = 1);
 namespace AppTest\Model\InputFilter;
 
-use App\Model\InputFilter\UaInputFilter;
 use App\Model\InputFilter\UaInputFilterFactory;
+use App\Model\InputFilter\UaInputFilterInterface;
 use Mezzio\Router\RouterInterface;
 use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
@@ -26,6 +26,8 @@ final class UaInputFilterFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     protected function setUp(): void
     {
@@ -38,6 +40,8 @@ final class UaInputFilterFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     public function testFactoryWithTemplate(): void
     {
@@ -46,10 +50,10 @@ final class UaInputFilterFactoryTest extends TestCase
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
-        static::assertInstanceOf(UaInputFilterFactory::class, $factory);
+        self::assertInstanceOf(UaInputFilterFactory::class, $factory);
 
-        $UaInputFilter = $factory($this->container->reveal());
+        $uaInputFilter = $factory($this->container->reveal());
 
-        static::assertInstanceOf(UaInputFilter::class, $UaInputFilter);
+        self::assertInstanceOf(UaInputFilterInterface::class, $uaInputFilter);
     }
 }

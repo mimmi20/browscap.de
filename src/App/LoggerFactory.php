@@ -38,12 +38,12 @@ final class LoggerFactory
         $stream = new StreamHandler('data/error.log', Logger::INFO);
         $stream->setFormatter(new LineFormatter('[%datetime%] %message% %extra%' . PHP_EOL));
 
-        /** @var callable $memoryProcessor */
         $memoryProcessor = new MemoryUsageProcessor(true);
+        \assert(\is_callable($memoryProcessor));
         $logger->pushProcessor($memoryProcessor);
 
-        /** @var callable $peakMemoryProcessor */
         $peakMemoryProcessor = new MemoryPeakUsageProcessor(true);
+        \assert(\is_callable($peakMemoryProcessor));
         $logger->pushProcessor($peakMemoryProcessor);
 
         $logger->pushHandler($stream);

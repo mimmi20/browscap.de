@@ -26,6 +26,8 @@ final class BrowscapFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     protected function setUp(): void
     {
@@ -43,15 +45,17 @@ final class BrowscapFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     public function testFactoryWithTemplate(): void
     {
         $factory = new BrowscapFactory();
 
-        static::assertInstanceOf(BrowscapFactory::class, $factory);
+        self::assertInstanceOf(BrowscapFactory::class, $factory);
 
         $browscap = $factory($this->container->reveal());
 
-        static::assertInstanceOf(BrowscapInterface::class, $browscap);
+        self::assertInstanceOf(BrowscapInterface::class, $browscap);
     }
 }

@@ -24,6 +24,8 @@ final class LoggerFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     protected function setUp(): void
     {
@@ -34,15 +36,17 @@ final class LoggerFactoryTest extends TestCase
      * @throws \Exception
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     public function testFactoryWithTemplate(): void
     {
         $factory = new LoggerFactory();
 
-        static::assertInstanceOf(LoggerFactory::class, $factory);
+        self::assertInstanceOf(LoggerFactory::class, $factory);
 
         $logger = $factory($this->container->reveal());
 
-        static::assertInstanceOf(LoggerInterface::class, $logger);
+        self::assertInstanceOf(LoggerInterface::class, $logger);
     }
 }

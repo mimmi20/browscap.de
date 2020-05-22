@@ -11,7 +11,7 @@
 declare(strict_types = 1);
 namespace App\Action;
 
-use App\Form\UaForm;
+use App\Form\UaFormInterface;
 use BrowscapPHP\BrowscapInterface;
 use Mezzio\Router\RouterInterface;
 use Mezzio\Template\TemplateRendererInterface;
@@ -32,7 +32,7 @@ final class LookupPageFactory
     {
         $router   = $container->get(RouterInterface::class);
         $template = $container->get(TemplateRendererInterface::class);
-        $form     = $container->get(UaForm::class);
+        $form     = $container->get(UaFormInterface::class);
         $browscap = $container->get(BrowscapInterface::class);
         $logger   = $container->get(LoggerInterface::class);
 

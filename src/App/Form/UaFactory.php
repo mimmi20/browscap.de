@@ -11,7 +11,7 @@
 declare(strict_types = 1);
 namespace App\Form;
 
-use App\Model\InputFilter\UaInputFilter;
+use App\Model\InputFilter\UaInputFilterInterface;
 use Psr\Container\ContainerInterface;
 
 final class UaFactory
@@ -26,7 +26,7 @@ final class UaFactory
      */
     public function __invoke(ContainerInterface $container): UaForm
     {
-        $inputFilter = $container->get(UaInputFilter::class);
+        $inputFilter = $container->get(UaInputFilterInterface::class);
 
         $form = new UaForm();
         $form->setInputFilter($inputFilter);

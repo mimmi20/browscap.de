@@ -17,8 +17,10 @@ parameters:
     - '~is not subtype of Throwable~'
 #    - '~ObjectProphecy~'
 #    - '~object given~'
-    - '~expects string, Exception given~'
+    - '~expects string, Throwable given~'
 #    - '~Cannot call method willReturn\(\) on string~'
+    - '~Call to function assert\(\) with true will always evaluate to true~'
+    - '~Call to function is_callable\(\) with.*Monolog\\Processor\\.*Processor will always evaluate to true~'
   checkMissingIterableValueType: false
 
 includes:
@@ -28,4 +30,4 @@ includes:
   #- vendor/pepakriz/phpstan-exception-rules/extension.neon
   - vendor/phpstan/phpstan-deprecation-rules/rules.neon
   - vendor/phpstan/phpstan-beberlei-assert/extension.neon
-  - vendor/jangregor/phpstan-prophecy/src/extension.neon
+  - vendor/jangregor/phpstan-prophecy/extension.neon

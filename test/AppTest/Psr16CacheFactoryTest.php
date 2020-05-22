@@ -25,6 +25,8 @@ final class Psr16CacheFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     protected function setUp(): void
     {
@@ -38,15 +40,17 @@ final class Psr16CacheFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     public function testFactoryWithTemplate(): void
     {
         $factory = new Psr16CacheFactory();
 
-        static::assertInstanceOf(Psr16CacheFactory::class, $factory);
+        self::assertInstanceOf(Psr16CacheFactory::class, $factory);
 
-        $Psr16Cache = $factory($this->container->reveal());
+        $psr16Cache = $factory($this->container->reveal());
 
-        static::assertInstanceOf(SimpleCache::class, $Psr16Cache);
+        self::assertInstanceOf(SimpleCache::class, $psr16Cache);
     }
 }

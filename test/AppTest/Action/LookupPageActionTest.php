@@ -12,7 +12,7 @@ declare(strict_types = 1);
 namespace AppTest\Action;
 
 use App\Action\LookupPageAction;
-use App\Form\UaForm;
+use App\Form\UaFormInterface;
 use BrowscapPHP\BrowscapInterface;
 use Laminas\Diactoros\Response\EmptyResponse;
 use Laminas\Diactoros\Response\HtmlResponse;
@@ -31,15 +31,17 @@ final class LookupPageActionTest extends TestCase
     /** @var \Mezzio\Router\RouterInterface|\Prophecy\Prophecy\ObjectProphecy */
     private $router;
 
-    /** @var \Mezzio\Template\TemplateRendererInterface|\Prophecy\Prophecy\ObjectProphecy */
-    private $template;
-
+    /**
+     * @return void
+     */
     protected function setUp(): void
     {
-        $this->router   = $this->prophesize(RouterInterface::class);
-        $this->template = $this->prophesize(TemplateRendererInterface::class);
+        $this->router = $this->prophesize(RouterInterface::class);
     }
 
+    /**
+     * @return void
+     */
     public function testReturnsEmptyResponseWhenNoSupportedMethodWasUsed(): void
     {
         $renderer = $this->prophesize(TemplateRendererInterface::class);
@@ -51,22 +53,43 @@ final class LookupPageActionTest extends TestCase
             ->generateUri('ua-lookup')
             ->willReturn('');
 
+        $request = $this->prophesize(ServerRequestInterface::class);
+        $request
+            ->getMethod()
+            ->willReturn('');
+
+        $secret = 'secret';
+        $guard  = $this->prophesize(CsrfGuardInterface::class);
+        $guard
+            ->validateToken($secret)
+            ->willReturn(false);
+        $request
+            ->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE)
+            ->willReturn($guard);
+        $body = ['__csrf' => $secret];
+        $request
+            ->getParsedBody()
+            ->willReturn($body);
+
         $homePage = new LookupPageAction(
             $this->router->reveal(),
             $renderer->reveal(),
-            $this->prophesize(UaForm::class)->reveal(),
+            $this->prophesize(UaFormInterface::class)->reveal(),
             $this->prophesize(BrowscapInterface::class)->reveal(),
             $this->prophesize(LoggerInterface::class)->reveal()
         );
 
         $response = $homePage->process(
-            $this->prophesize(ServerRequestInterface::class)->reveal(),
+            $request->reveal(),
             $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
-        static::assertInstanceOf(EmptyResponse::class, $response);
+        self::assertInstanceOf(EmptyResponse::class, $response);
     }
 
+    /**
+     * @return void
+     */
     public function testReturnsRedirectResponseWhenFormIsInvalid(): void
     {
         $renderer = $this->prophesize(TemplateRendererInterface::class);
@@ -83,16 +106,20 @@ final class LookupPageActionTest extends TestCase
             ->getMethod()
             ->willReturn('POST');
 
-        $guard = 'secret';
+        $secret = 'secret';
+        $guard  = $this->prophesize(CsrfGuardInterface::class);
+        $guard
+            ->validateToken($secret)
+            ->willReturn(false);
         $request
             ->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE)
             ->willReturn($guard);
-        $body = ['__csrf' => $guard];
+        $body = ['__csrf' => $secret];
         $request
             ->getParsedBody()
             ->willReturn($body);
 
-        $form = $this->prophesize(UaForm::class);
+        $form = $this->prophesize(UaFormInterface::class);
         $form
             ->isValid()
             ->willReturn(false);
@@ -114,9 +141,12 @@ final class LookupPageActionTest extends TestCase
             $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
-        static::assertInstanceOf(RedirectResponse::class, $response);
+        self::assertInstanceOf(RedirectResponse::class, $response);
     }
 
+    /**
+     * @return void
+     */
     public function testReturnsRedirectResponseWhenGuardIsInvalid(): void
     {
         $renderer = $this->prophesize(TemplateRendererInterface::class);
@@ -147,7 +177,7 @@ final class LookupPageActionTest extends TestCase
             ->getParsedBody()
             ->willReturn($body);
 
-        $form = $this->prophesize(UaForm::class);
+        $form = $this->prophesize(UaFormInterface::class);
         $form
             ->isValid()
             ->willReturn(true);
@@ -169,9 +199,12 @@ final class LookupPageActionTest extends TestCase
             $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
-        static::assertInstanceOf(RedirectResponse::class, $response);
+        self::assertInstanceOf(RedirectResponse::class, $response);
     }
 
+    /**
+     * @return void
+     */
     public function testReturnsRedirectResponseWhenBrowscapThrowsException(): void
     {
         $renderer = $this->prophesize(TemplateRendererInterface::class);
@@ -205,7 +238,7 @@ final class LookupPageActionTest extends TestCase
             ->getParsedBody()
             ->willReturn($body);
 
-        $form = $this->prophesize(UaForm::class);
+        $form = $this->prophesize(UaFormInterface::class);
         $form
             ->isValid()
             ->willReturn(true);
@@ -232,9 +265,12 @@ final class LookupPageActionTest extends TestCase
             $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
-        static::assertInstanceOf(EmptyResponse::class, $response);
+        self::assertInstanceOf(EmptyResponse::class, $response);
     }
 
+    /**
+     * @return void
+     */
     public function testReturnsHtmlResponseOnPost(): void
     {
         $this->router
@@ -264,7 +300,7 @@ final class LookupPageActionTest extends TestCase
             ->getParsedBody()
             ->willReturn($body);
 
-        $form = $this->prophesize(UaForm::class);
+        $form = $this->prophesize(UaFormInterface::class);
         $form
             ->isValid()
             ->willReturn(true);
@@ -323,9 +359,12 @@ final class LookupPageActionTest extends TestCase
             $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
-        static::assertInstanceOf(HtmlResponse::class, $response);
+        self::assertInstanceOf(HtmlResponse::class, $response);
     }
 
+    /**
+     * @return void
+     */
     public function testReturnsHtmlResponseOnGet(): void
     {
         $this->router
@@ -358,7 +397,7 @@ final class LookupPageActionTest extends TestCase
             ->getHeaders()
             ->willReturn([]);
 
-        $form = $this->prophesize(UaForm::class);
+        $form = $this->prophesize(UaFormInterface::class);
         $form
             ->isValid()
             ->willReturn(true);
@@ -413,6 +452,6 @@ final class LookupPageActionTest extends TestCase
             $this->prophesize(RequestHandlerInterface::class)->reveal()
         );
 
-        static::assertInstanceOf(HtmlResponse::class, $response);
+        self::assertInstanceOf(HtmlResponse::class, $response);
     }
 }

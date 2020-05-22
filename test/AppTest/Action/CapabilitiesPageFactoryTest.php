@@ -26,6 +26,8 @@ final class CapabilitiesPageFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     protected function setUp(): void
     {
@@ -38,6 +40,8 @@ final class CapabilitiesPageFactoryTest extends TestCase
     /**
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return void
      */
     public function testFactoryWithTemplate(): void
     {
@@ -46,10 +50,10 @@ final class CapabilitiesPageFactoryTest extends TestCase
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
-        static::assertInstanceOf(CapabilitiesPageFactory::class, $factory);
+        self::assertInstanceOf(CapabilitiesPageFactory::class, $factory);
 
-        $CapabilitiesPage = $factory($this->container->reveal());
+        $capabilitiesPage = $factory($this->container->reveal());
 
-        static::assertInstanceOf(CapabilitiesPageAction::class, $CapabilitiesPage);
+        self::assertInstanceOf(CapabilitiesPageAction::class, $capabilitiesPage);
     }
 }
