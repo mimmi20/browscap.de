@@ -11,7 +11,7 @@
     "browscap/browscap": "^6.0.38",
     "browscap/browscap-php": "^4.2.2 || ^5.0.0",
     "laminas/laminas-cache": "^2.9.0",
-    "laminas/laminas-component-installer": "~2.1.2",
+    "laminas/laminas-component-installer": "~2.2.0",
     "laminas/laminas-config-aggregator": "~1.2.2",
     "laminas/laminas-filter": "~2.9.4",
     "laminas/laminas-form": "~2.14.5",
