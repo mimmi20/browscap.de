@@ -21,6 +21,8 @@ trait BrowscapVersionTrait
      *
      * There are three digits for each version, so 001002003 becomes 1002003 when cast to int to drop the leading zeros
      *
+     * @throws \PackageInfo\Exception\PackageNotInstalledException
+     *
      * @return int
      */
     private function getBrowscapVersion(): int

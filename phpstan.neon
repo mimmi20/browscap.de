@@ -6,7 +6,7 @@ parameters:
   paths:
     - src
     - test
-  autoload_files:
+  scanFiles:
     - %currentWorkingDirectory%/vendor/autoload.php
     - %currentWorkingDirectory%/vendor/squizlabs/php_codesniffer/autoload.php
     - %currentWorkingDirectory%/vendor/squizlabs/php_codesniffer/src/Util/Tokens.php
@@ -24,4 +24,9 @@ parameters:
 #    - '~Cannot call method willReturn\(\) on string~'
     - '~Call to function assert\(\) with true will always evaluate to true~'
     - '~Call to function is_callable\(\) with.*Monolog\\Processor\\.*Processor will always evaluate to true~'
+    - '~Method .* has a parameter .* with a type declaration of Psr\\Container\\ContainerInterface, but containers should not be injected~'
+#    - '~PHPDoc tag \@throws with type .* is not compatible with parent~'
+    - '~Call to static method PHPUnit\\Framework\\Assert::assert.*\(\) with .* will always evaluate to true~'
+    - '~Language construct isset\(\) should not be used~'
+    - '~Class ".*" is not allowed to extend ".*"~'
   checkMissingIterableValueType: false

@@ -35,6 +35,8 @@ final class CapabilitiesPageAction implements MiddlewareInterface
      * @param \Psr\Http\Message\ServerRequestInterface $request
      * @param \Psr\Http\Server\RequestHandlerInterface $handler
      *
+     * @throws \Laminas\Diactoros\Exception\InvalidArgumentException
+     *
      * @return \Psr\Http\Message\ResponseInterface
      */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
