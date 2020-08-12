@@ -14,6 +14,7 @@
         <exclude name="Squiz.Arrays.ArrayDeclaration.NoKeySpecified"/>
     </rule>
 
+    <!-- Paths to check -->
     <file>src</file>
     <file>test</file>
 </ruleset>

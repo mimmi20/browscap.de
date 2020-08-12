@@ -1,5 +1,8 @@
 parameters:
   level: max
+  parallel:
+    maximumNumberOfProcesses: 1
+    processTimeout: 200.0
   paths:
     - src
     - test
@@ -22,12 +25,3 @@ parameters:
     - '~Call to function assert\(\) with true will always evaluate to true~'
     - '~Call to function is_callable\(\) with.*Monolog\\Processor\\.*Processor will always evaluate to true~'
   checkMissingIterableValueType: false
-
-includes:
-  - vendor/phpstan/phpstan-strict-rules/rules.neon
-  #- vendor/phpstan/phpstan-phpunit/extension.neon
-  #- vendor/phpstan/phpstan-phpunit/rules.neon
-  #- vendor/pepakriz/phpstan-exception-rules/extension.neon
-  - vendor/phpstan/phpstan-deprecation-rules/rules.neon
-  - vendor/phpstan/phpstan-beberlei-assert/extension.neon
-  - vendor/jangregor/phpstan-prophecy/extension.neon

@@ -8,7 +8,7 @@ name: "Continuous Integration"
 
 jobs:
   validate:
-    name: "Validate"
+    name: "Validate composer"
 
     runs-on: "ubuntu-latest"
 
@@ -25,20 +25,13 @@ jobs:
       - name: "Checkout"
         uses: "actions/checkout@v2"
 
-#      - name: "Lint YAML files"
-#        uses: "ibiqlik/action-yamllint@v1"
-#        with:
-#          config_file: ".yamllint.yaml"
-#          file_or_dir: "."
-#          strict: true
-
       - name: "Install PHP"
         uses: "shivammathur/setup-php@v2"
         with:
           php-version: "${{ matrix.php-versions }}"
-          extensions: "mbstring, dom, xmlwriter, opcache, bcmath, curl, intl, json" #optional
-          ini-values: "opcache.enable=1, opcache.enable_cli=1, zend.assertions=1, assert.exception=On" #optional
-          coverage: "none" #optional
+          extensions: "mbstring, dom, xmlwriter, opcache, bcmath, curl, intl, json"
+          ini-values: "opcache.enable=1, opcache.enable_cli=1, zend.assertions=1, assert.exception=On"
+          coverage: "none"
 
       - name: "Validate composer.json"
         run: "composer validate"
@@ -75,7 +68,6 @@ jobs:
           - "7.2"
           - "7.3"
           - "7.4"
-#          - "8.0"
 
         dependencies:
           - "--prefer-lowest"
@@ -89,9 +81,9 @@ jobs:
         uses: "shivammathur/setup-php@v2"
         with:
           php-version: "${{ matrix.php-versions }}"
-          extensions: "mbstring, dom, xmlwriter, opcache, bcmath, curl, intl, json" #optional
-          ini-values: "opcache.enable=1, opcache.enable_cli=1, zend.assertions=1, assert.exception=On" #optional
-          coverage: "none" #optional
+          extensions: "mbstring, dom, xmlwriter, opcache, bcmath, curl, intl, json"
+          ini-values: "opcache.enable=1, opcache.enable_cli=1, zend.assertions=1, assert.exception=On"
+          coverage: "none"
 
       - name: "Determine composer cache directory"
         id: "determine-composer-cache-directory"
@@ -134,9 +126,9 @@ jobs:
         uses: "shivammathur/setup-php@v2"
         with:
           php-version: "${{ matrix.php-versions }}"
-          extensions: "mbstring, dom, xmlwriter, opcache, bcmath, curl, intl, json" #optional
-          ini-values: "opcache.enable=1, opcache.enable_cli=1, zend.assertions=1, assert.exception=On" #optional
-          coverage: "none" #optional
+          extensions: "mbstring, dom, xmlwriter, opcache, bcmath, curl, intl, json"
+          ini-values: "opcache.enable=1, opcache.enable_cli=1, zend.assertions=1, assert.exception=On"
+          coverage: "none"
 
       - name: "Determine composer cache directory"
         id: "determine-composer-cache-directory"
@@ -182,9 +174,9 @@ jobs:
         uses: "shivammathur/setup-php@v2"
         with:
           php-version: "${{ matrix.php-versions }}"
-          extensions: "mbstring, dom, xmlwriter, opcache, bcmath, curl, intl, json" #optional
-          ini-values: "opcache.enable=1, opcache.enable_cli=1, zend.assertions=1, assert.exception=On" #optional
-          coverage: "none" #optional
+          extensions: "mbstring, dom, xmlwriter, opcache, bcmath, curl, intl, json"
+          ini-values: "opcache.enable=1, opcache.enable_cli=1, zend.assertions=1, assert.exception=On"
+          coverage: "none"
 
       - name: "Determine composer cache directory"
         id: "determine-composer-cache-directory"
@@ -217,6 +209,9 @@ jobs:
       matrix:
         php-versions:
           - "7.1"
+          - "7.2"
+          - "7.3"
+          - "7.4"
 
         dependencies:
           - ""
@@ -229,9 +224,9 @@ jobs:
         uses: "shivammathur/setup-php@v2"
         with:
           php-version: "${{ matrix.php-versions }}"
-          extensions: "mbstring, dom, xmlwriter, opcache, bcmath, curl, intl, json" #optional
-          ini-values: "opcache.enable=1, opcache.enable_cli=1, zend.assertions=1, assert.exception=On" #optional
-          coverage: "none" #optional
+          extensions: "mbstring, dom, xmlwriter, opcache, bcmath, curl, intl, json"
+          ini-values: "opcache.enable=1, opcache.enable_cli=1, zend.assertions=1, assert.exception=On"
+          coverage: "none"
 
       - name: "Determine composer cache directory"
         id: "determine-composer-cache-directory"
@@ -274,9 +269,9 @@ jobs:
         uses: "shivammathur/setup-php@v2"
         with:
           php-version: "${{ matrix.php-versions }}"
-          extensions: "mbstring, dom, xmlwriter, opcache, bcmath, curl, intl, json" #optional
-          ini-values: "opcache.enable=1, opcache.enable_cli=1, zend.assertions=1, assert.exception=On" #optional
-          coverage: "xdebug" #optional
+          extensions: "mbstring, dom, xmlwriter, opcache, bcmath, curl, intl, json"
+          ini-values: "opcache.enable=1, opcache.enable_cli=1, zend.assertions=1, assert.exception=On"
+          coverage: "xdebug"
 
       - name: "Determine composer cache directory"
         id: "determine-composer-cache-directory"
