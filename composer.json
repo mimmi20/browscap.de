@@ -39,7 +39,7 @@
     "thadafinser/package-info": "~1.0.0"
   },
   "require-dev": {
-    "ergebnis/composer-normalize": "~2.3.2",
+    "ergebnis/composer-normalize": "~2.6.0",
     "ergebnis/phpstan-rules": "~0.15.1",
     "filp/whoops": "~2.7.2",
     "jangregor/phpstan-prophecy": "~0.8.0",
