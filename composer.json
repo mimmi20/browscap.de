@@ -44,7 +44,7 @@
     "filp/whoops": "~2.8.0",
     "jangregor/phpstan-prophecy": "~0.8.0",
     "laminas/laminas-development-mode": "~3.2.1",
-    "mimmi20/coding-standard": "~1.0.3",
+    "mimmi20/coding-standard": "~1.0.4",
     "phpspec/prophecy": "~1.10.3",
     "phpstan/extension-installer": "~1.0.5",
     "phpstan/phpstan": "~0.12.50",
