@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ac304e993974719b5f4bc2b7b9ff97cc",
+    "content-hash": "6e37deb57b5285bc68e67f3f26354cd3",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -2495,16 +2495,16 @@
         },
         {
             "name": "laminas/laminas-zendframework-bridge",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-zendframework-bridge.git",
-                "reference": "4939c81f63a8a4968c108c440275c94955753b19"
+                "reference": "6ede70583e101030bcace4dcddd648f760ddf642"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/4939c81f63a8a4968c108c440275c94955753b19",
-                "reference": "4939c81f63a8a4968c108c440275c94955753b19",
+                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/6ede70583e101030bcace4dcddd648f760ddf642",
+                "reference": "6ede70583e101030bcace4dcddd648f760ddf642",
                 "shasum": ""
             },
             "require": {
@@ -2516,10 +2516,6 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev",
-                    "dev-develop": "1.1.x-dev"
-                },
                 "laminas": {
                     "module": "Laminas\\ZendFrameworkBridge"
                 }
@@ -2549,7 +2545,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2020-08-18T16:34:51+00:00"
+            "time": "2020-09-14T14:23:00+00:00"
         },
         {
             "name": "mezzio/mezzio",
@@ -3173,16 +3169,16 @@
         },
         {
             "name": "mimmi20/browser-detector-loader-interface",
-            "version": "3.0.9",
+            "version": "3.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mimmi20/browser-detector-loader-interface.git",
-                "reference": "b4d5570a9d53a607de5ce09457d18f6e8a764140"
+                "reference": "04b81703c4008a19f55b4ad0978a972e0a38fcdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mimmi20/browser-detector-loader-interface/zipball/b4d5570a9d53a607de5ce09457d18f6e8a764140",
-                "reference": "b4d5570a9d53a607de5ce09457d18f6e8a764140",
+                "url": "https://api.github.com/repos/mimmi20/browser-detector-loader-interface/zipball/04b81703c4008a19f55b4ad0978a972e0a38fcdb",
+                "reference": "04b81703c4008a19f55b4ad0978a972e0a38fcdb",
                 "shasum": ""
             },
             "require": {
@@ -3190,13 +3186,11 @@
             },
             "require-dev": {
                 "ergebnis/composer-normalize": "~2.8.0",
-                "ergebnis/phpstan-rules": "~0.15.1",
                 "mimmi20/coding-standard": "~1.0.3",
                 "pepakriz/phpstan-exception-rules": "~0.11.1",
                 "phpstan/extension-installer": "~1.0.5",
-                "phpstan/phpstan": "~0.12.42",
-                "phpstan/phpstan-deprecation-rules": "~0.12.5",
-                "phpstan/phpstan-strict-rules": "~0.12.5"
+                "phpstan/phpstan": "~0.12.50",
+                "phpstan/phpstan-deprecation-rules": "~0.12.5"
             },
             "type": "library",
             "autoload": {
@@ -3220,7 +3214,7 @@
                 }
             ],
             "description": "the source interface for the browscap helper",
-            "time": "2020-09-05T13:57:00+00:00"
+            "time": "2020-10-19T07:42:46+00:00"
         },
         {
             "name": "mimmi20/json-class",
@@ -3407,38 +3401,36 @@
         },
         {
             "name": "mimmi20/ua-generic-request",
-            "version": "5.0.9",
+            "version": "5.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mimmi20/ua-generic-request.git",
-                "reference": "81da617fc747997653132739f13e3ac4861af250"
+                "reference": "f67c2e175d4693d38bdf87abb0ba8155f2ebce92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mimmi20/ua-generic-request/zipball/81da617fc747997653132739f13e3ac4861af250",
-                "reference": "81da617fc747997653132739f13e3ac4861af250",
+                "url": "https://api.github.com/repos/mimmi20/ua-generic-request/zipball/f67c2e175d4693d38bdf87abb0ba8155f2ebce92",
+                "reference": "f67c2e175d4693d38bdf87abb0ba8155f2ebce92",
                 "shasum": ""
             },
             "require": {
                 "laminas/laminas-diactoros": "~2.4.1",
-                "mimmi20/browser-detector-loader-interface": "~3.0.9",
+                "mimmi20/browser-detector-loader-interface": "~3.0.10",
                 "php": "^7.1.3 || ^8.0.0",
                 "psr/http-message": "~1.0.1"
             },
             "require-dev": {
                 "ergebnis/composer-normalize": "~2.8.0",
-                "ergebnis/phpstan-rules": "~0.15.1",
-                "infection/infection": "~0.13.6 || ~0.17.5",
-                "mimmi20/coding-standard": "~1.0.3",
-                "mimmi20/json-class": "~2.0.13",
+                "infection/infection": "~0.13.6 || ~0.18",
+                "mimmi20/coding-standard": "~1.0.4",
+                "mimmi20/json-class": "~2.0.14",
                 "pepakriz/phpstan-exception-rules": "~0.11.1",
                 "phpstan/extension-installer": "~1.0.5",
-                "phpstan/phpstan": "~0.12.42",
+                "phpstan/phpstan": "~0.12.50",
                 "phpstan/phpstan-deprecation-rules": "~0.12.5",
                 "phpstan/phpstan-phpunit": "~0.12.16",
-                "phpstan/phpstan-strict-rules": "~0.12.5",
-                "phpunit/phpunit": "~7.5.20 || ~8.5.8 || ~9.3.8",
-                "symfony/finder": "~4.4.13 || ~5.1.5"
+                "phpunit/phpunit": "~7.5.20 || ~8.5.8 || ~9.4.2",
+                "symfony/finder": "~4.4.15 || ~5.1.7"
             },
             "type": "library",
             "autoload": {
@@ -3463,7 +3455,7 @@
             ],
             "description": "the Generic Request Object extracted from Wurfl for PHP 7.1+",
             "homepage": "https://github.com/mimmi20/ua-generic-request",
-            "time": "2020-09-05T15:07:01+00:00"
+            "time": "2020-10-20T08:06:44+00:00"
         },
         {
             "name": "monolog/monolog",
