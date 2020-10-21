@@ -41,7 +41,7 @@
   "require-dev": {
     "ergebnis/composer-normalize": "~2.6.0",
     "ergebnis/phpstan-rules": "~0.15.1",
-    "filp/whoops": "~2.8.0",
+    "filp/whoops": "~2.9.0",
     "jangregor/phpstan-prophecy": "~0.8.0",
     "laminas/laminas-development-mode": "~3.2.1",
     "mimmi20/coding-standard": "~1.0.4",
