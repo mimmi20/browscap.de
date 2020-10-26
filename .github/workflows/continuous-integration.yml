@@ -77,9 +77,6 @@ jobs:
       - name: "Checkout"
         uses: "actions/checkout@v2"
 
-      - name: "check for unused dependencies"
-        uses: "docker://icanhazstring/composer-unused-ga"
-
       - name: "Install PHP"
         uses: "shivammathur/setup-php@v2"
         with:
