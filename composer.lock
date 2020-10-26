@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8203efd311cce4b3ed305832c4a8d525",
+    "content-hash": "181b64b6fd3ca66209cae64b19286dc7",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -6787,66 +6787,6 @@
                 }
             ],
             "time": "2020-10-24T15:04:14+00:00"
-        },
-        {
-            "name": "laminas/laminas-development-mode",
-            "version": "3.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laminas/laminas-development-mode.git",
-                "reference": "dccbfc5a1503eb3f3805869525258ca6e6f6a0ce"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-development-mode/zipball/dccbfc5a1503eb3f3805869525258ca6e6f6a0ce",
-                "reference": "dccbfc5a1503eb3f3805869525258ca6e6f6a0ce",
-                "shasum": ""
-            },
-            "require": {
-                "laminas/laminas-zendframework-bridge": "^1.0",
-                "php": "^5.6 || ^7.0"
-            },
-            "replace": {
-                "zfcampus/zf-development-mode": "^3.2.0"
-            },
-            "require-dev": {
-                "laminas/laminas-coding-standard": "~1.0.0",
-                "mikey179/vfsstream": "^1.6.5",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.5"
-            },
-            "bin": [
-                "bin/laminas-development-mode"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Laminas\\DevelopmentMode\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Laminas development mode script",
-            "homepage": "https://laminas.dev",
-            "keywords": [
-                "framework",
-                "laminas"
-            ],
-            "support": {
-                "chat": "https://laminas.dev/chat",
-                "forum": "https://discourse.laminas.dev",
-                "issues": "https://github.com/laminas/laminas-development-mode/issues",
-                "rss": "https://github.com/laminas/laminas-development-mode/releases.atom",
-                "source": "https://github.com/laminas/laminas-development-mode"
-            },
-            "funding": [
-                {
-                    "url": "https://funding.communitybridge.org/projects/laminas-project",
-                    "type": "community_bridge"
-                }
-            ],
-            "time": "2020-08-03T14:07:04+00:00"
         },
         {
             "name": "localheinz/diff",
