@@ -10,8 +10,9 @@
     "beberlei/assert": "~3.2.7",
     "browscap/browscap": "~6.0.38",
     "browscap/browscap-php": "~4.2.2 || ~5.0.0",
+    "composer-runtime-api": "~2.0.0",
     "laminas/laminas-cache": "~2.9.0",
-    "laminas/laminas-component-installer": "~2.3.0",
+    "laminas/laminas-component-installer": "~2.3.1",
     "laminas/laminas-config-aggregator": "~1.2.2",
     "laminas/laminas-filter": "~2.9.4",
     "laminas/laminas-form": "~2.15.0",
@@ -35,24 +36,20 @@
     "psr/http-server-middleware": "~1.0.1",
     "roave/security-advisories": "dev-master",
     "stickee/cache": "dev-master",
-    "symfony/twig-bridge": "~4.4.8 || ~5.0.8",
-    "thadafinser/package-info": "~1.0.0"
+    "symfony/twig-bridge": "~4.4.8 || ~5.0.8"
   },
   "require-dev": {
     "ergebnis/composer-normalize": "~2.6.0",
-    "ergebnis/phpstan-rules": "~0.15.1",
     "filp/whoops": "~2.9.0",
-    "jangregor/phpstan-prophecy": "~0.8.0",
-    "laminas/laminas-development-mode": "~3.2.1",
+    "jangregor/phpstan-prophecy": "~0.8.1",
     "mimmi20/coding-standard": "~1.0.4",
     "phpspec/prophecy": "~1.10.3",
     "phpstan/extension-installer": "~1.0.5",
-    "phpstan/phpstan": "~0.12.50",
+    "phpstan/phpstan": "~0.12.52",
     "phpstan/phpstan-beberlei-assert": "~0.12.3",
     "phpstan/phpstan-deprecation-rules": "~0.12.5",
     "phpstan/phpstan-phpunit": "~0.12.16",
-    "phpstan/phpstan-strict-rules": "~0.12.5",
-    "phpunit/phpunit": "~7.5.20 || ~8.5.8 || ~9.3.5"
+    "phpunit/phpunit": "~7.5.20 || ~8.5.8 || ~9.4.2"
   },
   "config": {
     "platform": {
@@ -92,9 +89,6 @@
     "clear-config-cache": "php bin/clear-config-cache.php",
     "cs-check": "phpcs",
     "cs-fix": "phpcbf",
-    "development-disable": "zf-development-mode disable",
-    "development-enable": "zf-development-mode enable",
-    "development-status": "zf-development-mode status",
     "serve": "php -S 0.0.0.0:8080 -t public public/index.php",
     "test": "phpunit --colors=always",
     "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
